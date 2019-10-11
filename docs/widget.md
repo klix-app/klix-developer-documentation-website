@@ -2,7 +2,7 @@
 
 ## Checkout Widget placement
 
-Checkout Widget is implemented as embeddable Web Component. In order to show that on merchant website KLIX JavaScript should be included in the page and custom HTML tag to be placed in the required location. See the example below for integration code.
+Checkout Widget is implemented as embeddable Web Component. In order to show that on merchant website Klix JavaScript should be included in the page and custom HTML tag to be placed in the required location. See the example below for integration code.
 
 ```html
 <head>

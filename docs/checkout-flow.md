@@ -11,6 +11,6 @@ Order placement could be reflected as sequence diagram with three main parties: 
 5. **Approve order** - order gets approved after inventory and pricing check as well as internal fraud rules if such exist. Items should be marked as unavailable in the internet shop at this moment.
 6. **Decline order** - order gets declined due to item unavailability or price mismatch with shop inventory database. Customer sees decline message on Checkout.
 7. **Order status notification** - order status is presented to the customer in Checkout widget. There is a final approval by customer for final amount.
-8. **Authorize payment** - payment gets authorized by payment method specific way. This could be either 3D Secure with 2FA for payment cards or KLIX Pin or Fingerprint in case of onboarded mobile user.
+8. **Authorize payment** - payment gets authorized by payment method specific way. This could be either 3D Secure with 2FA for payment cards or Klix Pin or Fingerprint in case of onboarded mobile user.
 9. **Payment approval** - payment approval notification is shown to the customer, so the customer knows that funds have been authorized.
-10. **Confirm purchase** - KLIX send notification to merchant about funds availability and order could be dispatched. In case there is no notification in specified time frame (e.g. 10 minutes) order could be expired and reserved items released back to being available for other customers.
+10. **Confirm purchase** - Klix send notification to merchant about funds availability and order could be dispatched. In case there is no notification in specified time frame (e.g. 10 minutes) order could be expired and reserved items released back to being available for other customers.

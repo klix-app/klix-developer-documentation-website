@@ -1,10 +1,10 @@
 # Protocol Security
 
-Every data modification request sent by merchant to KLIX should be signed by merchant private key and validated on KLIX side by merchant public key. It is important to use asymmetric cryptography algorithm to have non-disputable transactions in e-commerce. Especially in pricing and quotes area. Shared keys could be stolen from both parties thus making KLIX liable of potential data and financial losses.
+Every data modification request sent by merchant to Klix should be signed by merchant private key and validated on Klix side by merchant public key. It is important to use asymmetric cryptography algorithm to have non-disputable transactions in e-commerce. Especially in pricing and quotes area. Shared keys could be stolen from both parties thus making Klix liable of potential data and financial losses.
 
 ## Transport-Level Security
 
-All communication is going via HTTPS TLS 1.2 protocol. KLIX is using trusted certificates from  a well-known certificate authority.
+All communication is going via HTTPS TLS 1.2 protocol. Klix is using trusted certificates from  a well-known certificate authority.
 
 In addition to TLS IP range limitation and redirect domain control is in place. 
 
@@ -16,7 +16,7 @@ Name of the HTTP header to be used for submitting API Key is '_X-KLIX-Api-Key_'.
 
 ## JWS Signature
 
-Private and public key pairs are issued by KLIX PKI (Public Key Infrastructure) server. It is possible to generate a new RSA 2048 key pair in Merchant Console -> Certificates page. When clicking “GENERATE NEW CERTIFICATE” private key is downloaded to user machine, and public key is kept in KLIX database.
+Private and public key pairs are issued by Klix PKI (Public Key Infrastructure) server. It is possible to generate a new RSA 2048 key pair in Merchant Console -> Certificates page. When clicking “GENERATE NEW CERTIFICATE” private key is downloaded to user machine, and public key is kept in Klix database.
 
 ![alt_text](images/merchant_console_generate_new_certificate.png "Generate merchant certificate in Merchant Console")
 
@@ -30,7 +30,7 @@ _“JWS compact serialization represents a signed JWT as a compact URL-safe stri
 
 [^2]: [https://medium.facilelogin.com/jwt-jws-and-jwe-for-not-so-dummies-b63310d201a3](https://medium.facilelogin.com/jwt-jws-and-jwe-for-not-so-dummies-b63310d201a3)
 
-This is Java code[^3] example using Nimbus Jose JWT open source library. It generates an RSA private/public key pair and signs it with JWS signature. In real environment merchant API user would be using a private key generated from KLIX Merchant Console.
+This is Java code[^3] example using Nimbus Jose JWT open source library. It generates an RSA private/public key pair and signs it with JWS signature. In real environment merchant API user would be using a private key generated from Klix Merchant Console.
 
 [^3]: [https://connect2id.com/products/nimbus-jose-jwt/examples/jws-with-rsa-signature](https://connect2id.com/products/nimbus-jose-jwt/examples/jws-with-rsa-signature)
 
@@ -84,12 +84,12 @@ There are JWS libraries available for all common implementation platforms: PHP, 
 Merchant RSA Key Pair generation guidelines:
 
 * Each key pair is assigned a unique identifier in KIiX database;
-* Merchant private key is not stored in KLIX and its responsibility of merchant to keep it secure;
-* Key could be revoked by the merchant or KLIX admin at any time;
+* Merchant private key is not stored in Klix and its responsibility of merchant to keep it secure;
+* Key could be revoked by the merchant or Klix admin at any time;
 * Multiple keys could be active at the same time. JWS ‘_kid_’ parameter helps to identify which key is used in a particular request;
 * Default Key expiration time is 2 calendar years. This is defined on PKI policies level;
 * Notifications about key status changes (as well as expiration reminders) should be sent to merchant email address (and potentially SMS);
 
-Requests going from KLIX to merchant defined callback URL are also signed digitally using KLIX private key and validated using public key, which is available in Merchant Console.
+Requests going from Klix to merchant defined callback URL are also signed digitally using Klix private key and validated using public key, which is available in Merchant Console.
 
 JWS signature content could be debugged inside online tool [https://jwt.io/](https://jwt.io/). Do not share your private key content online, since it will be compromised!
