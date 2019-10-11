@@ -1,0 +1,70 @@
+site_name: Klix Developers
+site_description: Klix Developer documentation
+site_author: Klix Development Team
+theme:
+  name: 'material'
+  palette:
+    primary: 'Teal'
+    accent: 'Teal'
+  logo: 'images/logo.png'
+  favicon: 'images/logo.png'
+google_analytics:
+  - 'UA-149580135-1'
+  - 'auto'
+
+# Plugins  
+plugins:
+  - search
+
+ # Extensions
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.caret
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tilde
+
+# Page tree
+nav:
+  - Overview: index.md
+  - Quick start guide: quick-start-guide.md
+  - Security: security.md
+  - Configuration: configuration.md
+  - Checkout flow: checkout-flow.md
+  - API: api.md
+  - Client libraries: client-libraries.md
+  - Callbacks: callbacks.md
+  - Widget: widget.md
+  - Testing integration: testing-integration.md
+
+# Social
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/klix-app'
+    - type: 'twitter'
+      link: 'https://twitter.com/klixapp'
+    - type: 'linkedin'
+      link: 'https://lv.linkedin.com/company/klixapp'
+
+# Style adjustments
+extra_css:
+  - 'stylesheets/klix.css'
+
+# Repository
+repo_name: klix-app/klix-app.github.io
+repo_url: https://github.com/klix-app/klix-app.github.io
+edit_uri: ""
+
+# Copyright
+copyright: 'Copyright &copy; 2019 Klix'
+
+      

@@ -1,0 +1,26 @@
+.md-footer-copyright {
+    font-size: .4rem;
+}
+
+.md-header-nav__button {
+    margin-top: 8px;
+}
+
+/* Override theme colors (keep an eye on solution described here: https://github.com/squidfunk/mkdocs-material/issues/1297) */
+button[data-md-color-primary=teal]{
+    background-color:#055853
+}
+[data-md-color-primary=teal] .md-header,[data-md-color-primary=teal] .md-hero{
+    background-color:#055853;
+}
+
+@media only screen and (max-width:76.1875em){
+    html [data-md-color-primary=teal] .md-nav--primary .md-nav__title--site{
+        background-color:#055853
+    }
+}
+@media only screen and (min-width:76.25em){
+        [data-md-color-primary=teal] .md-tabs{
+        background-color:#055853
+        }
+}
