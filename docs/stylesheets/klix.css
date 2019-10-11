@@ -3,7 +3,8 @@
 }
 
 .md-header-nav__button {
-    margin-top: 8px;
+    padding-top: 0px;
+    margin-top: -6px;
 }
 
 /* Override theme colors (keep an eye on solution described here: https://github.com/squidfunk/mkdocs-material/issues/1297) */

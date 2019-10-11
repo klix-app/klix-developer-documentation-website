@@ -3,6 +3,7 @@ site_description: Klix Developer documentation
 site_author: Klix Development Team
 theme:
   name: 'material'
+  custom_dir: 'theme/'
   palette:
     primary: 'Teal'
     accent: 'Teal'
