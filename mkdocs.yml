@@ -61,8 +61,8 @@ extra_css:
   - 'stylesheets/klix.css'
 
 # Repository
-repo_name: klix-app/klix-app.github.io
-repo_url: https://github.com/klix-app/klix-app.github.io
+repo_name: klix-app/klix-developer-documentation-website
+repo_url: https://github.com/klix-app/klix-developer-documentation-website
 edit_uri: ""
 
 # Copyright
