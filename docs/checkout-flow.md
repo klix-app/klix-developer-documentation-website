@@ -4,6 +4,14 @@ Order placement could be reflected as sequence diagram with three main parties: 
 
 ![alt_text](images/checkout_flow.png "Checkout flow sequence diagram")
 
+```sequence
+Title: Checkout flow sequence diagram
+Customer->Klix: Normal line
+Klix-->Merchant: Dashed line
+C->>D: Open arrow
+D-->>A: Dashed open arrow
+```
+
 1. **Place new order** - customer is creating new order in one of merchant sales channels (mobile, recurring payment, checkout widget). 
 2. **Notify about new order** - merchant gets notified about new pending order. Merchant gets information about items being requested as well as shipment options and specified shipment address. Merchant is required to make a decision about either approving or declining the submitted order.
 3. **Get pending order details** - Merchant receives a callback about new order without all order details. Merchant is required to retrieve a detailed information about order to make a decision.
