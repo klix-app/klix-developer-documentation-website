@@ -110,12 +110,9 @@ let escaped = orderAttribute.split('&').join('&amp;').split('<')
 let orderObjectInWidget = JSON.parse(orderAttribute);
 ```
 
-
-
 ### JS API for single and multiple order items
 
 Widget `'lazy'` attribute is used to delay widget initialization (until configuration via _Widget JS API_ is completed):
-
 
 ```html
 <checkout-widget id="my-checkout-widget" widget-id="..." lazy="true"></checkout-widget>
@@ -225,3 +222,33 @@ Widget `'lazy'` attribute is used to delay widget initialization (until configur
    </td>
   </tr>
 </table>
+
+## Javascript callbacks
+
+Klix widget uses [Custom DOM events](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events) to communicate with merchant page. In order to listen specifc Klix widget event appropriate event listener should be registered first.
+
+### Payment completed callback
+
+Event with type `paymentCompleted` is published in case of successfull or failed payment right before payment status screen is shown to customer.
+
+![Klix widget payment status screen](images/widget_payment_status.png "Klix widget payment status screen")
+
+Event handler can be used to dynamically update merchant page contents according to payment processing result.
+
+```html
+<klix-checkout widget-id="..." order="..."></klix-checkout>
+<script>
+    const checkoutElement = document.querySelector('klix-checkout');
+    checkoutElement.addEventListener('paymentCompleted', event => {
+        const message = 'Order with id ' + event.detail["orderId"] + ' payment succeeded -> ' + event.detail["paymentSucceeded"];
+        window.alert(message);
+    });
+</script>
+```
+
+Following event properties can be used:
+
+| Property                         | Type    | Description                              |
+|----------------------------------|-------- |------------------------------------------|
+| event.detail["orderId"]          | string  | Completed payment order identifier       |
+| event.detail["paymentSucceeded"] | boolean | Indicates if payment succeeded or failed |
