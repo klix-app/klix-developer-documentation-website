@@ -140,88 +140,15 @@ Widget `'lazy'` attribute is used to delay widget initialization (until configur
 
 ### Order Item attributes
 
-<table>
-  <tr>
-   <td>Name
-   </td>
-   <td>Mandatory
-   </td>
-   <td>Default Value
-   </td>
-   <td>Description
-   </td>
-  </tr>
-  <tr>
-   <td><code>amount</code>
-   </td>
-   <td><strong>Yes</strong>
-   </td>
-   <td>n/a
-   </td>
-   <td>Price per unit
-   </td>
-  </tr>
-  <tr>
-   <td><code>currency</code>
-   </td>
-   <td>No
-   </td>
-   <td>Merchant specific (<code>EUR</code> in Latvia)
-   </td>
-   <td>Alphabetic code ISO 4217
-   </td>
-  </tr>
-  <tr>
-   <td><code>label</code>
-   </td>
-   <td><strong>Yes</strong>
-   </td>
-   <td>n/a
-   </td>
-   <td>Product or service name
-   </td>
-  </tr>
-  <tr>
-   <td><code>count</code>
-   </td>
-   <td>No
-   </td>
-   <td><code>1</code>
-   </td>
-   <td>Quantity
-   </td>
-  </tr>
-  <tr>
-   <td><code>unit</code>
-   </td>
-   <td>No
-   </td>
-   <td><code>PIECE</code>
-   </td>
-   <td>{ PIECE, KILOGRAM, METER, LITRE, HOUR }
-   </td>
-  </tr>
-  <tr>
-   <td><code>taxRate</code>
-   </td>
-   <td>No
-   </td>
-   <td>Merchant specific (<code>0.21</code> in Latvia)
-   </td>
-   <td>VAT
-   </td>
-  </tr>
-  <tr>
-   <td><code>orderItemId</code>
-   </td>
-   <td>No
-   </td>
-   <td><code>null</code>
-   </td>
-   <td>Product ID in merchant system for reference purposes.
-   </td>
-  </tr>
-</table>
+| Name        | Mandatory | Default value                      | Description                                          |
+|-------------|-----------|------------------------------------|------------------------------------------------------|
+| amount      | Yes       | n/a                                | Price per unit                                       |
+| currency    | No        | Merchant specific (EUR in Latvia)  | Alphabetic code ISO 4217                             |
+| label       | Yes       | n/a                                | Product or service name                              |
+| count       | No        | 1                                  | Quantity                                             |
+| unit        | No        | PIECE                              | {PIECE, KILOGRAM, METER, LITRE, HOUR}                |
+| taxRate     | No        | Merchant specific (0.21 in Latvia) | VAT                                                  |
+| orderItemId | No        | null                               | Product ID in merchant system for reference purposes |
 
 ## Javascript callbacks
 
