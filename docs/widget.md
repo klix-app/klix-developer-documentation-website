@@ -150,6 +150,27 @@ Widget `'lazy'` attribute is used to delay widget initialization (until configur
 | taxRate     | No        | Merchant specific (0.21 in Latvia) | VAT                                                  |
 | orderItemId | No        | null                               | Product ID in merchant system for reference purposes |
 
+## Prefilling Klix widget form data
+
+Klix widget form data prefilling allows to reduce amount of fields that needs to be entred by customer in Klix form in situations where some or all of required customer information was previously entered in merchant's webpage e.g. in case if Klix form is presented to exsiting merchant's customer or customer needs to fill specific form on merchant's page before continuing with Klix form.
+
+Klix widget supports prefilling form with customer data specified as Klix widget attributes. Customer phone number, e-mail, first name and last name can be passed to widget:
+
+```html
+<klix-checkout widget-id="..." language="lv" email="john.doe@klix.app" phone="37120000000" first-name="John" last-name="Doe" class="hydrated">
+</klix-checkout>
+```
+
+Note that partial data prefill is supported i.e. if only firstname and last name of customer is passed to Klix widget it will be prefilled after non existing Klix customer enters his mobile phone number.
+
+In case there's no Klix customer with specified mobile phone number Klix widget form will be prefilled with specified data.
+
+![New customer data prefilled in widget](images/widget_new_customer_data_prefilled.png "New customer data prefilled in widget")
+
+Otherwise Klix widget data autofill is triggered automatically so that customer receives autofill notifcation in his mobile phone.
+
+![Existing customer data prefilled in widget](images/widget_existing_customer_data_prefilled.png "Existing customer data prefilled in widget")
+
 ## Javascript callbacks
 
 Klix widget uses [Custom DOM events](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events) to communicate with merchant page. In order to listen specifc Klix widget event appropriate event listener should be registered first.
