@@ -2,8 +2,10 @@
 
 ## Checkout Widget placement
 
-Checkout Widget is implemented as embeddable Web Component. In order to show that on merchant website Klix JavaScript should be included in the page and custom HTML tag to be placed in the required location. See the example below for integration code.
+Checkout Widget is implemented as embeddable Web Component. In order to show Klix checkout widget on a merchant website widget JavaScript should be included in the page and custom HTML tag to be placed in the required location. See the example below for integration code.
 
+!!! Warning "Widget scripts"
+    Please note that Klix Widget JavaScript source should be loaded from different destination in case of production and test environment. Production environment Klix Widget JavaScript base path is  `https://klix.blob.core.windows.net/public/widget/build/`. Production environment Klix Widget JavaScript base path is `https://klix.blob.core.windows.net/stage/widget/build/`.
 ```html
 <head>
     <script type="module"
