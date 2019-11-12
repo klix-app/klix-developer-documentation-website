@@ -2,7 +2,7 @@
 
 ## Callback URLs
 
-During order lifecycle Klix consumes API end-points implemented by merchant store. All URLs should be implemented and accessible via HTTPS in order to be callable by Klix.
+During order lifecycle Klix invokes API end-points implemented by merchant store. All URLs should be implemented and accessible via HTTPS in order to be callable by Klix.
 
 | URL Type                      | Example                            | Description
 |-------------------------------|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
