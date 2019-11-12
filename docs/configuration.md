@@ -27,7 +27,7 @@ For each HTTP request sent to Klix header called `X-KLIX-Api-Key` should be spec
 
 Generate certificate and download private key file. All data modification requests sent to Klix should be signed using this private key. Klix will use merchant certificate public key to check each data modification request payload integrity and authenticity. In order to understand which merchant's certificate should be used to validate a request JWS header `kid` value should be specified. Header value can be obtained from Certificates page corresponding certificate's field "Name".
 
-!!! Security notice
+!!! Warning "Security notice"
     Merchant is reponsible for storing certificate's private key securely. Merchant can generate a new certificate in Merchant Console and use this certificate to sign request payload. Note that in such case JWS header `kid` value should match new certificate's name.
 
 ![Create new merchant certificate](images/merchant_console_certificate_created.png "New merchant certificate creation")
