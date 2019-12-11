@@ -6,13 +6,13 @@ Checkout Widget is implemented as embeddable Web Component. In order to show Kli
 
 !!! Warning "Widget scripts"
     Please note that Klix Widget JavaScript source should be loaded from different destination in case of production and test environment. Production environment Klix Widget JavaScript base path is  `https://klix.blob.core.windows.net/public/widget/build/`. Production environment Klix Widget JavaScript base path is `https://klix.blob.core.windows.net/stage/widget/build/`.
+
 ```html
 <head>
     <script type="module"
                src="https://klix.blob.core.windows.net/public/widget/build/klixwidget.esm.js">
     </script>
-    <script nomodule 
-               src="https://klix.blob.core.windows.net/public/widget/build/klixwidget.js">
+    <script nomodule src="https://klix.blob.core.windows.net/public/widget/build/klixwidget.js">
     </script>
 </head>
 <body>
@@ -202,3 +202,19 @@ Following event properties can be used:
 |----------------------------------|-------- |------------------------------------------|
 | event.detail["orderId"]          | string  | Completed payment order identifier       |
 | event.detail["paymentSucceeded"] | boolean | Indicates if payment succeeded or failed |
+
+## Limiting accepted cards
+
+By default all cards issued by Mastercard and VISA are accepted by Klix however following constraints can be imposed via order configuration if needed:
+
+| Constraint                       | Configuration example                          | Description
+|----------------------------------|------------------------------------------------|----------------------------------------------------
+| Accepted card issuer             | ```"constraints": {"issuer": "Citadele"}```    | Only cards issued by Citadele bank are accepted for this payment
+| Accepted card brand              | ```"constraints": {"brand": "X karte"}```      | Only Citadele "X karte" brand cards are accepted for this payment
+| Accepted card payment scheme     | ```"constraints": {"paymentScheme": "VISA"}``` | Only VISA cards are accepted for this payment
+
+```html
+<checkout-widget widget-id="..." order="{&quot;constraints&quot;:{&quot;issuer&quot;:&quot;Citadele&quot;},&quot;items&quot;:[{&quot;amount&quot;:40,&quot;currency&quot;:&quot;EUR&quot;,&quot;count&quot;:2,&quot;label&quot;:&quot;Philips XR3857&quot;,&quot;taxRate&quot;:0.21}]}">
+</checkout-widget>
+```
+
