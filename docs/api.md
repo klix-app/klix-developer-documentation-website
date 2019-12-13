@@ -34,7 +34,8 @@ rejectMerchantOrderByExternalId
 ### /merchants/{merchantId}/orders/{orderId}
 
 #### GET
-##### Summary:
+
+##### Summary
 
 getOrder
 
@@ -44,7 +45,7 @@ getOrder
 | ---- | ---------- | ----------- | -------- | ---- |
 | X-KLIX-Api-Key | header | X-KLIX-Api-Key | Yes | string |
 | merchantId | path | merchantId | Yes | string (uuid) |
-| orderId | path | orderId | Yes | string (uuid) |
+| orderId | path | orderId | Yes | string |
 
 ##### Responses
 
@@ -94,39 +95,22 @@ rejectMerchantOrder
 
 ### Models
 
-
-#### MerchantOrderDTO
-
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| company | [Company](#company) |  | No |
-| customer | [Customer](#customer) |  | No |
-| id | string (uuid) |  | No |
-| merchant_urls | [MerchantUrls](#merchanturls) |  | No |
-| order_amount | number |  | No |
-| order_lines | [ [OrderItem](#orderitem) ] |  | No |
-| order_tax_amount | number |  | No |
-| purchase_currency | string |  | No |
-| shipment | [Shipment](#shipment) |  | No |
-| status | string |  | No |
-
-#### MerchantUrls
+#### Address
 
 | Name | Type | Description | Required |
 | ---- | ---- | ----------- | -------- |
-| confirmation | string |  | No |
-| place_order | string |  | No |
-| terms | string |  | No |
-| verification | string |  | No |
+| city | string |  | No |
+| country | string |  | No |
+| latitude | double |  | No |
+| longitude | double |  | No |
+| postal_code | string |  | No |
+| street | string |  | No |
 
-#### ErrorResponseModel
+#### Card
 
 | Name | Type | Description | Required |
 | ---- | ---- | ----------- | -------- |
-| errorCode | string |  | No |
-| errorId | string |  | No |
-| errors | [ [ErrorModel](#errormodel) ] |  | No |
-| timestamp | dateTime |  | No |
+| bin | string |  | No |
 
 #### Company
 
@@ -146,17 +130,79 @@ rejectMerchantOrder
 | last_name | string |  | No |
 | phone_number | string |  | No |
 
+#### MerchantOrderDTO
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| amount | number |  | No |
+| company | [Company](#company) |  | No |
+| currency | string |  | No |
+| customer | [Customer](#customer) |  | No |
+| effective_amount | number |  | No |
+| id | string (uuid) |  | No |
+| items | [ [OrderItem](#orderitem) ] |  | No |
+| merchant_urls | [MerchantUrls](#merchanturls) |  | No |
+| order_id | string |  | No |
+| payment | [Payment](#payment) |  | No |
+| shipping | [Shipment](#shipment) |  | No |
+| status | string |  | No |
+| tax_amount | number |  | No |
+| total_amount | number |  | No |
+
+#### MerchantShippingMethod
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| id | string |  | No |
+| name | string |  | No |
+
+#### MerchantUrls
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| confirmation | string |  | No |
+| place_order | string |  | No |
+| terms | string |  | No |
+| verification | string |  | No |
+
 #### OrderItem
 
 | Name | Type | Description | Required |
 | ---- | ---- | ----------- | -------- |
 | amount | number |  | No |
-| name | string |  | No |
+| label | string |  | No |
+| order_item_id | string |  | No |
 | quantity | number |  | No |
-| reference | string |  | No |
+| tax_amount | number |  | No |
 | tax_rate | number |  | No |
+| total_amount | number |  | No |
 | type | string |  | No |
 | unit | string |  | No |
+
+#### Payment
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| card | [Card](#card) |  | No |
+| error | [PaymentError](#paymenterror) |  | No |
+| method | string |  | No |
+| status | string |  | No |
+
+#### PaymentError
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| code | string |  | No |
+| message | string |  | No |
+
+#### PickupPoint
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| comments | string |  | No |
+| external_id | string |  | No |
+| name | string |  | No |
+| service_hours | string |  | No |
 
 #### Shipment
 
@@ -168,37 +214,3 @@ rejectMerchantOrder
 | method | [MerchantShippingMethod](#merchantshippingmethod) |  | No |
 | pickup_point | [PickupPoint](#pickuppoint) |  | No |
 | type | string |  | No |
-
-#### ErrorModel
-
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| code | string |  | No |
-| message | string |  | No |
-
-#### Address
-
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| city | string |  | No |
-| country | string |  | No |
-| latitude | double |  | No |
-| longitude | double |  | No |
-| postal_code | string |  | No |
-| street | string |  | No |
-
-#### MerchantShippingMethod
-
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| id | string |  | No |
-| name | string |  | No |
-
-#### PickupPoint
-
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| comments | string |  | No |
-| external_id | string |  | No |
-| name | string |  | No |
-| service_hours | string |  | No |
