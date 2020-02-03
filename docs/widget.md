@@ -28,6 +28,36 @@ Integration code could be accessed and copied from Merchant Console application.
 
 Widget entity with according _Widget Type_ should be created and configured in _Merchant Console_ (MC). Generated _Widget ID_ is used later for embedding Web Component into Merchant HTML page.
 
+### Specifying widget language
+
+Widget language can be specified using attribute _language_ e.g. "lv" for Latvian, "en" for English or "ru" for Russian.
+
+```html
+<klix-checkout language="lv" widget-id="604419cc-c313-4e47-93e8-330385669bdb">
+</klix-checkout>
+```
+
+### Prefilling Klix widget form data
+
+Klix widget form data prefilling allows to reduce amount of fields that needs to be entred by customer in Klix form in situations where some or all of required customer information was previously entered in merchant's webpage e.g. in case if Klix form is presented to exsiting merchant's customer or customer needs to fill specific form on merchant's page before continuing with Klix form.
+
+Klix widget supports prefilling form with customer data specified as Klix widget attributes. Customer phone number, e-mail, first name and last name can be passed to widget:
+
+```html
+<klix-checkout widget-id="..." language="lv" email="john.doe@klix.app" phone="37120000000" first-name="John" last-name="Doe" class="hydrated">
+</klix-checkout>
+```
+
+Note that partial data prefill is supported i.e. if only firstname and last name of customer is passed to Klix widget it will be prefilled after non existing Klix customer enters his mobile phone number.
+
+In case there's no Klix customer with specified mobile phone number Klix widget form will be prefilled with specified data.
+
+![New customer data prefilled in widget](images/widget_new_customer_data_prefilled.png "New customer data prefilled in widget")
+
+Otherwise Klix widget data autofill is triggered automatically so that customer receives autofill notifcation in his mobile phone.
+
+![Existing customer data prefilled in widget](images/widget_existing_customer_data_prefilled.png "Existing customer data prefilled in widget")
+
 ## INSTANT (Fixed Price) Widget Type
 
 It is possible to generate a checkout widget for a fixed amount. In this case no validation on merchant side is required - all order items are defined at widget configuration in Merchant Console (MC). They can’t be overwritten by _Widget HTML API_ or _Widget JS API_ (specified later in the document) for security purposes. This type of Widget allows lightweight integration with merchant - no merchant back-end is required for integration.
@@ -54,7 +84,7 @@ Order items should be provided either via _Widget HTML API_ (widget tag attribut
 
 ### HTML API for single order item
 
-Tax could be defined as rate (0.XX) or percentage (number greater than 1 without ‘%’ symbol). 
+Tax could be defined as rate (0.XX) or percentage (number greater than 1 without ‘%’ symbol).
 
 Tax rate default value is merchant specific (e.g. for merchants registered in LV it would be "0.21"). Currency default value is merchant specific as well (e.g. for merchants registered in EU it would be "EUR").
 
@@ -152,27 +182,6 @@ Widget `'lazy'` attribute is used to delay widget initialization (until configur
 | taxRate     | No        | Merchant specific (0.21 in Latvia) | VAT                                                  |
 | orderItemId | No        | null                               | Product ID in merchant system for reference purposes |
 
-## Prefilling Klix widget form data
-
-Klix widget form data prefilling allows to reduce amount of fields that needs to be entred by customer in Klix form in situations where some or all of required customer information was previously entered in merchant's webpage e.g. in case if Klix form is presented to exsiting merchant's customer or customer needs to fill specific form on merchant's page before continuing with Klix form.
-
-Klix widget supports prefilling form with customer data specified as Klix widget attributes. Customer phone number, e-mail, first name and last name can be passed to widget:
-
-```html
-<klix-checkout widget-id="..." language="lv" email="john.doe@klix.app" phone="37120000000" first-name="John" last-name="Doe" class="hydrated">
-</klix-checkout>
-```
-
-Note that partial data prefill is supported i.e. if only firstname and last name of customer is passed to Klix widget it will be prefilled after non existing Klix customer enters his mobile phone number.
-
-In case there's no Klix customer with specified mobile phone number Klix widget form will be prefilled with specified data.
-
-![New customer data prefilled in widget](images/widget_new_customer_data_prefilled.png "New customer data prefilled in widget")
-
-Otherwise Klix widget data autofill is triggered automatically so that customer receives autofill notifcation in his mobile phone.
-
-![Existing customer data prefilled in widget](images/widget_existing_customer_data_prefilled.png "Existing customer data prefilled in widget")
-
 ## Javascript callbacks
 
 Klix widget uses [Custom DOM events](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events) to communicate with merchant page. In order to listen specifc Klix widget event appropriate event listener should be registered first.
@@ -217,4 +226,3 @@ By default all cards issued by Mastercard and VISA are accepted by Klix however 
 <checkout-widget widget-id="..." order="{&quot;constraints&quot;:{&quot;issuer&quot;:&quot;Citadele&quot;},&quot;items&quot;:[{&quot;amount&quot;:40,&quot;currency&quot;:&quot;EUR&quot;,&quot;count&quot;:2,&quot;label&quot;:&quot;Philips XR3857&quot;,&quot;taxRate&quot;:0.21}]}">
 </checkout-widget>
 ```
-
