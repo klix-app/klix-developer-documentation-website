@@ -1,4 +1,4 @@
-# Quick Start Guide
+# Getting Started
 
 ## 1. Get access to Klix Merchant Console
 

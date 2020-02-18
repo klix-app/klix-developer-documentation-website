@@ -35,7 +35,9 @@ markdown_extensions:
 # Page tree
 nav:
   - Overview: index.md
-  - Quick start guide: quick-start-guide.md
+  - Quickstart guide: quickstart-guide.md
+  - Getting started: getting-started.md
+  - Signing order: signing-order.md
   - Security: security.md
   - Configuration: configuration.md
   - Checkout flow: checkout-flow.md

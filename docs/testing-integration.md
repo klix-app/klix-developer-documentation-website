@@ -2,11 +2,11 @@
 
 ## Environments
 
-Klix provides fully functional test environment that can be used to test Klix integration implementation without a need to use real bank cards or make actual transactions. Follow instructions in [quick start guide](../quick-start-guide/) to receive access to test both Merchant Console and API.
+Klix provides a fully functional test environment that can be used to test Klix integration implementation without a need to use real bank cards or make actual transactions. Follow instructions in the [getting started](../getting-started/) to receive access to test both Merchant Console and API.
 
 | Service                     | Test environment                                                 | Production environment                                            |
 |-----------------------------|------------------------------------------------------------------|-------------------------------------------------------------------|
-| Merchant Conssole           | <sub>https://mc.stage.klix.app</sub>                             | <sub>https://mc.klix.app</sub>                                    |
+| Merchant Console           | <sub>https://mc.stage.klix.app</sub>                             | <sub>https://mc.klix.app</sub>                                    |
 | Merchant API                | <sub>https://api.stage.klix.app</sub>                            | <sub>https://api.klix.app</sub>                                   |
 | Widget Javascript base path | <sub>https://klix.blob.core.windows.net/stage/widget/build/</sub>| <sub>https://klix.blob.core.windows.net/public/widget/build/</sub>|
 

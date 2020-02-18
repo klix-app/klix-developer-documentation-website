@@ -31,15 +31,15 @@ Note that `pickup_point` is present only if customer has selected a delivery to 
     ],
     "shipping_method_id": "omniva",
     "address": {
-        "city": "Rīga",
-        "address": "K.Valdemāra 62, Rīga",
+        "city": "Riga",
+        "address": "K.Valdemara 62, Riga",
         "postal_code": "LV-1013"
     },
     "pickup_point": {
         "external_id": "9111",
-        "name": "Rīgas Briāna ielas Rimi pakomāts",
-        "comments": "Pa labi no galvenās ieejas",
-        "service_hours": "P-Pk.piegāde 10:00, izņemšana 17:00 Sestdienās piegāde 14:00,izņemšana 14:00"
+        "name": "Rigas Briana ielas Rimi pakomats",
+        "comments": "Pa labi no galvenas ieejas",
+        "service_hours": "P-Pk.piegade 10:00, iznemšana 17:00 Sestdienas piegade 14:00,iznemšana 14:00"
     }
 }
 ```
