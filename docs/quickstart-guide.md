@@ -60,6 +60,7 @@ curl -x POST https://your.site/payment-notifications \
     }'
 ```
 
+HTTP status code 200 should be returned by your API end-point otherwise Klix server will retry to send notification multiple times.
 Note that first thing upon receiving purchase completed HTTP request you should verify request signature in order to ensure that request was sent by Klix server. Signature is sent as HTTP header `X-Klix-Signature` value and should be verified using `SHA256WithRSA` algorithm and Klix public key that can be downloaded from Merchant Console. Example signature validation code:
 
 ```PHP tab=
