@@ -48,7 +48,7 @@ Following private key is used in all examples. Note that you can obtain your mer
     ```
 </details>
 
-### Example No 1
+### Example No 1: Klix Pay widget with single order item
 
 Consider Klix widget for following order should be placed in merchant web-store:
 
@@ -70,5 +70,3 @@ Steps to calculate a signature:
 2. Calculate signature using private key previously downloaded from Klix Merchant Console and applying SHA256withRSA and Base64Encode functions to calculated input string. `Signature = Base64Encode(SHA256withRSA(signature-input)) = Base64Encode(SHA256withRSA("21ca7904-ff16-48b5-918d-c2d80af81f05lv123456785.45EUROrder No 12345678"))`.
 
 Calculated signature which should be passed to Klix widget as a `signature` attribute value in this example: `n0b7Sj0qEVlU52kNctEHR9zUZ9pRtPjA/5/avPSQamx7HiI3q6qijgstBw6KhOKZqcCIL3RULbWNu6xoSGnNtW/nx+RcSd12I0st21Los9MXXPakEIjIto+2Zx0+ZiVoa97dxO8/iGF5A1U4qW9GFhPJGPqQecmZSp7rYaiO+VRq5D9KqKqRpBQEYN9YJgDgWMn36KVYkTdlOYAhJslwkVeKKZ+/ifUqHhiXbPKD3VKAXwx7/MqSiRlfU8Qsm7Vcv/zV05X9trZiaSYOL6yd9aWO/KE2so2hAswY58i6dR218/XD6ab5xTpCSXrfjYbfhInchukvlH7CrbE1T3RcWw==`.
-
-

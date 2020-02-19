@@ -1,8 +1,10 @@
 # Quick Start guide
 
- This 5 minute guide describes how to integrate Klix into your web shop.
+ This 5 minute guide covers overview of Klix integration technical aspects.
 
-## 1. Embed Klix widget into your web shop
+## Integration steps
+
+### 1. Embed Klix widget into your web shop
 
 In order to embed Klix checkout/pay widget into your web shop following HTML fragment should be added to your web shop checkout page.
 
@@ -19,7 +21,7 @@ In order to embed Klix checkout/pay widget into your web shop following HTML fra
 
 This will load Klix widget JavaScript code. Note that Klix widget JavaScript code should be loaded from different destinations on production and test environments. See Testing integration [Environments](/../testing-integration/#Environments) section for details.
 
-## 2. Pass order information to Klix widget
+### 2. Pass order information to Klix widget
 
 Next step is to place Klix widget HTML code in an appropriate place on a checkout page where this widget will be rendered and pass order/payment relarted information.
 
@@ -45,7 +47,7 @@ Here's Klix widget that corresponds to previously mentioned HTML code.
 </div>
 <!-- markdownlint-disable MD033 -->
 
-## 3. Implement an end-point that will be invoked upon payment completetion
+### 3. Implement an end-point that will be invoked upon payment completetion
 
 After payment is completed (both successfully or cancelled) Klix server will send a callback HTTP request to your API end-point defined in Merchant Console. See [Integration configuration](../configuration/) section for details.
 Here's HTTP request example that will be sent to your API end-point.
@@ -148,3 +150,7 @@ private PublicKey loadPublicKey() {
     }
 }
 ```
+
+## Next steps
+
+Proceed with [Getting started](../getting-started/) section for step by step guide of Klix integration and configuration.
