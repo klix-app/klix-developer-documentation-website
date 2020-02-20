@@ -10,33 +10,36 @@ Fill in merchant data in "Business Profile view". Specify URL to merchant's term
 
 ## 2. Download Klix public key
 
-Head to Certificates page and copy public key contents from "Service Provider Certificate info" section. Store public key contents in file and use this key to validate the Klix callback payload.
+Head to Certificates page and copy public key contents from "Service Provider Certificate info" section.
 
-!!! Warning "Callback payload validation"
-    Merchant is obligated to perform JWS validation of Klix callback payload using Klix public key in order to ensure request payload integrity and authenticity.
+![Copy Klix public key](images/merchant_console_certificates.png "Klix public key")
 
-![Download Klix public key](images/merchant_console_certificates.png "Klix public key")
+Store public key contents in file and use this key to [validate](../callbacks/#callback-payload-signature-validation) the Klix callback payload signature.
 
-## 3. Store API key
+!!! Warning "Callback payload signature validation"
+    Merchant is obligated to perform Klix callback payload signature validation using Klix public key in order to ensure request payload integrity and authenticity.
 
-For each HTTP request sent to Klix header called `X-KLIX-Api-Key` should be specified. Header value can be obtained from Certificates page "Merchant Api key info" section's field "Api key".
+## 3. Generate private/public key pair for signing the API requests
 
-![Add Klix API key to HTTP request headers](images/merchant_console_api_key.png "Klix API key")
-
-## 4. Generate certificate for signing the API requests
-
-Generate certificate and download private key file. All data modification requests sent to Klix should be signed using this private key. Klix will use merchant certificate public key to check each data modification request payload integrity and authenticity. In order to understand which merchant's certificate should be used to validate a request JWS header `kid` value should be specified. Header value can be obtained from Certificates page corresponding certificate's field "Name".
+Generate private/public key pair and download private key file. Merchant order details passed as Klix widget attributes and all data modification requests sent to Klix API e.g. payment refund should be signed using this private key. Klix will use merchant certificate public key to check each data modification request payload integrity and authenticity. In order to understand which merchant's certificate should be used to validate a HTTP request payload HTTP header `X-Klix-Key-ID` value should be specified. Header value can be obtained from Certificates page corresponding certificate's field "Name".
 
 !!! Warning "Security notice"
-    Merchant is reponsible for storing certificate's private key securely. Merchant can generate a new certificate in Merchant Console and use this certificate to sign request payload. Note that in such case JWS header `kid` value should match new certificate's name.
+    Merchant is reponsible for storing certificate's private key securely. Merchant can generate a new certificate in Merchant Console and use this certificate to sign request payload and widget attrributes. Note that in such case HTTP header `X-Klix-Key-ID` value and Klix widget attribute `certificate-name` should match new certificate's name.
 
 ![Create new merchant certificate](images/merchant_console_certificate_created.png "New merchant certificate creation")
 
-## 5. Create a widget
+## 4. Create a widget
 
-Head to Widgets section to create a new widget. Klix widget is Klix form configuration representation that is identifiable by it's id. There are two types of widgets:
+Head to Widgets section to create a new widget. Klix widget is Klix form configuration representation that is identifiable by it's id. There are tree types of widgets:
 
 * Static widget
-* Dynamic widget
+* Klix Pay widget
+* Klix Checkout widget
 
 See [Widget](../widget/) section for more detailed description of widget types amd configuration.
+
+## 5. Store API key
+
+Note that Klix standard checkout flow doesn't require a merchant to invoke Klix API. More advanced use cases like refunding an order can be handled both in Merchant Console or via Klix API. For each HTTP request sent to Klix API HTTP header called `X-KLIX-Api-Key` should be specified. Header value can be obtained from Certificates page "Merchant Api key info" section's field "Api key".
+
+![Add Klix API key to HTTP request headers](images/merchant_console_api_key.png "Klix API key")

@@ -36,16 +36,14 @@ markdown_extensions:
 nav:
   - Overview: index.md
   - Quickstart guide: quickstart-guide.md
-  - Getting started: getting-started.md
-  - Signing order: signing-order.md
-  - Security: security.md
+  - Step by step instructions: step-by-step.md
   - Configuration: configuration.md
-  - Checkout flow: checkout-flow.md
-  - API: api.md
-  - Client libraries: client-libraries.md
   - Callbacks: callbacks.md
+  - Security: security.md
   - Widget: widget.md
+  - Client libraries: client-libraries.md
   - Testing integration: testing-integration.md
+  - API: api.md
 
 # Social
 extra:

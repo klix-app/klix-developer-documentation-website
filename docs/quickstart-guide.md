@@ -4,9 +4,11 @@
 
 ## Integration steps
 
+A central part of Klix checkout/payment solution is Klix web widget - HTML web component i.e. form for entering customer's credit card data. Klix widget accepts merchant order parameters (order identifier, amount, payment description, etc.) via HTML element attributes. The following steps describe actions that you need to perform in order to add Klix widget to your webshop and accept a callback on a server-side once payment has been successfully processed by Klix.
+
 ### 1. Embed Klix widget into your web shop
 
-In order to embed Klix checkout/pay widget into your web shop following HTML fragment should be added to your web shop checkout page.
+In order to embed Klix widget into your web shop following HTML fragment referencing Klix widget JavaScript should be added to your web shop checkout page.
 
 ```html
 <head>
@@ -19,138 +21,40 @@ In order to embed Klix checkout/pay widget into your web shop following HTML fra
 </head>
 ```
 
-This will load Klix widget JavaScript code. Note that Klix widget JavaScript code should be loaded from different destinations on production and test environments. See Testing integration [Environments](/../testing-integration/#Environments) section for details.
+Note that Klix widget JavaScript code should be loaded from different destinations on production and test environments. See Testing integration [Environments](/../testing-integration/#Environments) section for details.
 
 ### 2. Pass order information to Klix widget
 
 Next step is to place Klix widget HTML code in an appropriate place on a checkout page where this widget will be rendered and pass order/payment relarted information.
 
 ```html
-<checkout-widget widget-id="21ca7904-ff16-48b5-918d-c2d80af81f05"  
-    language="lv"  
+<klix-checkout widget-id="21ca7904-ff16-48b5-918d-c2d80af81f05"  
     amount="5.45"  
     currency="EUR"  
     label="Order No 12345678"  
-    tax-rate="0.21"  
-    count="1"  
-    unit="PIECE"  
-    signature="">
-</checkout-widget>
+    language="lv"
+    signature="B+nre6Oe6lnjh0hcW5dhOtRmXxN3pm6Sup3kjcNeQiSmTN6zQCp6kHErX/s+JIvkLIqQxD2D/EU2MUraQC03RyKHyX/Wr8qVVbPeBaskPkYR7l397BBYOghvVN1LS8RWdpQ4Q67kMYdPutqnJAUGJtHA51i14xmnaIRxctpK4UJE3qtfu1QjWPez/yP1lT/igpCTL66lqXKcbHac75v++5WUwwT5fCEUklPxudzC3qbujNhXZBPwAZxa2GaYQDzCOP7p/bcJgH/DwsaVMiDtekG5ANgXB51WOPB9X3pP1rdr6kbVccXhN0D4UrxMt3ZA4bPw+LaAWzVRNaVOJoNpZg==">
+</klix-checkout>
 ```
 
-Note that field `signature` should contain valid order signature. See section [Signing order](../signing-order/) for detailed instructions on how to generate a valid signature.
+Note that field `signature` should contain valid order signature. See section [Signing order](../security/#signing-order) for detailed instructions on how to generate a valid signature.
 Here's Klix widget that corresponds to previously mentioned HTML code.
 
 <!-- markdownlint-disable MD033 -->
+<details>
+    <summary>Click to load Klix widget</summary>
+
 <div>
-    <checkout-widget widget-id="21ca7904-ff16-48b5-918d-c2d80af81f05" language="lv" amount="5.45" currency="EUR" label="Philips XR3857" tax-rate="0.21" count="1" unit="PIECE" signature=""></checkout-widget>
+    <klix-checkout widget-id="21ca7904-ff16-48b5-918d-c2d80af81f05" amount="5.45" currency="EUR" label="Order No 12345678" language="lv" signature="B+nre6Oe6lnjh0hcW5dhOtRmXxN3pm6Sup3kjcNeQiSmTN6zQCp6kHErX/s+JIvkLIqQxD2D/EU2MUraQC03RyKHyX/Wr8qVVbPeBaskPkYR7l397BBYOghvVN1LS8RWdpQ4Q67kMYdPutqnJAUGJtHA51i14xmnaIRxctpK4UJE3qtfu1QjWPez/yP1lT/igpCTL66lqXKcbHac75v++5WUwwT5fCEUklPxudzC3qbujNhXZBPwAZxa2GaYQDzCOP7p/bcJgH/DwsaVMiDtekG5ANgXB51WOPB9X3pP1rdr6kbVccXhN0D4UrxMt3ZA4bPw+LaAWzVRNaVOJoNpZg=="></klix-checkout>
 </div>
+</details>
 <!-- markdownlint-disable MD033 -->
 
 ### 3. Implement an end-point that will be invoked upon payment completetion
 
-After payment is completed (both successfully or cancelled) Klix server will send a callback HTTP request to your API end-point defined in Merchant Console. See [Integration configuration](../configuration/) section for details.
-Here's HTTP request example that will be sent to your API end-point.
-
-```bash
-#!/bin/bash
-curl -x POST https://your.site/payment-notifications \
-    -H 'Content-Type: application/json' \
-    -H 'X-Klix-Signature: TODO' \
-    -d '{
-        "todo": "Example here"
-    }'
-```
-
-HTTP status code 200 should be returned by your API end-point otherwise Klix server will retry to send notification multiple times.
-Note that first thing upon receiving purchase completed HTTP request you should verify request signature in order to ensure that request was sent by Klix server. Signature is sent as HTTP header `X-Klix-Signature` value and should be verified using `SHA256WithRSA` algorithm and Klix public key that can be downloaded from Merchant Console. Example signature validation code:
-
-```PHP tab=
-<?php
-function is_signature_valid($payload, $signature_header_value) : int {
-    $klix_public_key = <<<EOD
------BEGIN CERTIFICATE-----
-MIIB5TCCAY+gAwIBAgIENkY2rzANBgkqhkiG9w0BAQsFADBoMQswCQYDVQQGEwJM
-VjEQMA4GA1UECBMHVW5rbm93bjEQMA4GA1UEBxMHVW5rbm93bjERMA8GA1UEChMI
-Q2l0YWRlbGUxEDAOBgNVBAsTB1Vua25vd24xEDAOBgNVBAMTB1Vua25vd24wHhcN
-MTgwNjEyMTMzNjM4WhcNMjgwNjA5MTMzNjM4WjBoMQswCQYDVQQGEwJMVjEQMA4G
-A1UECBMHVW5rbm93bjEQMA4GA1UEBxMHVW5rbm93bjERMA8GA1UEChMIQ2l0YWRl
-bGUxEDAOBgNVBAsTB1Vua25vd24xEDAOBgNVBAMTB1Vua25vd24wXDANBgkqhkiG
-9w0BAQEFAANLADBIAkEAqAUyLiFAd4hxAh3LrbBrbqk+lmGPVFgS3996vTCQ/L/h
-L9WnA+EPnxMV5LFyd49xsf5bbspaLrXnVmwkuvUC9wIDAQABoyEwHzAdBgNVHQ4E
-FgQUzbA4JwE+SOUOJEd25iwpd9cajJMwDQYJKoZIhvcNAQELBQADQQBDtypgN8O3
-AZ+H4CjH5Ihq+V5i/a3pL6nj8Dg502wejDN8fXZJjJvdu0VxRzf4k41xeRg3lO7I
-IrWkkFCW0LSH
------END CERTIFICATE-----
-EOD;
-
-    return openssl_verify($payload, base64_decode($signature_header_value), 
-        $klix_public_key, OPENSSL_ALGO_SHA256);
-}
-?>
-```
-
-```Java tab=
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.security.PublicKey;
-import java.security.Signature;
-import java.security.SignatureException;
-import java.security.cert.CertificateException;
-import java.security.cert.CertificateFactory;
-import java.security.cert.X509Certificate;
-import java.util.Base64;
-
-private boolean isSignatureValid(String payload, String signatureHeaderValue) {
-    byte[] decodedSignatureHeaderValue = Base64.getDecoder().decode(signatureHeaderValue);
-    Signature signature = getSignature(payload);
-    try {
-        return signature.verify(decodedSignatureHeaderValue);
-    } catch (SignatureException e) {
-        throw new RuntimeException(e);
-    }
-}
-
-private Signature getSignature(String payload) {
-    PublicKey publicKey = loadPublicKey();
-    try {
-        Signature signature = Signature.getInstance("SHA256withRSA");
-        signature.initVerify(publicKey);
-        signature.update(payload.getBytes(StandardCharsets.UTF_8));
-        return signature;
-    } catch (NoSuchAlgorithmException | InvalidKeyException | SignatureException e) {
-        throw new RuntimeException(e);
-    }
-}
-
-private PublicKey loadPublicKey() {
-    String klixPublicKey = "-----BEGIN CERTIFICATE-----\n" +
-            "MIIB5TCCAY+gAwIBAgIENkY2rzANBgkqhkiG9w0BAQsFADBoMQswCQYDVQQGEwJM\n" +
-            "VjEQMA4GA1UECBMHVW5rbm93bjEQMA4GA1UEBxMHVW5rbm93bjERMA8GA1UEChMI\n" +
-            "Q2l0YWRlbGUxEDAOBgNVBAsTB1Vua25vd24xEDAOBgNVBAMTB1Vua25vd24wHhcN\n" +
-            "MTgwNjEyMTMzNjM4WhcNMjgwNjA5MTMzNjM4WjBoMQswCQYDVQQGEwJMVjEQMA4G\n" +
-            "A1UECBMHVW5rbm93bjEQMA4GA1UEBxMHVW5rbm93bjERMA8GA1UEChMIQ2l0YWRl\n" +
-            "bGUxEDAOBgNVBAsTB1Vua25vd24xEDAOBgNVBAMTB1Vua25vd24wXDANBgkqhkiG\n" +
-            "9w0BAQEFAANLADBIAkEAqAUyLiFAd4hxAh3LrbBrbqk+lmGPVFgS3996vTCQ/L/h\n" +
-            "L9WnA+EPnxMV5LFyd49xsf5bbspaLrXnVmwkuvUC9wIDAQABoyEwHzAdBgNVHQ4E\n" +
-            "FgQUzbA4JwE+SOUOJEd25iwpd9cajJMwDQYJKoZIhvcNAQELBQADQQBDtypgN8O3\n" +
-            "AZ+H4CjH5Ihq+V5i/a3pL6nj8Dg502wejDN8fXZJjJvdu0VxRzf4k41xeRg3lO7I\n" +
-            "IrWkkFCW0LSH\n" +
-            "-----END CERTIFICATE-----";
-    try (InputStream inputStream = new ByteArrayInputStream(klixPublicKey.getBytes())) {
-        CertificateFactory fact = CertificateFactory.getInstance("X.509");
-        X509Certificate certificate = (X509Certificate) fact.generateCertificate(inputStream);
-        return certificate.getPublicKey();
-    } catch (IOException | CertificateException e) {
-        throw new RuntimeException(e);
-    }
-}
-```
+After payment is completed (both successfully or failed) Klix server will send a callback HTTP request to your API end-point defined in Merchant Console. See [Purchase notification HTTP request example](/callbacks/#purchase-notification-request-example).
+Note that first thing upon receiving purchase completed HTTP request you should verify request signature in order to ensure that request was sent by Klix server. See [Callback payload signature validation](/callbacks/#callback-payload-signature-validation) for details.
 
 ## Next steps
 
-Proceed with [Getting started](../getting-started/) section for step by step guide of Klix integration and configuration.
+Continue with [Step by step](../step-by-step/) Klix integration and configuration instructions.

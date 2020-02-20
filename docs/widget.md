@@ -1,18 +1,17 @@
-# Checkout JS Widget
+# Klix Widget
 
-## Checkout Widget placement
+## Klix Widget placement
 
-Checkout Widget is implemented as embeddable Web Component. In order to show Klix checkout widget on a merchant website widget JavaScript should be included in the page and custom HTML tag to be placed in the required location. See the example below for integration code.
+Klix Widget is implemented as embeddable Web Component. In order to show Klix widget on a merchant website widget JavaScript should be included in the page and custom HTML tag needs to be placed in the required location. See the example below for integration code.
 
-!!! Warning "Widget scripts"
-    Please note that Klix Widget JavaScript source should be loaded from different destination in case of production and test environment. Test environment Klix Widget JavaScript base path is  `https://klix.blob.core.windows.net/stage/widget/build/`. Production environment Klix Widget JavaScript base path is `https://klix.blob.core.windows.net/public/widget/build/`.
+!!! Warning "Widget JavaScript location"
+    Please note that Klix Widget JavaScript source should be loaded from different destination in case of production and test environments. Test environment Klix Widget JavaScript base path is  `https://klix.blob.core.windows.net/stage/widget/build/`. Production environment Klix Widget JavaScript base path is `https://klix.blob.core.windows.net/public/widget/build/`.
 
 ```html
 <head>
-    <script type="module"
-               src="https://klix.blob.core.windows.net/public/widget/build/klixwidget.esm.js">
+    <script type="module" src="https://klix.blob.core.windows.net/stage/widget/build/klixwidget.esm.js">
     </script>
-    <script nomodule src="https://klix.blob.core.windows.net/public/widget/build/klixwidget.js">
+    <script nomodule src="https://klix.blob.core.windows.net/stage/widget/build/klixwidget.js">
     </script>
 </head>
 <body>
@@ -22,11 +21,11 @@ Checkout Widget is implemented as embeddable Web Component. In order to show Kli
 </body>
 ```
 
-Integration code could be accessed and copied from Merchant Console application.
+Integration code can be accessed and copied from Widgets section of Merchant Console.
 
 ## Widget Configuration
 
-Widget entity with according _Widget Type_ should be created and configured in _Merchant Console_ (MC). Generated _Widget ID_ is used later for embedding Web Component into Merchant HTML page.
+Klix widget is created and configured in _Merchant Console_. Generated _Widget ID_ is used to embed Web Component into Merchant HTML page.
 
 ### Specifying widget language
 
@@ -39,12 +38,12 @@ Widget language can be specified using attribute _language_ e.g. "lv" for Latvia
 
 ### Prefilling Klix widget form data
 
-Klix widget form data prefilling allows to reduce amount of fields that needs to be entred by customer in Klix form in situations where some or all of required customer information was previously entered in merchant's webpage e.g. in case if Klix form is presented to exsiting merchant's customer or customer needs to fill specific form on merchant's page before continuing with Klix form.
+Klix widget form data prefilling allows to reduce a number of fields that needs to be entred by customer in Klix form in situations where required customer information was previously entered in merchant's webpage e.g. in case if Klix form is presented to exsiting merchant's customer or customer needs to fill specific form on merchant's page before continuing with Klix form.
 
 Klix widget supports prefilling form with customer data specified as Klix widget attributes. Customer phone number, e-mail, first name and last name can be passed to widget:
 
 ```html
-<klix-checkout widget-id="..." language="lv" email="john.doe@klix.app" phone="37120000000" first-name="John" last-name="Doe" class="hydrated">
+<klix-checkout widget-id="..." language="lv" email="john.doe@klix.app" phone="37120000000" first-name="John" last-name="Doe">
 </klix-checkout>
 ```
 
@@ -60,25 +59,23 @@ Otherwise Klix widget data autofill is triggered automatically so that customer 
 
 ## INSTANT (Fixed Price) Widget Type
 
-It is possible to generate a checkout widget for a fixed amount. In this case no validation on merchant side is required - all order items are defined at widget configuration in Merchant Console (MC). They can’t be overwritten by _Widget HTML API_ or _Widget JS API_ (specified later in the document) for security purposes. This type of Widget allows lightweight integration with merchant - no merchant back-end is required for integration.
+It is possible to generate Klix widget for a specific order. In this case no validation on merchant side is required - all order items are defined at widget configuration in Merchant Console (MC). They can’t be overwritten by _Widget HTML API_ or _Widget JS API_ (specified later in the document) for security purposes. This type of Widget allows lightweight integration with merchant - no merchant back-end is required for integration.
 
-Widget language is specified either in page _<html>_ tag or in according widget tag.
+Widget language is specified either in page _<html>_ tag or as a Klix widget attribute.
 
 ```html
 <html lang="lv">
 ...
-<checkout-widget widget-id="..."></checkout-widget>
+<klix-checkout widget-id="..."></klix-checkout>
 ```
 
 OR
 
 ```html
-<checkout-widget widget-id="..." language="lv"></checkout-widget>
+<klix-checkout widget-id="..." language="lv"></klix-checkout>
 ```
 
 ## CHECKOUT (Dynamic Price) Widget Type
-
-In case Merchant has Back-end or resources to implement integration via Merchant Back-end (order verification / confirmation _REST_ end-points) it might be more convenient to use this type of widget. One instance (created in _MC_) should be enough for all Merchant orders.
 
 Order items should be provided either via _Widget HTML API_ (widget tag attributes) or via _Widget JS API_. Widget language is defined in the same manner as in _Fixed Price Widget_ type.
 
@@ -91,27 +88,27 @@ Tax rate default value is merchant specific (e.g. for merchants registered in LV
 All HTML widgets below are equivalent for merchant registered in LV:
 
 ```html
-<checkout-widget widget-id="..." amount="1.99" currency="EUR" label="Philips XR3857" tax-rate="0.21" count="1" unit="PIECE"></checkout-widget>
+<klix-checkout widget-id="..." amount="1.99" currency="EUR" label="Philips XR3857" tax-rate="0.21" count="1" unit="PIECE"></klix-checkout>
 
-<checkout-widget widget-id="..." amount="1.99" currency="EUR" label="Philips XR3857" tax-rate="21"></checkout-widget>
+<klix-checkout widget-id="..." amount="1.99" currency="EUR" label="Philips XR3857" tax-rate="21"></klix-checkout>
 
-<checkout-widget widget-id="..." amount="1.99" currency="EUR" label="Philips XR3857"></checkout-widget>
+<klix-checkout widget-id="..." amount="1.99" currency="EUR" label="Philips XR3857"></klix-checkout>
 
-<checkout-widget widget-id="..." amount="1.99" label="Philips XR3857"></checkout-widget>
+<klix-checkout widget-id="..." amount="1.99" label="Philips XR3857"></klix-checkout>
 ```
 
 ### HTML API for multiple order items
 
 ```html
-<checkout-widget widget-id="..." order='{"items":[{"amount":40,"currency":"EUR","count":2,"unit":"PIECE","label":"Philips XR3857","taxRate":0.21},{"amount":5,"label":"Piegāde"}]}'>
-</checkout-widget>
+<klix-checkout widget-id="..." order='{"items":[{"amount":40,"currency":"EUR","count":2,"unit":"PIECE","label":"Philips XR3857","taxRate":0.21},{"amount":5,"label":"Piegāde"}]}'>
+</klix-checkout>
 ```
 
 OR
 
 ```html
-<checkout-widget widget-id="..." order="{&quot;items&quot;:[{&quot;amount&quot;:40,&quot;currency&quot;:&quot;EUR&quot;,&quot;count&quot;:2,&quot;label&quot;:&quot;Philips XR3857&quot;,&quot;taxRate&quot;:0.21},{&quot;amount&quot;:5,&quot;label&quot;:&quot;Piegāde&quot;}]}">
-</checkout-widget>
+<klix-checkout widget-id="..." order="{&quot;items&quot;:[{&quot;amount&quot;:40,&quot;currency&quot;:&quot;EUR&quot;,&quot;count&quot;:2,&quot;label&quot;:&quot;Philips XR3857&quot;,&quot;taxRate&quot;:0.21},{&quot;amount&quot;:5,&quot;label&quot;:&quot;Piegāde&quot;}]}">
+</klix-checkout>
 ```
 
 Also product name value needs to be properly escaped (e.g. using `&amp;` for `&`, `&lt;` for `<`, `&#39;` for `'`, `&#34;` for `"`, etc.) to be a valid HTML attribute value.
@@ -147,10 +144,10 @@ let orderObjectInWidget = JSON.parse(orderAttribute);
 Widget `'lazy'` attribute is used to delay widget initialization (until configuration via _Widget JS API_ is completed):
 
 ```html
-<checkout-widget id="my-checkout-widget" widget-id="..." lazy="true"></checkout-widget>
+<klix-checkout id="my-klix-checkout" widget-id="..." lazy="true"></klix-checkout>
 ...
 <script>
-  let checkoutWidget = document.querySelector('#my-checkout-widget');
+  let checkoutWidget = document.querySelector('#my-klix-checkout');
   checkoutWidget.addOrderItem( {"amount":40,"currency":"EUR","label":"Philips XR3857","count":2,"unit":"PIECE","taxRate":0.21});
   checkoutWidget.addOrderItem({"amount":5,"label":"Piegāde"});
 
@@ -223,6 +220,6 @@ By default all cards issued by Mastercard and VISA are accepted by Klix however 
 | Accepted card payment scheme     | ```"constraints": {"paymentScheme": "VISA"}``` | Only VISA cards are accepted for this payment
 
 ```html
-<checkout-widget widget-id="..." order="{&quot;constraints&quot;:{&quot;issuer&quot;:&quot;Citadele&quot;},&quot;items&quot;:[{&quot;amount&quot;:40,&quot;currency&quot;:&quot;EUR&quot;,&quot;count&quot;:2,&quot;label&quot;:&quot;Philips XR3857&quot;,&quot;taxRate&quot;:0.21}]}">
-</checkout-widget>
+<klix-checkout widget-id="..." order="{&quot;constraints&quot;:{&quot;issuer&quot;:&quot;Citadele&quot;},&quot;items&quot;:[{&quot;amount&quot;:40,&quot;currency&quot;:&quot;EUR&quot;,&quot;count&quot;:2,&quot;label&quot;:&quot;Philips XR3857&quot;,&quot;taxRate&quot;:0.21}]}">
+</klix-checkout>
 ```

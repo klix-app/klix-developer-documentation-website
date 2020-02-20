@@ -1,6 +1,6 @@
 # Client libraries
 
-Klix team maintains official API client libraries which wraps Klix API invocations including request signing and response signature testing using JWS.
+Klix team maintains official API client libraries which wraps Klix API invocations including request signing and response signature validation.
 
 If you have implemented client library for programming language or popular framework that's not listed here then let us know it so that we might share it with others.
 
