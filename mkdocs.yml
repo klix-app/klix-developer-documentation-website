@@ -35,7 +35,7 @@ markdown_extensions:
 # Page tree
 nav:
   - Overview: index.md
-  - Quickstart guide: quickstart-guide.md
+  - Quick start guide: quick-start-guide.md
   - Step by step instructions: step-by-step.md
   - Configuration: configuration.md
   - Callbacks: callbacks.md
