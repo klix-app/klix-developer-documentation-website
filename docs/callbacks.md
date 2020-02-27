@@ -20,9 +20,81 @@ HTTP status code 200 should be returned by this API end-point otherwise Klix ser
 #!/bin/bash
 curl -x POST https://your.site/payment-notifications \
     -H 'Content-Type: application/json' \
-    -H 'X-Klix-Signature: TODO' \
+    -H 'X-Klix-Signature: W80ryKJcG8K3LPp438k+AVfZmi2S6DmH8GkQraAa+D+2N/f2DlCgT42cuIkCMJS1MouMbcbVoxdnXZMm74dD2ThXdiFRCdgb2HWc25OQXZpZgZe+EJ4uWOJJSum2vMP25Pr/IoyHrjQ4/I0ddJs63/nlxhOODkN/kudYTndloMq9tgCGuxBS+6AIet5SUq2kC/uEgZEIBBI+IPxuji506T0XhT2e+u7nUJA+DApmulNamjhaccXQBfpYeVrSG8vhDyyan1s7F2vzlTir76cTN2LxncPW0xJ3UlBGpyMP0rT9PPypwW7N+7AYzYM5zoICm9rr6Y6VyIhOiIJ9jcOlLA==' \
     -d '{
-        "TODO": "Example here"
+        "id":"246c4390-a711-4b9b-8c4a-86349e6a15db",
+        "status":"VERIFIED",
+        "customer":{
+            "first_name":"John",
+            "last_name":"Doe",
+            "email":"john.doe@klix.app",
+            "phone_number":"37126000000"
+        },
+        "payment":{
+            "accountStatementReference":"731583191"
+        },
+        "tax_amount":18.53,
+        "total_amount":108.78,
+        "items":[
+            {
+                "amount":72.73,
+                "label":"Vacuum cleaner TP-3",
+                "tax_amount":15.27,
+                "total_amount":88.00,
+                "tax_rate":0.21,
+                "order_item_id":"12345",
+                "quantity":1.000,
+                "unit":"PIECE",
+                "type":"UNKNOWN"
+            },
+            {
+                "amount":6.13,
+                "label":"TP-3 HEPA filter",
+                "tax_amount":3.26,
+                "total_amount":18.78,
+                "tax_rate":0.21,
+                "quantity":2.000,
+                "unit":"PIECE",
+                "type":"UNKNOWN"
+            },
+            {
+                "amount":2.00,
+                "label":"Piegāde",
+                "tax_amount":0.00,
+                "total_amount":2.00,
+                "tax_rate":0.00,
+                "quantity":1.000,
+                "unit":"PIECE",
+                "type":"SHIPPING"
+            }
+        ],
+        "currency":"EUR",
+        "merchant_urls":{
+            "confirmation":"https://webhook.site/#!/6ddabff9-49af-4d4d-b221-7b607ffed276"
+        },
+        "shipping":{
+            "type":"PICKUP_POINT",
+            "address":{
+                "country":"Latvia",
+                "city":"Rīga",
+                "street":"Āzenes iela 5",
+                "latitude":24.08128,
+                "longitude":56.949924,
+                "postal_code":"9934"
+            },
+            "method":{
+                "id":"omniva",
+                "name":"Omniva"
+            },
+            "contact_phone":"37126000000",
+            "pickup_point":{
+                "name":"Rīgas T/C Olimpia pakomāts",
+                "comments":"Blakus iebrauktuvei pazemes autostāvvietā",
+                "external_id":"9934",
+                "service_hours":"P-Pk.piegāde 10:00, izņemšana 17:00 Sestdienās piegāde 14:00,izņemšana 14:00"
+            }
+        },
+        "effective_amount":108.78
     }'
 ```
 
@@ -61,12 +133,6 @@ curl -x POST https://your.site/shipping-cost-calculations \
         }
     }'
 ```
-
-## Updating callback URLs
-
-URLs can be set in Merchant Console settings.
-
-![alt_text](images/callback_urls.png "Callback URLs configuration in Merchant Console")
 
 ## Callback payload signature validation
 
@@ -157,3 +223,9 @@ private PublicKey loadPublicKey() {
     }
 }
 ```
+
+## Updating callback URLs
+
+URLs can be set in Merchant Console settings.
+
+![alt_text](images/callback_urls.png "Callback URLs configuration in Merchant Console")
