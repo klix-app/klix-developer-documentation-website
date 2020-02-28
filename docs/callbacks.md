@@ -14,7 +14,7 @@ During order lifecycle Klix invokes API end-points implemented by merchant store
 
 ### Purchase notification request example
 
-HTTP status code 200 should be returned by this API end-point otherwise Klix server will retry to send notification multiple times.
+HTTP status code 200 should be returned by this API end-point otherwise Klix server will retry to send notification multiple times. In order to ensure that a purchase notification was sent by Klix and request was not altered it's important to [check request signature](#Callback-payload-signature-validation).
 
 ```bash
 #!/bin/bash
