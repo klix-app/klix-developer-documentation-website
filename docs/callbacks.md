@@ -163,6 +163,16 @@ EOD;
 ?>
 ```
 
+```Klix PHP Library tab=
+<?php
+use Klix\Callback\ProviderSignatureValidator;
+use Klix\Callback\ProviderCallbackRequestDecoder;
+
+$validator = new ProviderSignatureValidator($apiConfiguration);
+$validator->isValid(payload, signature_header_value);
+?>
+```
+
 ```Java tab=
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
