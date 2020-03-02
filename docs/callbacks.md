@@ -157,8 +157,7 @@ IrWkkFCW0LSH
 -----END CERTIFICATE-----
 EOD;
 
-    return openssl_verify($payload, base64_decode($signature_header_value), 
-        $klix_public_key, OPENSSL_ALGO_SHA256);
+    return openssl_verify($payload, base64_decode($signature_header_value), $klix_public_key, OPENSSL_ALGO_SHA256);
 }
 ?>
 ```
