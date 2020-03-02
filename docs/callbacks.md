@@ -20,18 +20,18 @@ HTTP status code 200 should be returned by this API end-point otherwise Klix ser
 #!/bin/bash
 curl -x POST https://your.site/payment-notifications \
     -H 'Content-Type: application/json' \
-    -H 'X-Klix-Signature: W80ryKJcG8K3LPp438k+AVfZmi2S6DmH8GkQraAa+D+2N/f2DlCgT42cuIkCMJS1MouMbcbVoxdnXZMm74dD2ThXdiFRCdgb2HWc25OQXZpZgZe+EJ4uWOJJSum2vMP25Pr/IoyHrjQ4/I0ddJs63/nlxhOODkN/kudYTndloMq9tgCGuxBS+6AIet5SUq2kC/uEgZEIBBI+IPxuji506T0XhT2e+u7nUJA+DApmulNamjhaccXQBfpYeVrSG8vhDyyan1s7F2vzlTir76cTN2LxncPW0xJ3UlBGpyMP0rT9PPypwW7N+7AYzYM5zoICm9rr6Y6VyIhOiIJ9jcOlLA==' \
+    -H 'X-Klix-Signature: MKqXr7siOkC6TYENeHUcy5ofFDiWpqMt+ow5iWJqnIYWU71W50fZFHfy3BVrehEGCvf+TufZK6DPymdM1e2G0w==' \
     -d '{
-        "id":"246c4390-a711-4b9b-8c4a-86349e6a15db",
-        "status":"VERIFIED",
+        "id":"d72096a0-58f2-46f0-9a4c-6d2271784530",
+        "status":"PAID",
         "customer":{
             "first_name":"John",
             "last_name":"Doe",
             "email":"john.doe@klix.app",
-            "phone_number":"37126000000"
+            "phone_number":"37120000000"
         },
         "payment":{
-            "accountStatementReference":"731583191"
+            "accountStatementReference":"731589767"
         },
         "tax_amount":18.53,
         "total_amount":108.78,
@@ -86,7 +86,7 @@ curl -x POST https://your.site/payment-notifications \
                 "id":"omniva",
                 "name":"Omniva"
             },
-            "contact_phone":"37126000000",
+            "contact_phone":"37120000000",
             "pickup_point":{
                 "name":"Rīgas T/C Olimpia pakomāts",
                 "comments":"Blakus iebrauktuvei pazemes autostāvvietā",
