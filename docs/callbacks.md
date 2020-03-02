@@ -163,7 +163,7 @@ EOD;
 ?>
 ```
 
-```PHP library tab=
+```PHP_library tab=
 <?php
 use Klix\Callback\ProviderSignatureValidator;
 use Klix\Callback\ProviderCallbackRequestDecoder;
