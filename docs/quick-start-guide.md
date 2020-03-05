@@ -13,10 +13,10 @@ In order to embed Klix widget into your web shop following HTML fragment referen
 ```html
 <head>
     <script type="module"  
-        src="https://klix.blob.core.windows.net/public/widget/build/klixwidget.esm.js">
+        src="https://klix.blob.core.windows.net/stage/widget/build/klixwidget.esm.js">
     </script>
     <script nomodule  
-        src="https://klix.blob.core.windows.net/public/widget/build/klixwidget.js">
+        src="https://klix.blob.core.windows.net/stage/widget/build/klixwidget.js">
     </script>
 </head>
 ```
