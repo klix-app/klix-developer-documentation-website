@@ -36,7 +36,7 @@ Head to Widgets section to create a new widget. Klix widget is Klix form configu
 * Klix Pay widget
 * Klix Checkout widget
 
-See [Widget](../widget/) section for more detailed description of widget types amd configuration.
+See [Widget](../widget/) section for more detailed description of widget types and configuration.
 
 ## 5. Store API key
 

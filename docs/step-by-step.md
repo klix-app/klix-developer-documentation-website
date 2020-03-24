@@ -53,4 +53,4 @@ Klix provides fully functional test environment that can be used to perform end 
 
 ## 7. Sign agreement and request access to production environment
 
-After integration has beed successfully tested on test environment you can proceed with creadentials request for production.
+After integration has been successfully tested on test environment you can proceed with creadentials request for production.
