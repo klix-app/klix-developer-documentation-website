@@ -43,6 +43,7 @@ nav:
   - Widget: widget.md
   - Client libraries: client-libraries.md
   - Testing integration: testing-integration.md
+  - Static assets: static-assets.md
   - API: api.md
 
 # Social
