@@ -1,5 +1,9 @@
 # Klix Pay and Klix Checkout assets for your store
 
+## Asset usage guide
+
+![Klix static asset usage guide](images/asset_usage_guide.png "Klix static asset usage guide")
+
 ## 1. Klix Pay assets for Klix as one of your payment methods
 
 1.1. Use assets without text - available for light or dark backgrounds.
