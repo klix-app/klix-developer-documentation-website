@@ -43,14 +43,19 @@ Follow registration link in Merchant Console invitation e-mail and specify new p
 
 Add Klix widget HTML code to your product or checkout page depending on a type of used widget (instant, checkout, payment) and your webshop specifics. More information about widget configuration can be found on [Widget](../widget/) page.
 
-## 5. Implement callbacks end-point
+## 5. Implement purchase completed callback end-point
 
-[Callback](../callbacks/) end-points should be implemented in case if Klix Pay or Klix Checkout Widget is used.
+[Callback](../callbacks/) end-point should be implemented so that Klix can send payment status to merchant.
 
-## 6. Test integration
+## 6. Implement callbacks to navigate back to payment method selection page or display additional message in case of successfull payment
+
+JavaScript [callaback](../widget/#navigate-back-to-payment-method-selection-shopping-cart-page) should be implemented in order to allow customer to navigate back to payment method selection page or checkout page in case of failed or cancelled Klix payment.
+Additional [callback](..widget/#payment-completed-callback) can be implemented in order to adjust payment status page depending on a payment result.
+
+## 7. Test integration
 
 Klix provides fully functional test environment that can be used to perform end to end [integration implementation testing](../testing-integration/).
 
-## 7. Sign agreement and request access to production environment
+## 8. Sign agreement and request access to production environment
 
 After integration has been successfully tested on test environment you can proceed with creadentials request for production.
