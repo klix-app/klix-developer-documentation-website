@@ -198,6 +198,14 @@ Event handler can be used to dynamically update merchant page contents according
     checkoutElement.addEventListener('paymentCompleted', event => {
         const message = 'Order with id ' + event.detail["orderId"] + ' payment succeeded -> ' + event.detail["paymentSucceeded"];
         window.alert(message);
+        // Note that this callback can be used to hide Klix default payment success screen and show your own instead
+        /*
+        if (event.detail["paymentSucceeded"]) {
+          checkoutElement.remove();  
+          // display your own payment success message
+        }
+        */
+
     });
 </script>
 ```
@@ -208,6 +216,24 @@ Following event properties can be used:
 |----------------------------------|-------- |------------------------------------------|
 | event.detail["orderId"]          | string  | Completed payment order identifier       |
 | event.detail["paymentSucceeded"] | boolean | Indicates if payment succeeded or failed |
+
+### Navigate back to payment method selection / shopping cart page
+
+Event with type `navigateBackToCart` is published in case if customer presses "Back to merchant store" button on cancelled/failed payment Klix widget form.
+
+![Failed/cancelled payment screen](images/widget_failed_payment.png "Failed/cancelled payment screen")
+
+Event handler should point browser to checkout or payment method selection page so that customer can use another payment method if available.
+
+```html
+<klix-checkout widget-id="..." order="..."></klix-checkout>
+<script>
+    const checkoutElement = document.querySelector('klix-checkout');
+    checkoutElement.addEventListener('navigateBackToCart', () => {
+        location.pathname = '/shopping-cart';
+    });
+</script>
+```
 
 ## Limiting accepted cards
 
