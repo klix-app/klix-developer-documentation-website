@@ -221,7 +221,10 @@ Following event properties can be used:
 
 Event with type `navigateBackToCart` is published in case if customer presses "Back to merchant store" button on cancelled/failed payment Klix widget form.
 
-![Failed/cancelled payment screen](images/widget_failed_payment.png "Failed/cancelled payment screen")
+<!-- markdownlint-disable MD033 -->
+<p style="text-align: center;">
+  <img src="../images/widget_failed_payment.png" width="500" alt="Failed/cancelled payment screen" />
+</p>
 
 Event handler should point browser to checkout or payment method selection page so that customer can use another payment method if available.
 
