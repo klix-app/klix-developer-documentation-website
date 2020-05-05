@@ -59,3 +59,7 @@ Klix provides fully functional test environment that can be used to perform end 
 ## 8. Sign agreement and request access to production environment
 
 After integration has been successfully tested on test environment you can proceed with creadentials request for production.
+
+## 9. Pass checklist on production environment
+
+After integration configuration is completed on production environment you need to make test payments and pass few other tests from production readiness checklist.
