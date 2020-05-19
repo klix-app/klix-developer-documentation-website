@@ -1,0 +1,1100 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Klix Developer documentation">
+      
+      
+      
+        <meta name="author" content="Klix Development Team">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>Widget - Klix Developers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#009688">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../stylesheets/klix.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-149580135-1", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+<script type="module" src="https://klix.blob.core.windows.net/stage/widget/build/klixwidget.esm.js"></script>
+<script nomodule src="https://klix.blob.core.windows.net/stage/widget/build/klixwidget.js"></script>
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="a5ad4e02-afc6-4a09-907d-67bedb386f14";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#klix-widget" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <!-- Application header -->
+<header class="md-header" data-md-component="header">
+
+    <!-- Top-level navigation -->
+    <nav class="md-header-nav md-grid">
+      <div class="md-flex">
+  
+        <!-- Link to home -->
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <a href=".."
+              title="Klix Developers"
+              class="md-header-nav__button md-logo">
+            
+              <img src="../images/logo.png" width="64" height="64" />
+            
+          </a>
+        </div>
+  
+        <!-- Button to toggle drawer -->
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <label class="md-icon md-icon--menu md-header-nav__button"
+              for="__drawer"></label>
+        </div>
+  
+        <!-- Header title -->
+        <div class="md-flex__cell md-flex__cell--stretch">
+          <div class="md-flex__ellipsis md-header-nav__title"
+              data-md-component="title">
+            
+              <span class="md-header-nav__topic">
+                Klix Developers
+              </span>
+              <span class="md-header-nav__topic">
+                
+                  Widget
+                
+              </span>
+            
+          </div>
+        </div>
+  
+        <!-- Button to open search dialogue -->
+        <div class="md-flex__cell md-flex__cell--shrink">
+          
+            <label class="md-icon md-icon--search md-header-nav__button"
+                for="__search"></label>
+  
+            <!-- Search interface -->
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        </div>
+  
+        <!-- Repository containing source -->
+        
+          <div class="md-flex__cell md-flex__cell--shrink">
+            <div class="md-header-nav__source">
+              
+
+
+  
+
+<a href="https://github.com/klix-app/klix-developer-documentation-website" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    klix-app/klix-developer-documentation-website
+  </div>
+</a>
+            </div>
+          </div>
+        
+      </div>
+    </nav>
+  </header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Klix Developers" class="md-nav__button md-logo">
+      
+        <img src="../images/logo.png" width="48" height="48">
+      
+    </a>
+    Klix Developers
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/klix-app/klix-developer-documentation-website" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    klix-app/klix-developer-documentation-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../quick-start-guide/" title="Quick start guide" class="md-nav__link">
+      Quick start guide
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../step-by-step/" title="Step by step instructions" class="md-nav__link">
+      Step by step instructions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../configuration/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../callbacks/" title="Callbacks" class="md-nav__link">
+      Callbacks
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../security/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Widget
+      </label>
+    
+    <a href="./" title="Widget" class="md-nav__link md-nav__link--active">
+      Widget
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#klix-widget-placement" class="md-nav__link">
+    Klix Widget placement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#widget-configuration" class="md-nav__link">
+    Widget Configuration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specifying-widget-language" class="md-nav__link">
+    Specifying widget language
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefilling-klix-widget-form-data" class="md-nav__link">
+    Prefilling Klix widget form data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instant-fixed-price-widget-type" class="md-nav__link">
+    INSTANT (Fixed Price) Widget Type
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkout-dynamic-price-widget-type" class="md-nav__link">
+    CHECKOUT (Dynamic Price) Widget Type
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html-api-for-single-order-item" class="md-nav__link">
+    HTML API for single order item
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html-api-for-multiple-order-items" class="md-nav__link">
+    HTML API for multiple order items
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-details" class="md-nav__link">
+    Implementation details
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#js-api-for-single-and-multiple-order-items" class="md-nav__link">
+    JS API for single and multiple order items
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-item-attributes" class="md-nav__link">
+    Order Item attributes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript-callbacks" class="md-nav__link">
+    Javascript callbacks
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#payment-completed-callback" class="md-nav__link">
+    Payment completed callback
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navigate-back-to-payment-method-selection-shopping-cart-page" class="md-nav__link">
+    Navigate back to payment method selection / shopping cart page
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limiting-accepted-cards" class="md-nav__link">
+    Limiting accepted cards
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../client-libraries/" title="Client libraries" class="md-nav__link">
+      Client libraries
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../testing-integration/" title="Testing integration" class="md-nav__link">
+      Testing integration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../api/" title="API" class="md-nav__link">
+      API
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../static-assets/" title="Static assets" class="md-nav__link">
+      Static assets
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#klix-widget-placement" class="md-nav__link">
+    Klix Widget placement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#widget-configuration" class="md-nav__link">
+    Widget Configuration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specifying-widget-language" class="md-nav__link">
+    Specifying widget language
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefilling-klix-widget-form-data" class="md-nav__link">
+    Prefilling Klix widget form data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instant-fixed-price-widget-type" class="md-nav__link">
+    INSTANT (Fixed Price) Widget Type
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkout-dynamic-price-widget-type" class="md-nav__link">
+    CHECKOUT (Dynamic Price) Widget Type
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html-api-for-single-order-item" class="md-nav__link">
+    HTML API for single order item
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html-api-for-multiple-order-items" class="md-nav__link">
+    HTML API for multiple order items
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-details" class="md-nav__link">
+    Implementation details
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#js-api-for-single-and-multiple-order-items" class="md-nav__link">
+    JS API for single and multiple order items
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-item-attributes" class="md-nav__link">
+    Order Item attributes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript-callbacks" class="md-nav__link">
+    Javascript callbacks
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#payment-completed-callback" class="md-nav__link">
+    Payment completed callback
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navigate-back-to-payment-method-selection-shopping-cart-page" class="md-nav__link">
+    Navigate back to payment method selection / shopping cart page
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limiting-accepted-cards" class="md-nav__link">
+    Limiting accepted cards
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="klix-widget">Klix Widget<a class="headerlink" href="#klix-widget" title="Permanent link">&para;</a></h1>
+<h2 id="klix-widget-placement">Klix Widget placement<a class="headerlink" href="#klix-widget-placement" title="Permanent link">&para;</a></h2>
+<p>Klix Widget is implemented as embeddable Web Component. In order to show Klix widget on a merchant website widget JavaScript should be included in the page and custom HTML tag needs to be placed in the required location. See the example below for integration code.</p>
+<div class="admonition warning">
+<p class="admonition-title">Widget JavaScript location</p>
+<p>Please note that Klix Widget JavaScript source should be loaded from different destination in case of production and test environments. Test environment Klix Widget JavaScript base path is  <code class="codehilite"><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">klix</span><span class="p">.</span><span class="nb">blob</span><span class="p">.</span><span class="n">core</span><span class="p">.</span><span class="n">windows</span><span class="p">.</span><span class="n">net</span><span class="o">/</span><span class="n">stage</span><span class="o">/</span><span class="n">widget</span><span class="o">/</span><span class="n">build</span><span class="o">/</span></code>. Production environment Klix Widget JavaScript base path is <code class="codehilite"><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">klix</span><span class="p">.</span><span class="nb">blob</span><span class="p">.</span><span class="n">core</span><span class="p">.</span><span class="n">windows</span><span class="p">.</span><span class="n">net</span><span class="o">/</span><span class="k">public</span><span class="o">/</span><span class="n">widget</span><span class="o">/</span><span class="n">build</span><span class="o">/</span></code>.</p>
+</div>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://klix.blob.core.windows.net/stage/widget/build/klixwidget.esm.js&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">nomodule</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://klix.blob.core.windows.net/stage/widget/build/klixwidget.js&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    KLIX embedded checkout:
+    <span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">language</span><span class="o">=</span><span class="s">&quot;lv&quot;</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;604419cc-c313-4e47-93e8-330385669bdb&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>Integration code can be accessed and copied from Widgets section of Merchant Console.</p>
+<h2 id="widget-configuration">Widget Configuration<a class="headerlink" href="#widget-configuration" title="Permanent link">&para;</a></h2>
+<p>Klix widget is created and configured in <em>Merchant Console</em>. Generated <em>Widget ID</em> is used to embed Web Component into Merchant HTML page.</p>
+<h3 id="specifying-widget-language">Specifying widget language<a class="headerlink" href="#specifying-widget-language" title="Permanent link">&para;</a></h3>
+<p>Widget language can be specified using attribute <em>language</em> e.g. "lv" for Latvian, "en" for English or "ru" for Russian.</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">language</span><span class="o">=</span><span class="s">&quot;lv&quot;</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;604419cc-c313-4e47-93e8-330385669bdb&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
+</pre></div>
+
+<h3 id="prefilling-klix-widget-form-data">Prefilling Klix widget form data<a class="headerlink" href="#prefilling-klix-widget-form-data" title="Permanent link">&para;</a></h3>
+<p>Klix widget form data prefilling allows to reduce a number of fields that needs to be entred by customer in Klix form in situations where required customer information was previously entered in merchant's webpage e.g. in case if Klix form is presented to exsiting merchant's customer or customer needs to fill specific form on merchant's page before continuing with Klix form.</p>
+<p>Klix widget supports prefilling form with customer data specified as Klix widget attributes. Customer phone number, e-mail, first name and last name can be passed to widget:</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">language</span><span class="o">=</span><span class="s">&quot;lv&quot;</span> <span class="na">email</span><span class="o">=</span><span class="s">&quot;john.doe@klix.app&quot;</span> <span class="na">phone</span><span class="o">=</span><span class="s">&quot;37120000000&quot;</span> <span class="na">first-name</span><span class="o">=</span><span class="s">&quot;John&quot;</span> <span class="na">last-name</span><span class="o">=</span><span class="s">&quot;Doe&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>Note that partial data prefill is supported i.e. if only firstname and last name of customer is passed to Klix widget it will be prefilled after non existing Klix customer enters his mobile phone number.</p>
+<p>In case there's no Klix customer with specified mobile phone number Klix widget form will be prefilled with specified data.</p>
+<p><img alt="New customer data prefilled in widget" src="../images/widget_new_customer_data_prefilled.png" title="New customer data prefilled in widget" /></p>
+<p>Otherwise Klix widget data autofill is triggered automatically so that customer receives autofill notifcation in his mobile phone.</p>
+<p><img alt="Existing customer data prefilled in widget" src="../images/widget_existing_customer_data_prefilled.png" title="Existing customer data prefilled in widget" /></p>
+<h2 id="instant-fixed-price-widget-type">INSTANT (Fixed Price) Widget Type<a class="headerlink" href="#instant-fixed-price-widget-type" title="Permanent link">&para;</a></h2>
+<p>It is possible to generate Klix widget for a specific order. In this case no validation on merchant side is required - all order items are defined at widget configuration in Merchant Console (MC). They can’t be overwritten by <em>Widget HTML API</em> or <em>Widget JS API</em> (specified later in the document) for security purposes. This type of Widget allows lightweight integration with merchant - no merchant back-end is required for integration.</p>
+<p>Widget language is specified either in page <em><html></em> tag or as a Klix widget attribute.</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;lv&quot;</span><span class="p">&gt;</span>
+...
+<span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>OR</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">language</span><span class="o">=</span><span class="s">&quot;lv&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
+</pre></div>
+
+<h2 id="checkout-dynamic-price-widget-type">CHECKOUT (Dynamic Price) Widget Type<a class="headerlink" href="#checkout-dynamic-price-widget-type" title="Permanent link">&para;</a></h2>
+<p>Order items should be provided either via <em>Widget HTML API</em> (widget tag attributes) or via <em>Widget JS API</em>. Widget language is defined in the same manner as in <em>Fixed Price Widget</em> type.</p>
+<h3 id="html-api-for-single-order-item">HTML API for single order item<a class="headerlink" href="#html-api-for-single-order-item" title="Permanent link">&para;</a></h3>
+<p>Tax could be defined as rate (0.XX) or percentage (number greater than 1 without ‘%’ symbol).</p>
+<p>Tax rate default value is merchant specific (e.g. for merchants registered in LV it would be "0.21"). Currency default value is merchant specific as well (e.g. for merchants registered in EU it would be "EUR").</p>
+<p>All HTML widgets below are equivalent for merchant registered in LV:</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">amount</span><span class="o">=</span><span class="s">&quot;1.99&quot;</span> <span class="na">currency</span><span class="o">=</span><span class="s">&quot;EUR&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Philips XR3857&quot;</span> <span class="na">tax-rate</span><span class="o">=</span><span class="s">&quot;0.21&quot;</span> <span class="na">count</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">unit</span><span class="o">=</span><span class="s">&quot;PIECE&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">amount</span><span class="o">=</span><span class="s">&quot;1.99&quot;</span> <span class="na">currency</span><span class="o">=</span><span class="s">&quot;EUR&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Philips XR3857&quot;</span> <span class="na">tax-rate</span><span class="o">=</span><span class="s">&quot;21&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">amount</span><span class="o">=</span><span class="s">&quot;1.99&quot;</span> <span class="na">currency</span><span class="o">=</span><span class="s">&quot;EUR&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Philips XR3857&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">amount</span><span class="o">=</span><span class="s">&quot;1.99&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Philips XR3857&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
+</pre></div>
+
+<h3 id="html-api-for-multiple-order-items">HTML API for multiple order items<a class="headerlink" href="#html-api-for-multiple-order-items" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">order</span><span class="o">=</span><span class="s">&#39;{&quot;items&quot;:[{&quot;amount&quot;:40,&quot;currency&quot;:&quot;EUR&quot;,&quot;count&quot;:2,&quot;unit&quot;:&quot;PIECE&quot;,&quot;label&quot;:&quot;Philips XR3857&quot;,&quot;taxRate&quot;:0.21},{&quot;amount&quot;:5,&quot;label&quot;:&quot;Piegāde&quot;}]}&#39;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>OR</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">order</span><span class="o">=</span><span class="s">&quot;{&amp;quot;items&amp;quot;:[{&amp;quot;amount&amp;quot;:40,&amp;quot;currency&amp;quot;:&amp;quot;EUR&amp;quot;,&amp;quot;count&amp;quot;:2,&amp;quot;label&amp;quot;:&amp;quot;Philips XR3857&amp;quot;,&amp;quot;taxRate&amp;quot;:0.21},{&amp;quot;amount&amp;quot;:5,&amp;quot;label&amp;quot;:&amp;quot;Piegāde&amp;quot;}]}&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>Also product name value needs to be properly escaped (e.g. using <code class="codehilite"><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span></code> for <code class="codehilite"><span class="o">&amp;</span></code>, <code class="codehilite"><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span></code> for <code class="codehilite"><span class="o">&lt;</span></code>, <code class="codehilite"><span class="o">&amp;#</span><span class="mi">39</span><span class="p">;</span></code> for <code class="codehilite"><span class="err">&#39;</span></code>, <code class="codehilite"><span class="o">&amp;#</span><span class="mi">34</span><span class="p">;</span></code> for <code class="codehilite"><span class="err">&quot;</span></code>, etc.) to be a valid HTML attribute value.</p>
+<h4 id="implementation-details">Implementation details<a class="headerlink" href="#implementation-details" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><span class="c1">// merchant order</span>
+<span class="kd">let</span> <span class="nx">orderObject</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;items&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mi">40</span><span class="p">,</span><span class="s2">&quot;currency&quot;</span><span class="o">:</span><span class="s2">&quot;EUR&quot;</span><span class="p">,</span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="s2">&quot;Philips XR3857&quot;</span><span class="p">,</span><span class="s2">&quot;taxRate&quot;</span><span class="o">:</span><span class="mf">0.21</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mi">5</span><span class="p">,</span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="s2">&quot;Piegāde&quot;</span><span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;shippingOptions&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;pickup&quot;</span><span class="p">,</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mi">0</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;omniva&quot;</span><span class="p">,</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;currency&quot;</span><span class="o">:</span><span class="s2">&quot;EUR&quot;</span><span class="p">,</span><span class="s2">&quot;taxRate&quot;</span><span class="o">:</span><span class="mf">0.21</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;latvijaspasts&quot;</span><span class="p">}]</span>
+<span class="p">};</span>
+
+<span class="c1">// this value goes into widget &#39;order&#39; attribute</span>
+<span class="kd">let</span> <span class="nx">orderAttribute</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">orderObject</span><span class="p">);</span>
+
+<span class="c1">// this value goes into HTML attribute (e.g. client side templating)</span>
+<span class="kd">let</span> <span class="nx">escaped</span> <span class="o">=</span> <span class="nx">orderAttribute</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&amp;amp;&#39;</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&lt;&#39;</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&amp;lt;&#39;</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&amp;#39;&#39;</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&quot;&#39;</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&amp;#34;&#39;</span><span class="p">);</span>
+
+<span class="c1">// this value is received as widget internal state</span>
+<span class="kd">let</span> <span class="nx">orderObjectInWidget</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">orderAttribute</span><span class="p">);</span>
+</pre></div>
+
+<h3 id="js-api-for-single-and-multiple-order-items">JS API for single and multiple order items<a class="headerlink" href="#js-api-for-single-and-multiple-order-items" title="Permanent link">&para;</a></h3>
+<p>Widget <code class="codehilite"><span class="s1">&#39;lazy&#39;</span></code> attribute is used to delay widget initialization (until configuration via <em>Widget JS API</em> is completed):</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;my-klix-checkout&quot;</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">lazy</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
+...
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="kd">let</span> <span class="nx">checkoutWidget</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#my-klix-checkout&#39;</span><span class="p">);</span>
+  <span class="nx">checkoutWidget</span><span class="p">.</span><span class="nx">addOrderItem</span><span class="p">(</span> <span class="p">{</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mi">40</span><span class="p">,</span><span class="s2">&quot;currency&quot;</span><span class="o">:</span><span class="s2">&quot;EUR&quot;</span><span class="p">,</span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="s2">&quot;Philips XR3857&quot;</span><span class="p">,</span><span class="s2">&quot;count&quot;</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;unit&quot;</span><span class="o">:</span><span class="s2">&quot;PIECE&quot;</span><span class="p">,</span><span class="s2">&quot;taxRate&quot;</span><span class="o">:</span><span class="mf">0.21</span><span class="p">});</span>
+  <span class="nx">checkoutWidget</span><span class="p">.</span><span class="nx">addOrderItem</span><span class="p">({</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mi">5</span><span class="p">,</span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="s2">&quot;Piegāde&quot;</span><span class="p">});</span>
+
+  <span class="c1">// pick-up at store, free of charge </span>
+  <span class="nx">checkoutWidget</span><span class="p">.</span><span class="nx">addShippingOption</span><span class="p">({</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;pickup&quot;</span><span class="p">,</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mi">0</span><span class="p">});</span>
+
+  <span class="c1">// shipping price is unknown, separate request will be initiated</span>
+  <span class="c1">// for entered (by customer) address via Merchant API</span>
+  <span class="nx">checkoutWidget</span><span class="p">.</span><span class="nx">addShippingOption</span><span class="p">({</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;latvijaspasts&quot;</span><span class="p">});</span>
+
+  <span class="c1">// shipping price (before tax) and tax rate are known for</span>
+  <span class="c1">// given product/cart (whatever selected address or pickup point)</span>
+  <span class="nx">checkoutWidget</span><span class="p">.</span><span class="nx">addShippingOption</span><span class="p">({</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;myIdForPickupProvider&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mi">5</span><span class="p">,</span><span class="s2">&quot;currency&quot;</span><span class="o">:</span><span class="s2">&quot;EUR&quot;</span><span class="p">,</span><span class="s2">&quot;taxRate&quot;</span><span class="o">:</span><span class="mf">0.21</span><span class="p">});</span>
+
+  <span class="nx">checkoutWidget</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+<h3 id="order-item-attributes">Order Item attributes<a class="headerlink" href="#order-item-attributes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Mandatory</th>
+<th>Default value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>amount</td>
+<td>Yes</td>
+<td>n/a</td>
+<td>Price per unit</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>No</td>
+<td>Merchant specific (EUR in Latvia)</td>
+<td>Alphabetic code ISO 4217</td>
+</tr>
+<tr>
+<td>label</td>
+<td>Yes</td>
+<td>n/a</td>
+<td>Product or service name</td>
+</tr>
+<tr>
+<td>count</td>
+<td>No</td>
+<td>1</td>
+<td>Quantity</td>
+</tr>
+<tr>
+<td>unit</td>
+<td>No</td>
+<td>PIECE</td>
+<td>{PIECE, KILOGRAM, METER, LITRE, HOUR}</td>
+</tr>
+<tr>
+<td>taxRate</td>
+<td>No</td>
+<td>Merchant specific (0.21 in Latvia)</td>
+<td>VAT</td>
+</tr>
+<tr>
+<td>orderItemId</td>
+<td>No</td>
+<td>null</td>
+<td>Product ID in merchant system for reference purposes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="javascript-callbacks">Javascript callbacks<a class="headerlink" href="#javascript-callbacks" title="Permanent link">&para;</a></h2>
+<p>Klix widget uses <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events">Custom DOM events</a> to communicate with merchant page. In order to listen specifc Klix widget event appropriate event listener should be registered first.</p>
+<h3 id="payment-completed-callback">Payment completed callback<a class="headerlink" href="#payment-completed-callback" title="Permanent link">&para;</a></h3>
+<p>Event with type <code class="codehilite"><span class="n">paymentCompleted</span></code> is published in case of successfull or failed payment right before payment status screen is shown to customer.</p>
+<p><img alt="Klix widget payment status screen" src="../images/widget_payment_status.png" title="Klix widget payment status screen" /></p>
+<p>Event handler can be used to dynamically update merchant page contents according to payment processing result.</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">order</span><span class="o">=</span><span class="s">&quot;...&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="kr">const</span> <span class="nx">checkoutElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;klix-checkout&#39;</span><span class="p">);</span>
+    <span class="nx">checkoutElement</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;paymentCompleted&#39;</span><span class="p">,</span> <span class="nx">event</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="kr">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;Order with id &#39;</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">detail</span><span class="p">[</span><span class="s2">&quot;orderId&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; payment succeeded -&gt; &#39;</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">detail</span><span class="p">[</span><span class="s2">&quot;paymentSucceeded&quot;</span><span class="p">];</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+        <span class="c1">// Note that this callback can be used to hide Klix default payment success screen and show your own instead</span>
+        <span class="cm">/*</span>
+<span class="cm">        if (event.detail[&quot;paymentSucceeded&quot;]) {</span>
+<span class="cm">          checkoutElement.remove();  </span>
+<span class="cm">          // display your own payment success message</span>
+<span class="cm">        }</span>
+<span class="cm">        */</span>
+
+    <span class="p">});</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>Following event properties can be used:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>event.detail["orderId"]</td>
+<td>string</td>
+<td>Completed payment order identifier</td>
+</tr>
+<tr>
+<td>event.detail["paymentSucceeded"]</td>
+<td>boolean</td>
+<td>Indicates if payment succeeded or failed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="navigate-back-to-payment-method-selection-shopping-cart-page">Navigate back to payment method selection / shopping cart page<a class="headerlink" href="#navigate-back-to-payment-method-selection-shopping-cart-page" title="Permanent link">&para;</a></h3>
+<p>Event with type <code class="codehilite"><span class="n">navigateBackToCart</span></code> is published in case if customer presses "Back to merchant store" button on cancelled/failed payment Klix widget form.</p>
+<!-- markdownlint-disable MD033 -->
+
+<p style="text-align: center;">
+  <img src="../images/widget_failed_payment.png" width="500" alt="Failed/cancelled payment screen" />
+</p>
+
+<p>Event handler should point browser to checkout or payment method selection page so that customer can use another payment method if available.</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">order</span><span class="o">=</span><span class="s">&quot;...&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="kr">const</span> <span class="nx">checkoutElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;klix-checkout&#39;</span><span class="p">);</span>
+    <span class="nx">checkoutElement</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;navigateBackToCart&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span> <span class="o">=</span> <span class="s1">&#39;/shopping-cart&#39;</span><span class="p">;</span>
+    <span class="p">});</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+<h2 id="limiting-accepted-cards">Limiting accepted cards<a class="headerlink" href="#limiting-accepted-cards" title="Permanent link">&para;</a></h2>
+<p>By default all cards issued by Mastercard and VISA are accepted by Klix however following constraints can be imposed via order configuration if needed:</p>
+<table>
+<thead>
+<tr>
+<th>Constraint</th>
+<th>Configuration example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accepted card issuer</td>
+<td><code class="codehilite"><span class="ss">&quot;constraints&quot;</span><span class="p">:</span> <span class="err">{</span><span class="ss">&quot;issuer&quot;</span><span class="p">:</span> <span class="ss">&quot;Citadele&quot;</span><span class="err">}</span></code></td>
+<td>Only cards issued by Citadele bank are accepted for this payment</td>
+</tr>
+<tr>
+<td>Accepted card brand</td>
+<td><code class="codehilite"><span class="ss">&quot;constraints&quot;</span><span class="p">:</span> <span class="err">{</span><span class="ss">&quot;brand&quot;</span><span class="p">:</span> <span class="ss">&quot;X karte&quot;</span><span class="err">}</span></code></td>
+<td>Only Citadele "X karte" brand cards are accepted for this payment</td>
+</tr>
+<tr>
+<td>Accepted card payment scheme</td>
+<td><code class="codehilite"><span class="ss">&quot;constraints&quot;</span><span class="p">:</span> <span class="err">{</span><span class="ss">&quot;paymentScheme&quot;</span><span class="p">:</span> <span class="ss">&quot;VISA&quot;</span><span class="err">}</span></code></td>
+<td>Only VISA cards are accepted for this payment</td>
+</tr>
+</tbody>
+</table>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">order</span><span class="o">=</span><span class="s">&quot;{&amp;quot;constraints&amp;quot;:{&amp;quot;issuer&amp;quot;:&amp;quot;Citadele&amp;quot;},&amp;quot;items&amp;quot;:[{&amp;quot;amount&amp;quot;:40,&amp;quot;currency&amp;quot;:&amp;quot;EUR&amp;quot;,&amp;quot;count&amp;quot;:2,&amp;quot;label&amp;quot;:&amp;quot;Philips XR3857&amp;quot;,&amp;quot;taxRate&amp;quot;:0.21}]}&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../security/" title="Security" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Security
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../client-libraries/" title="Client libraries" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Client libraries
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 Klix
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/klix-app" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/klixapp" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://lv.linkedin.com/company/klixapp" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.ac79c3b0.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>
