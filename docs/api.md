@@ -72,5 +72,5 @@ Here is a list of libraries that can be used to simplify merchant authentication
 | Go                   | [99designs/httpsignatures-go](https://github.com/99designs/httpsignatures-go)               |
 | Java                 | [tomitribe/http-signatures-java](https://github.com/tomitribe/http-signatures-java)         |
 | node.js              | [joyent/node-http-signature](https://github.com/joyent/node-http-signature)                 |
-| PHP                  | [99designs/http-signatures-php](https://github.com/99designs/http-signatures-php)           |
+| PHP                  | [liamdennehy/http-signatures-php](https://github.com/liamdennehy/http-signatures-php)       |
 | Ruby                 | [99designs/http-signatures-ruby](https://github.com/99designs/http-signatures-ruby)         |
