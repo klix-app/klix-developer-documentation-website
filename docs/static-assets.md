@@ -12,6 +12,7 @@
 <div>
     <div style="width:49%; display:inline-block;">
         <img src="../images/logos/pay-without-text/examples/logo-dark.png" />
+        <img src="../images/logos/pay-without-text/logo-dark.png" width="0%" />
         <img src="../images/logos/pay-without-text/logo-dark.svg" width="45%" />
         <a href="../images/logos/pay-without-text/logo-dark.svg" style="display:block;font-size: 14px">Download asset</a>
     </div>
