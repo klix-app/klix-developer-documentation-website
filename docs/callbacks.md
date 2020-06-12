@@ -4,6 +4,9 @@
 
 During order lifecycle Klix invokes API end-points implemented by merchant store. All URLs should be implemented and accessible via HTTPS in order to be callable by Klix.
 
+!!! Warning "Exposing you API via HTTPS on development environment"
+    If you have trouble to expose your API via HTTPS on a development environment you can use [ngrok](https://ngrok.com).
+
 | URL Type                      | Example                            | Optional | Description
 |-------------------------------|------------------------------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Purchase notification URL     | https://merchant.com/purchases     | false    | HTTP PUT request is sent from Klix backend to confirm that a payment has either been collected successfully on behalf of the merchant or either payment has failed/was cancelled. Note that error code and message might not be present even in case of failed payment. See [Purchase notification request example](#purchase-notification-request-example).|
@@ -14,7 +17,7 @@ During order lifecycle Klix invokes API end-points implemented by merchant store
 
 ### Purchase notification request example
 
-HTTP status code 200 should be returned by this API end-point otherwise Klix server will retry to send notification multiple times. In order to ensure that a purchase notification was sent by Klix and request was not altered it's important to [check request signature](#Callback-payload-signature-validation). In case of successfull payment `"status"` field value is `"PAID"` and order in merchant web shop can be marked as paid.
+HTTP status code 200 should be returned by this API end-point otherwise Klix server will retry to send notification multiple times. In order to ensure that a purchase notification was sent by Klix and request was not altered it's important to [check a request signature](#Callback-payload-signature-validation). In case of a successfull payment `"status"` field value is `"PAID"` and order in merchant web shop can be marked as paid.
 
 ```bash
 #!/bin/bash
