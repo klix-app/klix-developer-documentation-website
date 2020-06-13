@@ -21,31 +21,31 @@ Installation instructions:
 2. Log in to your Shopify store by specifying store address, email and password.
 <!-- markdownlint-disable MD033 -->
 <div>
-    <img src="../images/ecommerce-platforms/shopify/1_login.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%;" alt="Shopify login screen" title="Log in to your Shopify store" />
+    <img src="../images/ecommerce-platforms/shopify/1_login.png" style="display:block;margin-left:auto;margin-right:auto;width:50%;margin-top:5px;margin-botton:10px;" alt="Shopify login screen" title="Log in to your Shopify store" />
 </div>
 <!-- markdownlint-disable MD033 -->
 3. Confirm Klix payment provider installation.
 <!-- markdownlint-disable MD033 -->
 <div>
-    <img src="../images/ecommerce-platforms/shopify/2_install.png" style="display: block;margin-left: auto;margin-right: auto;width: 70%;" alt="Klix payment provider installation confirmation screen" title="Confirm Klix payment provider installation" />
+    <img src="../images/ecommerce-platforms/shopify/2_install.png" style="display:block;margin-left:auto;margin-right:auto;width:70%;margin-top:5px;margin-botton:10px;" alt="Klix payment provider installation confirmation screen" title="Confirm Klix payment provider installation" />
 </div>
 <!-- markdownlint-disable MD033 -->
 4. Open `Settings` -> `Payments` section.
 <!-- markdownlint-disable MD033 -->
 <div>
-    <img src="../images/ecommerce-platforms/shopify/3_payments_settings.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;" alt="Payments section on settings screen" title="Open payments settings" />
+    <img src="../images/ecommerce-platforms/shopify/3_payments_settings.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;margin-top:5px;margin-botton:10px;" alt="Payments section on settings screen" title="Open payments settings" />
 </div>
 <!-- markdownlint-disable MD033 -->
 5. Press `Choose alternative payment` button in `Alternative payment methods` section.
 <!-- markdownlint-disable MD033 -->
 <div>
-    <img src="../images/ecommerce-platforms/shopify/4_alternative_payment_methods.png" style="display:block;margin-left:auto;margin-right:auto;width:70%;" alt="Alternative payment methods screen" title="Choose alternative payment method" />
+    <img src="../images/ecommerce-platforms/shopify/4_alternative_payment_methods.png" style="display:block;margin-left:auto;margin-right:auto;width:70%;margin-top:5px;margin-botton:10px;" alt="Alternative payment methods screen" title="Choose alternative payment method" />
 </div>
 <!-- markdownlint-disable MD033 -->
 6. Find and open Klix payment provider settings.
 <!-- markdownlint-disable MD033 -->
 <div>
-    <img src="../images/ecommerce-platforms/shopify/5_find_klix_payment_provider.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;" alt="Payment provider search screen" title="Find and open Klix payment provider settings" />
+    <img src="../images/ecommerce-platforms/shopify/5_find_klix_payment_provider.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;margin-top:5px;margin-botton:10px;" alt="Payment provider search screen" title="Find and open Klix payment provider settings" />
 </div>
 <!-- markdownlint-disable MD033 -->
 7. Enter Brand ID and secret key provided by Klix contact person and press `Activate Klix` button.
