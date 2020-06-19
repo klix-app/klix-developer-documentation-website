@@ -9,7 +9,32 @@ Klix provides plugins for most popular eCommerce platforms so Klix can be integr
 
 ### Magento
 
+Compatible versions: 2.0+
+
+Installation instructions:
+
+1. Connect to Magento server terminal.
+2. Create and navigate to a directory `app/code/` in your Magento root directory if does not exist already.
+3. Download Klix Magento plugin: `curl https://portal.klix.app/ecommerce_modules/magento-v2.0+.zip --output magento-v2.0+.zip`
+4. Extract Klix Magento plugin archive contents to `app/code/` directory so that there's `app/code/SpellPayment/Magento2Module` directory structure after that: `unzip -q magento-v2.0+.zip && rm magento-v2.0+.zip`
+5. Navigate to Magento root directory and run `php bin/magento module:enable SpellPayment_Magento2Module --clear-static-content`
+6. Run `php bin/magento setup:upgrade`
+7. Run `php bin/magento setup:static-content:deploy` (note that message "Manual static content deployment is not required in "default" and "developer" modes" can be ignored).
+<!-- markdownlint-disable MD033 -->
+<div>
+    <img src="../images/ecommerce-platforms/magento/1_run_commands.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;margin-top:5px;margin-bottom:10px;" alt="Terminal screen" title="Run Klix plugin installation commands in terminal" />
+</div>
+<!-- markdownlint-disable MD033 -->
+8. Log in to your Magento store admin panel.
+<!-- markdownlint-disable MD033 -->
+<div>
+    <img src="../images/ecommerce-platforms/magento/2_login.png" style="display:block;margin-left:auto;margin-right:auto;width:50%;margin-top:5px;margin-bottom:10px;" alt="Magento admin panel login screen" title="Log in to your Magento admin panel" />
+</div>
+<!-- markdownlint-disable MD033 -->
+
 ### OpenCart
+
+Compatible versions: 3.0+
 
 Installation instructions:
 
@@ -29,37 +54,37 @@ Installation instructions:
 4. Press "`Upload`" button and select Klix OpenCart extension file downloaded in the first step. Progress bar will indicate extension upload progress.
 <!-- markdownlint-disable MD033 -->
 <div>
-    <img src="../images/ecommerce-platforms/opencart/3_upload_extension.png" style="display:block;margin-left:auto;margin-right:auto;width:75%;margin-top:5px;margin-bottom:10px;" alt="OpenCart extension install screen" title="Upload extension" />
+    <img src="../images/ecommerce-platforms/opencart/3_upload_extension.png" style="display:block;margin-left:auto;margin-right:auto;width:85%;margin-top:5px;margin-bottom:10px;" alt="OpenCart extension install screen" title="Upload extension" />
 </div>
 <!-- markdownlint-disable MD033 -->
 5. Open "`Extensions`" -> "`Extensions`" section from the main menu and filter payment extensions.
 <!-- markdownlint-disable MD033 -->
 <div>
-    <img src="../images/ecommerce-platforms/opencart/4_filter_extensions.png" style="display:block;margin-left:auto;margin-right:auto;width:75%;margin-top:5px;margin-bottom:10px;" alt="Extensions filter screen" title="Filter payment extensions" />
+    <img src="../images/ecommerce-platforms/opencart/4_filter_extensions.png" style="display:block;margin-left:auto;margin-right:auto;width:85%;margin-top:5px;margin-bottom:10px;" alt="Extensions filter screen" title="Filter payment extensions" />
 </div>
 <!-- markdownlint-disable MD033 -->
 6. Find Klix extension in extension list and press "`+`" (Install).
 <!-- markdownlint-disable MD033 -->
 <div>
-    <img src="../images/ecommerce-platforms/opencart/5_install_extension.png" style="display:block;margin-left:auto;margin-right:auto;width:75%;margin-top:5px;margin-bottom:10px;" alt="Klix extension install screen" title="Install Klix extension" />
+    <img src="../images/ecommerce-platforms/opencart/5_install_extension.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;margin-top:5px;margin-bottom:10px;" alt="Klix extension install screen" title="Install Klix extension" />
 </div>
 <!-- markdownlint-disable MD033 -->
 7. Press "`Edit`" Klix extension.
 <!-- markdownlint-disable MD033 -->
 <div>
-    <img src="../images/ecommerce-platforms/opencart/6_edit_extension.png" style="display:block;margin-left:auto;margin-right:auto;width:75%;margin-top:5px;margin-bottom:10px;" alt="Klix extension edit button screen" title="Edit Klix extension" />
+    <img src="../images/ecommerce-platforms/opencart/6_edit_extension.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;margin-top:5px;margin-bottom:10px;" alt="Klix extension edit button screen" title="Edit Klix extension" />
 </div>
 <!-- markdownlint-disable MD033 -->
 8. Enter Brand ID and Secret key provided by Klix contact person, mark "`Enable API`" to enable Klix payment method and select order payment success and error statuses.
 <!-- markdownlint-disable MD033 -->
 <div>
-    <img src="../images/ecommerce-platforms/opencart/7_edit_extension_settings.png" style="display:block;margin-left:auto;margin-right:auto;width:75%;margin-top:5px;margin-bottom:10px;" alt="Klix extension settings edit screen" title="Edit Klix extension settings" />
+    <img src="../images/ecommerce-platforms/opencart/7_edit_extension_settings.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;margin-top:5px;margin-bottom:10px;" alt="Klix extension settings edit screen" title="Edit Klix extension settings" />
 </div>
 <!-- markdownlint-disable MD033 -->
 9. Go to your OpenCart store checkout page and check that Klix payment method is available. It's advisable to test Klix integration using a real card.
 <!-- markdownlint-disable MD033 -->
 <div>
-    <img src="../images/ecommerce-platforms/opencart/8_preview_klix_payment_method.png" style="display:block;margin-left:auto;margin-right:auto;width:75%;margin-top:5px;margin-bottom:10px;" alt="Checkout payment method selection screen" title="Preview Klix payment method" />
+    <img src="../images/ecommerce-platforms/opencart/8_preview_klix_payment_method.png" style="display:block;margin-left:auto;margin-right:auto;width:90%;margin-top:5px;margin-bottom:10px;" alt="Checkout payment method selection screen" title="Preview Klix payment method" />
 </div>
 <!-- markdownlint-disable MD033 -->
 
