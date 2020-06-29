@@ -226,6 +226,6 @@ Installation instructions:
 8. Go to your WooCommerce store checkout page and check that Klix payment method is available. It's advisable to test Klix integration using a real card.
 <!-- markdownlint-disable MD033 -->
 <div>
-    <img src="../images/ecommerce-platforms/woocommerce/7_test_klix_payment_option.png" style="display:block;margin-left:auto;margin-right:auto;width:60%;margin-top:5px;margin-bottom:10px;" alt="Payment option selection screen" title="Test Klix payment option" />
+    <img src="../images/ecommerce-platforms/woocommerce/7_test_klix_payment_option.png" style="display:block;margin-left:auto;margin-right:auto;width:65%;margin-top:5px;margin-bottom:10px;" alt="Payment option selection screen" title="Test Klix payment option" />
 </div>
 <!-- markdownlint-disable MD033 -->
