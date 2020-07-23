@@ -33,7 +33,8 @@ Next step is to place Klix widget HTML code in an appropriate place on a checkou
     currency="EUR"  
     label="Order No 12345678"  
     language="lv"
-    signature="B+nre6Oe6lnjh0hcW5dhOtRmXxN3pm6Sup3kjcNeQiSmTN6zQCp6kHErX/s+JIvkLIqQxD2D/EU2MUraQC03RyKHyX/Wr8qVVbPeBaskPkYR7l397BBYOghvVN1LS8RWdpQ4Q67kMYdPutqnJAUGJtHA51i14xmnaIRxctpK4UJE3qtfu1QjWPez/yP1lT/igpCTL66lqXKcbHac75v++5WUwwT5fCEUklPxudzC3qbujNhXZBPwAZxa2GaYQDzCOP7p/bcJgH/DwsaVMiDtekG5ANgXB51WOPB9X3pP1rdr6kbVccXhN0D4UrxMt3ZA4bPw+LaAWzVRNaVOJoNpZg==">
+    back-to-merchant-url="https://developers.klix.app/"
+    signature="E2Ag7p/v9cUQ1U5ntkYIZuDwXPErBxZWA19mGFaW/hRDXlnWvY8UH5jF991/fTgWE5Ls/3DHi5cbbZbM7zkGBT/MB13oVt6QJEtJLIFHi8t5Oqd61S6nSYcKgB/Ju4FvqbQcSaQavc1VS9zd8sgq4BuUzhyF4rb/ErI5wq6VqvDfJLNneL3kfxAcoxtU1lVvYoqZWFz52MN57aFwa7A9wJJRGmpETXFl6jYeFLLYTUjb67eiuMs60vxGh8CFpNCXlJpHzVV3cMTb+h7xit+HCwUDvM8mXwlPWXzg5F4orsoHPHWbMx2HXh8BuwZ5uXnwJar0zFioYlKqLZ+qxje0Bg==">
 </klix-checkout>
 ```
 
