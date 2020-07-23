@@ -1,16 +1,10 @@
 # Security
 
-Every data modification request sent by merchant to Klix and every Klix widget order parameters should be signed by merchant private key and validated on Klix side by merchant public key. It is important to use asymmetric cryptography algorithm to have non-disputable transactions in e-commerce.
+Every data modification request sent by merchant to Klix and every Klix widget order parameters should be signed by merchant private key and validated on Klix side by merchant public key.
 
 ## Transport-Level Security
 
-All communication is going via HTTPS TLS 1.2 protocol. Klix is using trusted certificates from  a well-known certificate authority.
-
-## API Key
-
-The very first level of Merchant API security is a shared API key. API key is generated for Merchant user and should be sent in HTTP header with every request. It allows identifying that requests are coming from legit user.
-
-Name of the HTTP header to be used for submitting API Key is '_X-KLIX-Api-Key_'.
+All communication is going via HTTPS TLS 1.2 protocol.
 
 ## Certificates
 
@@ -20,16 +14,16 @@ Private and public key pairs are issued by Klix PKI (Public Key Infrastructure) 
 
 Merchant RSA Key Pair generation guidelines:
 
-* Each key pair is assigned a unique identifier in KIiX database.
+* Each key pair is assigned a unique identifier in Klix database.
 * Merchant private key is not stored in Klix and its responsibility of merchant to keep it secure.
 * Key could be revoked by the merchant or Klix admin at any time.
 * Multiple keys could be active at the same time. Widget attribute `certificate-name` helps to identify which key is used to sign particular order.
 * Default Key expiration time is 2 calendar years. This is defined on PKI policies level.
-* Notifications about key status changes (as well as expiration reminders) should be sent to merchant email address (and potentially SMS).
+* Notifications about key status changes (as well as expiration reminders) is sent to merchant email address.
 
-Requests going from Klix to merchant defined callback URL are also signed digitally using Klix private key and validated using public key, which is available in Merchant Console.
+Requests sent from Klix to merchant defined callback URL are also signed digitally using Klix private key and validated using public key, which is available in Merchant Console.
 
-!!! Warning "Stroing private key"
+!!! Warning "Storing private key"
     Do not share your private key with anyone.
 
 ## Signing order
@@ -95,17 +89,18 @@ Consider Klix widget for following order should be placed in merchant webshop:
     order-id="12345678"  
     label="Order No 12345678"  
     language="lv"
+    back-to-merchant-url="https://example.com/shopping-cart"
     signature="n0b7Sj0qEVlU52kNctEHR9zUZ9pRtPjA/5/avPSQamx7HiI3q6qijgstBw6KhOKZqcCIL3RULbWNu6xoSGnNtW/nx+RcSd12I0st21Los9MXXPakEIjIto+2Zx0+ZiVoa97dxO8/iGF5A1U4qW9GFhPJGPqQecmZSp7rYaiO+VRq5D9KqKqRpBQEYN9YJgDgWMn36KVYkTdlOYAhJslwkVeKKZ+/ifUqHhiXbPKD3VKAXwx7/MqSiRlfU8Qsm7Vcv/zV05X9trZiaSYOL6yd9aWO/KE2so2hAswY58i6dR218/XD6ab5xTpCSXrfjYbfhInchukvlH7CrbE1T3RcWw==">
 </klix-checkout>
 ```
 
 Steps to calculate a signature:
 
-1. Calculate signature input string. `Input string = CONCAT(widget ID, language, amount, currency, label) = 21ca7904-ff16-48b5-918d-c2d80af81f05lv123456785.45EUROrder No 12345678`. Note that fields without a value e.g. certificate name, unit, count are not included in signature input string.
+1. Calculate signature input string. `Input string = CONCAT(widget ID, language, back to merchant URL, amount, currency, label) = 21ca7904-ff16-48b5-918d-c2d80af81f05lvhttps://example.com/shopping-cart123456785.45EUROrder No 12345678`. Note that fields without a value e.g. certificate name, success URL, unit, count are not included in signature input string.
 
-2. Calculate signature using private key previously downloaded from Klix Merchant Console and applying SHA256withRSA and Base64Encode functions to calculated input string. `Signature = Base64Encode(SHA256withRSA(signature-input)) = Base64Encode(SHA256withRSA("21ca7904-ff16-48b5-918d-c2d80af81f05lv123456785.45EUROrder No 12345678"))`.
+2. Calculate signature using private key previously downloaded from Klix Merchant Console and applying SHA256withRSA and Base64Encode functions to calculated input string. `Signature = Base64Encode(SHA256withRSA(signature-input)) = Base64Encode(SHA256withRSA("21ca7904-ff16-48b5-918d-c2d80af81f05lvhttps://example.com/shopping-cart123456785.45EUROrder No 12345678"))`.
 
-Calculated signature which should be passed to Klix widget as a `signature` attribute value in this example: `n0b7Sj0qEVlU52kNctEHR9zUZ9pRtPjA/5/avPSQamx7HiI3q6qijgstBw6KhOKZqcCIL3RULbWNu6xoSGnNtW/nx+RcSd12I0st21Los9MXXPakEIjIto+2Zx0+ZiVoa97dxO8/iGF5A1U4qW9GFhPJGPqQecmZSp7rYaiO+VRq5D9KqKqRpBQEYN9YJgDgWMn36KVYkTdlOYAhJslwkVeKKZ+/ifUqHhiXbPKD3VKAXwx7/MqSiRlfU8Qsm7Vcv/zV05X9trZiaSYOL6yd9aWO/KE2so2hAswY58i6dR218/XD6ab5xTpCSXrfjYbfhInchukvlH7CrbE1T3RcWw==`.
+Calculated signature which should be passed to Klix widget as a `signature` attribute value in this example: `ebSnfsTOV2v0zwXxk8YVYjH6iYTfkYA+tn+ove9I+0Zi3lgQ+Mhc6sNJJlhqaSa6hqODZJKGGOCy/d2sqB86dIcJd2M3wB1MqHtVTNadCR+V3gHi+ORTcAQmX/c7crU0lLiKwfHSvaE7FlZUG9cU8ErcZfWDAJEtOMWncMl/yIeec1kPwb302mFzZUsXkVi8/VPp70k9oIh+vPvew/vVTGhoS2ClnFx4heezp1BNXYxZZsFoSgYFP555tNsHYi4GY6DOIx0qrUtmRrWCrt8HjWV7hBFPDNOQnQ05vALLcWtzWdDtGIo5a46HrlW2biCXW3R6K9jW/FxhsEVvwT7fDQ==`.
 
 #### Example No 2: Klix Checkout widget with multiple order items and order delivery
 
