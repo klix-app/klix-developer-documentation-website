@@ -25,7 +25,7 @@ Note that Klix widget JavaScript code should be loaded from different destinatio
 
 ### 2. Pass order information to Klix widget
 
-Next step is to place Klix widget HTML code in an appropriate place on a checkout page where this widget will be rendered and pass order/payment relarted information.
+Next step is to place Klix widget HTML code in an appropriate place on a checkout page where this widget will be rendered and pass order/payment related information.
 
 ```html
 <klix-checkout widget-id="21ca7904-ff16-48b5-918d-c2d80af81f05"  
@@ -38,7 +38,7 @@ Next step is to place Klix widget HTML code in an appropriate place on a checkou
 </klix-checkout>
 ```
 
-Note that field `signature` should contain valid order signature. See section [Signing order](../security/#signing-order) for detailed instructions on how to generate a valid signature.
+Note that attribute `signature` should contain valid order signature. See section [Signing order](../security/#signing-order) for detailed instructions on how to generate a valid signature. Attribute `back-to-merchant-url` allows to specify a URL where customer will be redirected in case of cancelled purchase.
 Here's Klix widget that corresponds to previously mentioned HTML code.
 
 <!-- markdownlint-disable MD033 -->
