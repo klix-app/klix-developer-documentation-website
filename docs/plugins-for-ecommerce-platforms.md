@@ -1,9 +1,9 @@
 # Plugins for eCommerce plartforms
 
-Klix provides plugins for most popular eCommerce platforms so Klix can be integrated as simple as other plugins you might be already using in your shop. Integration using eCommerce platform plugin consists of a plugin installation and configuration. Plugin installation instructions differs between eCommerce platforms but configuration usually consists of two steps:
+Klix provides plugins for most popular eCommerce platforms so that Klix can be integrated as simple as other plugins you might be already using in your shop. Integration using eCommerce platform plugin consists of a plugin installation and configuration. Plugin installation instructions differs between eCommerce platforms but configuration usually consists of two steps:
 
 1. Enabling Klix as a payment method.
-2. Specifying Brand ID and secret API key in plugin settings.
+2. Specifying Brand ID and Secret key in plugin settings.
 
 ## eCommerce plartforms
 
