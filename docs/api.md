@@ -47,13 +47,13 @@ curl -X POST \
   -H 'Host: portal.klix.app' \
   -H 'accept-encoding: gzip, deflate' \
   -H 'cache-control: no-cache' \
-  -H 'content-length: 849' \
   -d '{
    "success_callback": "https://your.site/api/successfully-paid-callback-will-be-sent-to-this-end-point",
    "success_redirect": "https://your.site/customer-will-be-redirected-here-in-case-of-successfull-payment",
    "failure_redirect": "https://your.site/customer-will-be-redirected-here-in-case-of-failed-payment",
    "cancel_redirect": "https://your.site/customer-will-be-redirected-here-in-case-customer-decides-to-go-back-to-your-store-during-payment",
    "purchase":{
+      "language": "lv",
       "products":[
          {
             "price":3000,
