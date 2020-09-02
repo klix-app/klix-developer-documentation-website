@@ -75,7 +75,7 @@ curl -X POST \
 
 ### Get purchase information
 
-<Purchase ID> is purchase identifier (field `id` value) received in purchase creation response.
+`<Purchase ID>` is purchase identifier (field `id` value) received in purchase creation response.
 
 ```sh
 curl -X GET \
