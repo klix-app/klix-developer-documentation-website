@@ -38,6 +38,7 @@ nav:
   - Plugins for eCommerce platforms: plugins-for-ecommerce-platforms.md
   - Direct integration using API: api.md
   - Legacy Klix API (deprecated): widget-api.md
+  - Static assets: static-assets.md
 
 # Social
 extra:
