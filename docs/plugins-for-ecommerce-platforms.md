@@ -193,7 +193,7 @@ Installation instructions:
     <img src="../images/ecommerce-platforms/woocommerce/1_login.png" style="display:block;margin-left:auto;margin-right:auto;width:45%;margin-top:5px;margin-bottom:10px;" alt="WooCommerce admin panel login screen" title="Log in to your WooCommerce admin panel" />
 </div>
 <!-- markdownlint-disable MD033 -->
-3. Open "Plugins" -> "Ann new" section.
+3. Open "Plugins" -> "Add new" section.
 <!-- markdownlint-disable MD033 -->
 <div>
     <img src="../images/ecommerce-platforms/woocommerce/2_select_plugin_menu.png" style="display:block;margin-left:auto;margin-right:auto;width:20%;margin-top:5px;margin-bottom:10px;" alt="Plugin menu screen" title="Open new plugin section" />
