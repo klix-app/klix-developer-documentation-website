@@ -32,6 +32,25 @@ Installation instructions:
 </div>
 <!-- markdownlint-disable MD033 -->
 
+### Mozello
+
+Installation instructions:
+
+1. Log in to your Mozello store administration portal.
+2. Open `Catalog` -> `Catalog settings` -> `Payment` page and locate `Credit cards / payment platforms` section.
+<!-- markdownlint-disable MD033 -->
+<div>
+    <img src="../images/ecommerce-platforms/mozello/1_provide_klix_settings.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;margin-top:5px;margin-bottom:10px;" alt="Klix payment method configuration screen in Mozello" title="Configure Klix payment method in Mozello" />
+</div>
+<!-- markdownlint-disable MD033 -->
+3. Select "Klix by Citadele" in `Connect online payment platform` drop down and enter Brand ID and Secret key provided by Klix contact person. Change payment method title in checkout form if needed.
+4. Go to your Mozello store checkout page and check that Klix payment method is available. It's advisable to test Klix integration using a real card.
+<!-- markdownlint-disable MD033 -->
+<div>
+    <img src="../images/ecommerce-platforms/mozello/2_preview_klix_payment_method.png" style="display:block;margin-left:auto;margin-right:auto;width:80%;margin-top:5px;margin-bottom:10px;" alt="Checkout payment method selection screen in Mozello store" title="Preview Klix payment method in Mozello store" />
+</div>
+<!-- markdownlint-disable MD033 -->
+
 ### OpenCart
 
 Compatible versions: 3.0+
