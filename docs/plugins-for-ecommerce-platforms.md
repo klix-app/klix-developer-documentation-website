@@ -151,6 +151,11 @@ Installation instructions:
 </div>
 <!-- markdownlint-disable MD033 -->
 8. Go to your PrestShop store checkout page and check that Klix payment method is available. It's advisable to test Klix integration using a real card.
+<!-- markdownlint-disable MD033 -->
+<div>
+    <img src="../images/ecommerce-platforms/prestashop/7_preview_klix_payment_method.png" style="display:block;margin-left:auto;margin-right:auto;width:90%;margin-top:5px;margin-bottom:10px;" alt="Checkout payment method selection screen" title="Preview Klix payment method" />
+</div>
+<!-- markdownlint-disable MD033 -->
 
 ### Shopify
 
@@ -218,7 +223,7 @@ Installation instructions:
     <img src="../images/ecommerce-platforms/woocommerce/2_select_plugin_menu.png" style="display:block;margin-left:auto;margin-right:auto;width:20%;margin-top:5px;margin-bottom:10px;" alt="Plugin menu screen" title="Open new plugin section" />
 </div>
 <!-- markdownlint-disable MD033 -->
-1. Select Klix WooCommerce plugin file downloaded in the first step and press "Install Now". In rare cases e.g. if your server is not configured to allow automatic installations you might need to install Klix WooCommerce plugin by manually transfering Klix plugin files onto the server. Follow [these instructions](https://wordpress.org/support/article/managing-plugins/#manual-plugin-installation) in such case.
+4. Press on "Upload Plugin" and select Klix WooCommerce plugin file downloaded in the first step, press "Install Now". In rare cases e.g. if your server is not configured to allow automatic installations you might need to install Klix WooCommerce plugin by manually transfering Klix plugin files onto the server. Follow [these instructions](https://wordpress.org/support/article/managing-plugins/#manual-plugin-installation) in such case.
 <!-- markdownlint-disable MD033 -->
 <div>
     <img src="../images/ecommerce-platforms/woocommerce/3_upload_plugin.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;margin-top:5px;margin-bottom:10px;" alt="Upload plugin screen" title="Select and install plugin from file" />
