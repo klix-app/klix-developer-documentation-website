@@ -106,6 +106,18 @@ Installation instructions:
     <img src="../images/ecommerce-platforms/opencart/8_preview_klix_payment_method.png" style="display:block;margin-left:auto;margin-right:auto;width:90%;margin-top:5px;margin-bottom:10px;" alt="Checkout payment method selection screen" title="Preview Klix payment method" />
 </div>
 <!-- markdownlint-disable MD033 -->
+10. Localize Klix checkout page (optional). By default all Klix payment method section text elements are in English. In order to add translations for Klix section to your store checkout page go to OpenCart store admin panel, open "Design" -> "Language Editor". Press on "+" (add new) button and for each language create translations for required keys: "klix_payment_method_selection" (Klix payment section title), "klix_place_order" (Klix pay button title). In given example translation for default "Select payment method" label is defined for Russian. In a similar way translation for pay button can be changed, the only difference is in translation key which should be "klix_place_order". Note that route should always be "checkout/checkout".
+<!-- markdownlint-disable MD033 -->
+<div>
+    <img src="../images/ecommerce-platforms/opencart/9_localize_klix_payment_section.png" style="display:block;margin-left:auto;margin-right:auto;width:60%;margin-top:5px;margin-bottom:10px;" alt="Translation definition screen" title="Add translation" />
+</div>
+<!-- markdownlint-disable MD033 -->
+11. Go to your OpenCart store checkout page and preview translations by switching to desired language.
+<!-- markdownlint-disable MD033 -->
+<div>
+    <img src="../images/ecommerce-platforms/opencart/10_preview_translated_payment_section.png" style="display:block;margin-left:auto;margin-right:auto;width:95%;margin-top:5px;margin-bottom:10px;" alt="Translated checkout payment method selection screen" title="Preview translations" />
+</div>
+<!-- markdownlint-disable MD033 -->
 
 ### PrestaShop
 
