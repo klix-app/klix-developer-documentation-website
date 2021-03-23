@@ -125,7 +125,7 @@ Compatible versions: 1.7+
 
 Installation instructions:
 
-1. Click on [this link](https://portal.klix.app/ecommerce_modules/prestashop-v1.7+.zip) to download Klix PrestaShop plugin.
+1. Click on [this link](https://drive.google.com/uc?export=download&id=1mE1_h1z_lqFjIDZTevv75IqBYOzRiMZN) to download Klix PrestaShop plugin in case your store Prestshop version is 1.7.6. or newer. If you use Prestashop version that's older than 1.7.6. then click on [this link](https://portal.klix.app/ecommerce_modules/prestashop-v1.7+.zip) (note that translations functionality will work only with Prestashop 1.7.6. and newer version).
 2. Log in to your PrestaShop store admin panel by specifying authentication credentials.
 <!-- markdownlint-disable MD033 -->
 <div>
@@ -162,10 +162,27 @@ Installation instructions:
     <img src="../images/ecommerce-platforms/prestashop/6_configure_module.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;margin-top:5px;margin-bottom:10px;" alt="Klix module configuration screen" title="Configure Klix module" />
 </div>
 <!-- markdownlint-disable MD033 -->
-8. Go to your PrestShop store checkout page and check that Klix payment method is available. It's advisable to test Klix integration using a real card.
+8. Localize Klix checkout page (optional). By default all Klix payment method section text elements are in English. In order to add translations for Klix section to your store checkout page press "Translate" button.
 <!-- markdownlint-disable MD033 -->
 <div>
-    <img src="../images/ecommerce-platforms/prestashop/7_preview_klix_payment_method.png" style="display:block;margin-left:auto;margin-right:auto;width:90%;margin-top:5px;margin-bottom:10px;" alt="Checkout payment method selection screen" title="Preview Klix payment method" />
+    <img src="../images/ecommerce-platforms/prestashop/7_translate_module.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;margin-top:5px;margin-bottom:10px;" alt="Klix module configuration screen" title="Translate Klix module" />
+</div>
+<!-- markdownlint-disable MD033 -->
+9. Then choose your store language for which you would like to enter translations.
+<!-- markdownlint-disable MD033 -->
+<div>
+    <img src="../images/ecommerce-platforms/prestashop/8_choose_language.png" style="display:block;margin-left:auto;margin-right:auto;width:40%;margin-top:5px;margin-bottom:10px;" alt="Klix module translation language selection screen" title="Choose translation language" />
+</div>
+<!-- markdownlint-disable MD033 -->
+10.  And provide translations for all provided texts.
+<!-- markdownlint-disable MD033 -->
+<div>
+    <img src="../images/ecommerce-platforms/prestashop/9_provide_translations.png" style="display:block;margin-left:auto;margin-right:auto;width:90%;margin-top:5px;margin-bottom:10px;" alt="Klix translations screen" title="Translate Klix module texts" />
+</div>
+11. Go to your PrestShop store checkout page and check that Klix payment method is available. It's advisable to test Klix integration using a real card.
+<!-- markdownlint-disable MD033 -->
+<div>
+    <img src="../images/ecommerce-platforms/prestashop/10_preview_klix_payment_method.png" style="display:block;margin-left:auto;margin-right:auto;width:90%;margin-top:5px;margin-bottom:10px;" alt="Checkout payment method selection screen" title="Preview Klix payment method" />
 </div>
 <!-- markdownlint-disable MD033 -->
 
