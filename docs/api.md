@@ -33,7 +33,9 @@ curl -X GET \
   -H 'cache-control: no-cache'
 ```
 
-#### Create single payment
+#### Create available payment methods purchase
+
+This option allows to create a purchase that can be paid using any payment method available to merchant. Customer will be have an option to choose one of available payment methods after redirect to Klix payment page.
 
 ```sh
 curl -X POST \
@@ -67,6 +69,48 @@ curl -X POST \
    "client":{
       "email":"test@test.com"
    },
+   "brand_id":"<Brand ID goes here>",
+   "reference": "Your order id"
+}'
+```
+
+#### Create whitelisted payment method purchase
+
+This option allows to create a purchase that can be paid only using specified whitelisted payment method. Most often this option is used to allow purchase to be paid using payment method selected on merchant web-site.
+
+```sh
+curl -X POST \
+  https://portal.klix.app/api/v1/purchases/ \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer <Secret key goes here>' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -H 'Content-Type: application/json' \
+  -H 'Host: portal.klix.app' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'cache-control: no-cache' \
+  -d '{
+   "success_callback": "https://your.site/api/successfully-paid-callback-will-be-sent-to-this-end-point",
+   "success_redirect": "https://your.site/customer-will-be-redirected-here-in-case-of-successfull-payment",
+   "failure_redirect": "https://your.site/customer-will-be-redirected-here-in-case-of-failed-payment",
+   "cancel_redirect": "https://your.site/customer-will-be-redirected-here-in-case-customer-decides-to-go-back-to-your-store-during-payment",
+   "purchase":{
+      "language": "lv",
+      "products":[
+         {
+            "price":3000,
+            "name":"Xiaomi Mi Smart Band 5"
+         },
+         {
+            "price":100,
+            "name":"Screen protector for Xiaomi Mi Smart Band 5"
+         }
+      ]
+   },
+   "client":{
+      "email":"test@test.com"
+   },
+   "payment_method_whitelist": ["klix"],
    "brand_id":"<Brand ID goes here>",
    "reference": "Your order id"
 }'
