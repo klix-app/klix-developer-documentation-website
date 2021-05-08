@@ -5,7 +5,7 @@ Klix provides plugins for most popular eCommerce platforms so that Klix can be i
 1. Enabling Klix as a payment method.
 2. Specifying Brand ID and Secret key in plugin settings.
 
-If you have already signed Klix merchant agreement and have received production environment API keys then those should be used in these instructions. Otherwise there's an option to use [demo account](/../demo-account) credentials to preview Klix payment gateway solution functionality.
+If you have already signed Klix merchant agreement and have received production environment API keys then those should be used in these instructions. Otherwise there's an option to use [test-environment](/../test-environment) credentials to preview Klix payment gateway solution functionality.
 
 ## eCommerce plartforms
 
