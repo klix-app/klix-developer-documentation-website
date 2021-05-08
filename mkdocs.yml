@@ -35,6 +35,7 @@ markdown_extensions:
 # Page tree
 nav:
   - Overview: index.md
+  - Demo account: demo-account.md
   - Plugins for eCommerce platforms: plugins-for-ecommerce-platforms.md
   - Libraries: libraries.md
   - Direct integration using API: api.md
