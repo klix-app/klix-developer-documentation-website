@@ -284,3 +284,11 @@ Installation instructions:
     <img src="../images/ecommerce-platforms/woocommerce/7_test_klix_payment_option.png" style="display:block;margin-left:auto;margin-right:auto;width:65%;margin-top:5px;margin-bottom:10px;" alt="Payment option selection screen" title="Test Klix payment option" />
 </div>
 <!-- markdownlint-disable MD033 -->
+9. In order to use Klix-Checkout in plugin settings unselect "Enable payment method selection" and select "Enable directed payment".  
+Then from shipping options fetch the shipping method titles and send them to support@klix.app.  
+In case of pickup in store, please send the list of shop addresses.
+<!-- markdownlint-disable MD033 -->
+<div>
+    <img src="../images/ecommerce-platforms/woocommerce/8_shipping_options.png" style="display:block;margin-left:auto;margin-right:auto;width:65%;margin-top:5px;margin-bottom:10px;" alt="Shipping options" title="Shipping options" />
+</div>
+<!-- markdownlint-disable MD033 -->
