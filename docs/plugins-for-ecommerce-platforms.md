@@ -241,7 +241,7 @@ Compatible versions: 3.5+
 
 Installation instructions:
 
-1. Click on [this link](https://drive.google.com/uc?export=download&id=1r_lgGHPfC63WbPAKKz3JJtsGtadoCqiR) to download Klix WooCommerce plugin.
+1. Click on [this link](https://drive.google.com/uc?export=download&id=1SmMp8zTZl_m3ZFDg1xr2EqwRFcn5atwV) to download Klix WooCommerce plugin.
 2. Log in to your WooCommerce store admin panel by specifying authentication credentials.
 <!-- markdownlint-disable MD033 -->
 <div>
