@@ -4,9 +4,19 @@
 
 ![Klix static asset usage guide](images/asset_usage_guide.png "Klix static asset usage guide")
 
-## 1. Klix Pay assets for Klix as one of your payment methods
+## 1. Klix Checkout assets for Klix as your express checkout solution
 
-1.1. Use assets without text - available for light or dark backgrounds.
+Use assets for your Klix express checkout buttons available in EN, LT, LV, RU.
+
+<!-- markdownlint-disable MD033 -->
+<div>
+    <img src="../images/logos/quick-checkout-en.gif" width="50%" />
+    <div style="font-size: 14px;">Download asset in <a href="../images/logos/quick-checkout-en.gif">EN</a>, <a href="../images/logos/quick-checkout-lt.gif">LT</a>, <a href="../images/logos/quick-checkout-lv.gif">LV</a>, <a href="../images/logos/quick-checkout-ru.gif">RU</a> languages</div>
+</div>
+
+## 2. Klix Pay assets for Klix as one of your payment methods
+
+2.1. Use assets without text - available for light or dark backgrounds.
 
 <!-- markdownlint-disable MD033 -->
 <div>
@@ -22,7 +32,7 @@
     </div>
 </div>
 
-1.2. Use assets for your buttons with white or black text: "Pay by card", available in LV, RU, EN.
+2.2. Use assets for your buttons with white or black text: "Pay by card", available in LV, RU, EN.
 
 <!-- markdownlint-disable MD033 -->
 <div>
@@ -35,23 +45,5 @@
         <img src="../images/logos/pay-with-text/examples/light-text.png"/>
         <img src="../images/logos/pay-with-text/light-text-en.svg" width="45%" style="background-color: #9fa09f" />
         <div style="font-size: 14px;">Download asset in <a href="../images/logos/pay-with-text/light-text-lv.svg">LV</a>, <a href="../images/logos/pay-with-text/light-text-ru.svg">RU</a>, <a href="../images/logos/pay-with-text/light-text-en.svg">EN</a> languages</div>
-    </div>
-</div>
-
-## 2. Klix Checkout assets for Klix as your Express checkout solution
-
-2.1 Use assets for your buttons with white or black text: "Express checkout", available in LV, RU, EN.
-
-<!-- markdownlint-disable MD033 -->
-<div>
-    <div style="width:49%; display:inline-block;">
-        <img src="../images/logos/checkout/examples/dark-text.png" />
-        <img src="../images/logos/checkout/dark-text-en.svg" width="45%" />
-        <div style="font-size: 14px;">Download asset in <a href="../images/logos/checkout/dark-text-lv.svg">LV</a>, <a href="../images/logos/checkout/dark-text-ru.svg">RU</a>, <a href="../images/logos/checkout/dark-text-en.svg">EN</a> languages</div>
-    </div>
-    <div style="width: 49%; display:inline-block;">
-        <img src="../images/logos/checkout/examples/light-text.png"/>
-        <img src="../images/logos/checkout/light-text-en.svg" width="45%" style="background-color: #9fa09f" />
-        <div style="font-size: 14px;">Download asset in <a href="../images/logos/checkout/light-text-lv.svg">LV</a>, <a href="../images/logos/checkout/light-text-ru.svg">RU</a>, <a href="../images/logos/checkout/light-text-en.svg">EN</a> languages</div>
     </div>
 </div>
