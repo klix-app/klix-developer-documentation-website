@@ -59,7 +59,7 @@ Compatible versions: 3.0+
 
 Installation instructions:
 
-1. Click on [this link](https://drive.google.com/uc?export=download&id=1OEann_0BeyVUpiWBjQNAQC9GaJioktTr) to download Klix OpenCart extension.
+1. Click on [this link](https://drive.google.com/uc?export=download&id=1wFvc-R8S2G9bGhBRuhDktqQOL1rRuHrq) to download Klix OpenCart extension.
 2. Log in to your OpenCart store admin panel by specifying authentication credentials.
 <!-- markdownlint-disable MD033 -->
 <div>
