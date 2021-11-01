@@ -4,15 +4,8 @@ In order to preview Klix payment gateway card payment method and test integratio
 
 | Brand ID                                                  | Secret key                                                                                                     |
 |-----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
-| <sub><sup>702314b8-dd86-41fa-9a22-510fdd71fa92</sup></sub>| <sub><sup>IB-bzOdJLgJjbsaA34Qpxkg1TTIrW-iDuni6JuzbP--KgtsREHzvIvLLTH8E5T0CZcSbYM3qNmfeogpWW_RZaA== </sup></sub>|
+| <sub><sup>702314b8-dd86-41fa-9a22-510fdd71fa92</sup></sub>| <sub><sup>No51P_Dq4jQGeha6_eQpfjAFe67u3QYHEO95jrcCux0zPfByd8x9poSa6xINQPz1hyUGKNYoxa16rnUkSUI_MA==</sup></sub>|
 
-Note that this Klix test account supports only card payments using special test cards which are not connected to real bank card issuer networks. Banklink and Klix Pay Later payment methods are available only using production API keys sent to you after Klix agreement signing.
+In case of Klix card and Klix Pay Later payment methods after redirecting customer to the Klix payment page (field "checkout_url" value from Purchase creation response) there's an option to choose either successful or failed payment scenario for testing purposes. In case of bank transfers only success scenario is supported in test environment.
 
-Test cards that can be used with this account:
-
-| Issuer     | PAN                 | CVV | Expiry date | 3D secure password |
-|------------|---------------------|-----|-------------|--------------------|
-| VISA       | 4314 2200 0000 0056 | 123 | 01/22       | hint               |
-| MASTERCARD | 5413 3300 0000 0019 | 589 | 01/22       | hint               |
-
-Note that any cardholder name can be used with these cards.
+![Choose successful or failed payment scenario](images/testing_integration.png "Tesing integration")
