@@ -53,23 +53,23 @@ curl -X POST \
    "success_redirect": "https://your.site/customer-will-be-redirected-here-in-case-of-successfull-payment",
    "failure_redirect": "https://your.site/customer-will-be-redirected-here-in-case-of-failed-payment",
    "cancel_redirect": "https://your.site/customer-will-be-redirected-here-in-case-customer-decides-to-go-back-to-your-store-during-payment",
-   "purchase":{
+   "purchase": {
       "language": "lv",
-      "products":[
+      "products": [
          {
-            "price":3000,
-            "name":"Xiaomi Mi Smart Band 5"
+            "price": 3000,
+            "name": "Xiaomi Mi Smart Band 5"
          },
          {
-            "price":100,
-            "name":"Screen protector for Xiaomi Mi Smart Band 5"
+            "price": 100,
+            "name": "Screen protector for Xiaomi Mi Smart Band 5"
          }
       ]
    },
-   "client":{
-      "email":"test@test.com"
+   "client": {
+      "email": "test@test.com"
    },
-   "brand_id":"<Brand ID goes here>",
+   "brand_id": "<Brand ID goes here>",
    "reference": "Your order id"
 }'
 ```
@@ -94,24 +94,24 @@ curl -X POST \
    "success_redirect": "https://your.site/customer-will-be-redirected-here-in-case-of-successfull-payment",
    "failure_redirect": "https://your.site/customer-will-be-redirected-here-in-case-of-failed-payment",
    "cancel_redirect": "https://your.site/customer-will-be-redirected-here-in-case-customer-decides-to-go-back-to-your-store-during-payment",
-   "purchase":{
+   "purchase": {
       "language": "lv",
-      "products":[
+      "products": [
          {
-            "price":3000,
-            "name":"Xiaomi Mi Smart Band 5"
+            "price": 3000,
+            "name": "Xiaomi Mi Smart Band 5"
          },
          {
-            "price":100,
-            "name":"Screen protector for Xiaomi Mi Smart Band 5"
+            "price": 100,
+            "name": "Screen protector for Xiaomi Mi Smart Band 5"
          }
       ]
    },
-   "client":{
-      "email":"test@test.com"
+   "client": {
+      "email": "test@test.com"
    },
    "payment_method_whitelist": ["klix"],
-   "brand_id":"<Brand ID goes here>",
+   "brand_id": "<Brand ID goes here>",
    "reference": "Your order id"
 }'
 ```
@@ -166,19 +166,19 @@ curl -X POST \
    "success_redirect": "https://your.site/customer-will-be-redirected-here-in-case-of-successfull-payment",
    "failure_redirect": "https://your.site/customer-will-be-redirected-here-in-case-of-failed-payment",
    "cancel_redirect": "https://your.site/customer-will-be-redirected-here-in-case-customer-decides-to-go-back-to-your-store-during-payment",
-   "purchase":{
+   "purchase": {
       "language": "lv",
-      "products":[
+      "products": [
          {
-            "price":700,
-            "name":"XYZ service subscription"
+            "price": 700,
+            "name": "XYZ service subscription"
          }
       ]
    },
-   "client":{
-      "email":"test@test.com"
+   "client": {
+      "email": "test@test.com"
    },
-   "brand_id":"<Brand ID goes here>",
+   "brand_id": "<Brand ID goes here>",
    "reference": "Your order id"
 }'
 ```
@@ -200,19 +200,19 @@ curl -X POST \
   -H 'cache-control: no-cache' \
   -d '{
    "success_callback": "https://your.site/api/successfully-paid-callback-will-be-sent-to-this-end-point",
-   "purchase":{
+   "purchase": {
       "language": "lv",
-      "products":[
+      "products": [
          {
-            "price":700,
-            "name":"XYZ service subscription fee for December 2020"
+            "price": 700,
+            "name": "XYZ service subscription fee for December 2020"
          }
       ]
    },
-   "client":{
-      "email":"test@test.com"
+   "client": {
+      "email": "test@test.com"
    },
-   "brand_id":"<Brand ID goes here>",
+   "brand_id": "<Brand ID goes here>",
    "reference": "Your order id"
 }'
 ```
@@ -233,4 +233,95 @@ curl -X POST \
   -d '{
    "recurring_token": "<Recurring payment token>"
 }'
+```
+
+## API usage in reservation scenario (payment execution separated from authorization)
+
+### Reservation step by step guide
+
+1. Create a purchase by submitting order data and additional `skip_capture` flag to Klix indicating card payment authorization separation from payment execution. Once purchase is created link to Klix hosted payment page will be returned as `checkout_url` field value. Payment identifier returned in purchase creation response should be stored for later use in capture or release requests. After customer is redirected to this page Klix will capture customer card details and will reserve the funds equal to purchase total amount.
+2. There are several options how to proceed with reservation:
+    * Charge reserved amount. There's an option to either charge full reserved amount or amount that's smaller than initially reserved amount.
+    * Release (return to customer) reserved amount. Note that reservations are also released automatically after a few days if charge request is not reveived.
+
+### Reservation functionality request examples
+
+These are simple request examples that illustrate Klix API usage. Always use [API Reference](https://portal.klix.app/api) as a single source of truth.
+Note that `<Brand ID goes here>` and `<Secret key goes here>` should be replaced with actual `Brand ID` and `Secret Key` received from Klix contact person.
+
+#### Create a reservation purchase
+
+This option allows to create a purchase that will reserve purchase total amount in case of card payment. Store purchase `id` returned in response to either change or release funds reserved by this purchase. Redirect customer to `checkout_url` returned in purchase creation response to allow customer to enter card details. Note that in case of successful reservation purchase status will be changed to "hold" instead of "paid" as in case of regular card payment.
+
+```sh
+curl -X POST \
+  https://portal.klix.app/api/v1/purchases/ \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer <Secret key goes here>' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -H 'Content-Type: application/json' \
+  -H 'Host: portal.klix.app' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'cache-control: no-cache' \
+  -d '{
+   "success_callback": "https://your.site/api/successfully-paid-callback-will-be-sent-to-this-end-point",
+   "success_redirect": "https://your.site/customer-will-be-redirected-here-in-case-of-successfull-payment",
+   "failure_redirect": "https://your.site/customer-will-be-redirected-here-in-case-of-failed-payment",
+   "cancel_redirect": "https://your.site/customer-will-be-redirected-here-in-case-customer-decides-to-go-back-to-your-store-during-payment",
+   "purchase": {
+      "language": "lv",
+      "products": [
+         {
+            "price": 3000,
+            "name": "Xiaomi Mi Smart Band 5"
+         },
+         {
+            "price": 100,
+            "name": "Screen protector for Xiaomi Mi Smart Band 5"
+         }
+      ]
+   },
+   "skip_capture": true,
+   "client": {
+      "email": "test@test.com"
+   },
+   "payment_method_whitelist": ["klix"],
+   "brand_id": "<Brand ID goes here>",
+   "reference": "Your order id"
+}'
+```
+
+#### Charge funds reserved by previously created purchase
+
+To change full amount previously reserved by specified purchase no request body should be sent. `<Purchase ID>` is purchase identifier (field `id` value) received in purchase creation response.
+
+```sh
+curl --location --request POST 'https://portal.klix.app/api/v1/purchases/<Purchase ID>/capture/' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <Secret key goes here>'
+```
+
+#### Charge partial funds reserved by previously created purchase
+
+To change amount that's smaller than previously reserved amount this new amount should be specified in request. `<Purchase ID>` is purchase identifier (field `id` value) received in purchase creation response.
+
+```sh
+curl --location --request POST 'https://portal.klix.app/api/v1/purchases/<Purchase ID>/capture/' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <Secret key goes here>' \
+--data-raw '{
+    "amount": 5
+}
+'
+```
+
+#### Release funds reserved by previously created purchase
+
+To release funds reserved by Purchase following request should be sent:
+
+```sh
+curl --location --request POST 'https://portal.klix.app/api/v1/purchases/<Purchase ID>/release/' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <Secret key goes here>'
 ```
