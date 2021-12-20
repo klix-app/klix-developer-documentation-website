@@ -5,10 +5,10 @@ theme:
   name: 'material'
   custom_dir: 'theme/'
   palette:
-    primary: 'Teal'
-    accent: 'Teal'
-  logo: 'images/logo.png'
-  favicon: 'images/favicon.png'
+    primary: 'klix-theme-primary'
+    accent: 'klix-theme-accent'
+  logo: 'images/logos/klix_white.png'
+  favicon: 'images/logos/favicon.png'
 google_analytics:
   - 'UA-149580135-1'
   - 'auto'
@@ -62,6 +62,6 @@ repo_url: https://github.com/klix-app/klix-developer-documentation-website
 edit_uri: ""
 
 # Copyright
-copyright: 'Copyright &copy; 2019 Klix'
+copyright: 'Copyright &copy; 2021 Klix'
 
       
