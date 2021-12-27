@@ -14,36 +14,26 @@ Use assets for your Klix express checkout buttons available in EN, LT, LV, RU.
     <div style="font-size: 14px;">Download asset in <a href="../images/logos/quick-checkout-en.gif">EN</a>, <a href="../images/logos/quick-checkout-lt.gif">LT</a>, <a href="../images/logos/quick-checkout-lv.gif">LV</a>, <a href="../images/logos/quick-checkout-ru.gif">RU</a> languages</div>
 </div>
 
-## 2. Klix Pay assets for Klix as one of your payment methods
+## 2. Klix assets for Klix and Klix Pay Later
 
-2.1. Use assets without text - available for light or dark backgrounds.
+2.1. Use assets for <b>Klix</b> card payments button
 
 <!-- markdownlint-disable MD033 -->
 <div>
     <div style="width:49%; display:inline-block;">
-        <img src="../images/logos/pay-without-text/examples/logo-dark.png" />
-        <img src="../images/logos/pay-without-text/logo-dark.svg" width="45%" />
-        <a href="../images/logos/pay-without-text/logo-dark.svg" style="display:block;font-size: 14px">Download asset</a>
-    </div>
-    <div style="width: 49%; display:inline-block;">
-        <img src="../images/logos/pay-without-text/examples/logo-light.png"/>
-        <img src="../images/logos/pay-without-text/logo-light.svg" width="45%" style="background-color: #9fa09f" />
-        <a href="../images/logos/pay-without-text/logo-light.svg" style="display:block;font-size: 14px">Download asset</a>
+        <img src="../images/logos/pay-by-card/pay-by-card-logo.png" />
+        <img src="../images/logos/pay-by-card/pay-by-card-logo.svg" width="45%" />
+        <a href="../images/logos/pay-by-card/pay-by-card-logo.svg" style="display:block;font-size: 14px">Download asset</a>
     </div>
 </div>
 
-2.2. Use assets for your buttons with white or black text: "Pay by card", available in LV, RU, EN.
+2.2. Use assets for <b>Klix Pay Later</b> button
 
 <!-- markdownlint-disable MD033 -->
 <div>
     <div style="width:49%; display:inline-block;">
-        <img src="../images/logos/pay-with-text/examples/dark-text.png" />
-        <img src="../images/logos/pay-with-text/dark-text-en.svg" width="45%" />
-        <div style="font-size: 14px;">Download asset in <a href="../images/logos/pay-with-text/dark-text-lv.svg">LV</a>, <a href="../images/logos/pay-with-text/dark-text-ru.svg">RU</a>, <a href="../images/logos/pay-with-text/dark-text-en.svg">EN</a> languages</div>
-    </div>
-    <div style="width: 49%; display:inline-block;">
-        <img src="../images/logos/pay-with-text/examples/light-text.png"/>
-        <img src="../images/logos/pay-with-text/light-text-en.svg" width="45%" style="background-color: #9fa09f" />
-        <div style="font-size: 14px;">Download asset in <a href="../images/logos/pay-with-text/light-text-lv.svg">LV</a>, <a href="../images/logos/pay-with-text/light-text-ru.svg">RU</a>, <a href="../images/logos/pay-with-text/light-text-en.svg">EN</a> languages</div>
+        <img src="../images/logos/pay-later/pay-later-logo.png" />
+        <img src="../images/logos/pay-later/pay-later-logo.svg" width="45%" />
+        <a href="../images/logos/pay-later/pay-later-logo.svg" style="display:block;font-size: 14px">Download asset</a>
     </div>
 </div>
