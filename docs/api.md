@@ -325,3 +325,54 @@ curl --location --request POST 'https://portal.klix.app/api/v1/purchases/<Purcha
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <Secret key goes here>'
 ```
+
+## Klix Pay Later monthly payment widget
+
+### Widget script
+
+In order to add Klix Pay Later monthly payment widget to your store place following script in head part of the page.
+
+```html
+<head>
+   <!-- Klix Pay Later widget -->
+   <script type="module" src="https://klix.blob.core.windows.net/public/pay-later-widget/build/klix-pay-later-widget.esm.js"></script>
+   <script nomodule="" src="https://klix.blob.core.windows.net/public/pay-later-widget/build/klix-pay-later-widget.js"></script>
+</head>
+```
+
+Then place Klix Pay Later monthly payment widget source code just below the product price.
+
+```html
+<body>
+   ...
+   <klix-pay-later amount="67900" brand_id="702314b8-dd86-41fa-9a22-510fdd71fa92" 
+      language="en" theme="light" view="product" category="SPORTS_GOODS">
+   </klix-pay-later>
+   ...
+</body>
+```
+
+![Klix Pay Later widget in product page](images/klix_pay_later_monthly_payment_widget_on_product_page.png "Klix Pay Later widget in product page")
+
+!!! Note "We strongly recommend to place Klix Pay Later montly payment widget both on product, shopping cart and checkout page so that customer can preview monhly payment also if multiple different products are added to the shopping cart."
+
+Previously mentioned widget code example will result in the following widget.
+
+<!-- markdownlint-disable MD033 -->
+<klix-pay-later amount="67900" brand_id="55b7d52b-020e-4143-bc69-3292b5002cf2" language="en" theme="light" view="product" category="SPORTS_GOODS" class="hydrated">
+</klix-pay-later>
+<!-- markdownlint-disable MD033 -->
+
+Widget parameters are described in the following table.
+
+| Parameter      | Description                                                                                                                             | Optional |
+|----------------|-----------------------------------------------------------------------------------------------------------------------------------------|----------|
+| `amount`       | Product price in cents (if widget is shown in product view)/shopping cart item total amount in cents (if widget is shown in shopping cart/checkout view)  | false    |
+| `brand_id`     | Brand ID assigned to your company after Klix agreement signing                                                                          | false    |
+| `language`     | Current language of the page where widget is shown (supported languages: "ee", "en", "lt", "lv", "ru")                                  | false    |
+| `theme`        | Currenly only "light" theme is supported                                                                                                | true     |
+| `view`         | Widget placement in site. Following placements are supported: "product", "cart", "checkout".                                            | true     |
+| `category`     | Product category. Should be specified only in case merchant sells different type of goods. Possible values: TV_HOME_APPLIANCES, CLOTHES_SHOES_ACCESSORIES, ELECTRONICS, COMPUTER_EQUIPMENT, FURNITURE, SPORTING_GOODS, GARDEN_GOODS, COSMETICS, CHILDREN_GOODS, CAR_GOODS, MOTO_GOODS, FOR_HOME_AND_REPAIR, ZOO_GOODS, GROCERIES_AND_ALCOHOL, BOOKS, MEDICAL_GOODS, GIFT_CARDS, DELIVERY, OTHER                                                                                                                       | true     |
+
+### Widget placement in product, cart and checkout views
+
