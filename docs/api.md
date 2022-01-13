@@ -328,8 +328,6 @@ curl --location --request POST 'https://portal.klix.app/api/v1/purchases/<Purcha
 
 ## Klix Pay Later monthly payment widget
 
-### Widget script
-
 In order to add Klix Pay Later monthly payment widget to your store place following script in head part of the page.
 
 ```html
@@ -373,6 +371,3 @@ Widget parameters are described in the following table.
 | `theme`        | Currenly only "light" theme is supported                                                                                                | true     |
 | `view`         | Widget placement in site. Following placements are supported: "product", "cart", "checkout".                                            | true     |
 | `category`     | Product category. Should be specified only in case merchant sells different type of goods. Possible values: TV_HOME_APPLIANCES, CLOTHES_SHOES_ACCESSORIES, ELECTRONICS, COMPUTER_EQUIPMENT, FURNITURE, SPORTING_GOODS, GARDEN_GOODS, COSMETICS, CHILDREN_GOODS, CAR_GOODS, MOTO_GOODS, FOR_HOME_AND_REPAIR, ZOO_GOODS, GROCERIES_AND_ALCOHOL, BOOKS, MEDICAL_GOODS, GIFT_CARDS, DELIVERY, OTHER                                                                                                                       | true     |
-
-### Widget placement in product, cart and checkout views
-
