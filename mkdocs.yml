@@ -9,8 +9,6 @@ theme:
     accent: 'klix-theme-accent'
   logo: 'images/logos/klix_white.png'
   favicon: 'images/logos/favicon.png'
-  features:
-    - content.tabs.link
 google_analytics:
   - 'UA-149580135-1'
   - 'auto'

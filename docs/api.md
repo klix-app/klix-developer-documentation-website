@@ -340,7 +340,7 @@ In order to add Klix Pay Later monthly payment widget to your store place follow
 </head>
 ```
 
-Then place Klix Pay Later monthly payment widget source code just below the product price.
+Then place Klix Pay Later monthly payment widget source code just below the product price. You should pass at least product price, language and your Brand ID to widget.
 
 ```html
 <body>
