@@ -41,6 +41,8 @@ nav:
   - Direct integration using API: api.md
   - Legacy Klix API (deprecated): widget-api.md
   - Static assets: static-assets.md
+  - Representation guidelines: representation-guidelines.md
+  - Marketing guidelines: marketing-guidelines.md
 
 # Social
 extra:
