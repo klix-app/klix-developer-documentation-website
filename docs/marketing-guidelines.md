@@ -45,4 +45,4 @@ Since you are responsible for staying compliant with loan advertising law, pleas
 - Lithuania [e-tar.lt](https://www.e-tar.lt/portal/lt/legalAct/93180b00c13611e6bcd2d69186780352/asr)
 
 _________________________________
-Have questions? [marketing@klix.app](mailto:marketing@klix.app)
+Have questions? Contact us via [marketing@klix.app](mailto:marketing@klix.app)
