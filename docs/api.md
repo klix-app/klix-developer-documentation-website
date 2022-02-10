@@ -242,7 +242,10 @@ curl -X POST \
 1. Create a purchase by submitting order data and additional `skip_capture` flag to Klix indicating card payment authorization separation from payment execution. Once purchase is created link to Klix hosted payment page will be returned as `checkout_url` field value. Payment identifier returned in purchase creation response should be stored for later use in capture or release requests. After customer is redirected to this page Klix will capture customer card details and will reserve the funds equal to purchase total amount.
 2. There are several options how to proceed with reservation:
     * Charge reserved amount. There's an option to either charge full reserved amount or amount that's smaller than initially reserved amount.
-    * Release (return to customer) reserved amount. Note that reservations are also released automatically after a few days if charge request is not reveived.
+    * Release (return to customer) reserved amount.
+
+!!! Warning "Automatic release of reserved amount"
+    Reservations are released automatically after 6 days if charge request is not received within this period.
 
 ### Reservation functionality request examples
 
