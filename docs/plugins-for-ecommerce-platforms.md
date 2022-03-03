@@ -241,7 +241,7 @@ Compatible versions: 3.5+
 
 Installation instructions:
 
-1. Click on [this link](https://portal.klix.app/ecommerce_modules/woocommerce-v3.5+) to download Klix WooCommerce plugin.
+1. Click on [this link](https://klixecom.blob.core.windows.net/modules/klix-woocommerce.zip) to download Klix WooCommerce plugin.
 2. Log in to your WooCommerce store admin panel by specifying authentication credentials.
 <!-- markdownlint-disable MD033 -->
 <div>
