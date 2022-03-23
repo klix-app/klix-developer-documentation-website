@@ -59,7 +59,7 @@ Compatible versions: 3.0+
 
 Installation instructions:
 
-1. Click on [this link](https://drive.google.com/uc?export=download&id=1wFvc-R8S2G9bGhBRuhDktqQOL1rRuHrq) to download Klix OpenCart extension.
+1. Click on [this link](https://klixecom.blob.core.windows.net/modules/opencart-v3.0+.ocmod.zip) to download Klix OpenCart extension.
 2. Log in to your OpenCart store admin panel by specifying authentication credentials.
 <!-- markdownlint-disable MD033 -->
 <div>
@@ -118,6 +118,10 @@ Installation instructions:
 <!-- markdownlint-disable MD033 -->
 <div>
     <img src="../images/ecommerce-platforms/opencart/10_preview_translated_payment_section.png" style="display:block;margin-left:auto;margin-right:auto;width:95%;margin-top:5px;margin-bottom:10px;" alt="Translated checkout payment method selection screen" title="Preview translations" />
+</div>
+12. <b>Pay Later widget</b> will be enabled after modification refresh. Open "Extensions" -> "Modifications" section. Click on <b> refresh</b> button.
+ <div>
+    <img src="../images/ecommerce-platforms/opencart/11_modifications_refresh.png" style="display:block;margin-left:auto;margin-right:auto;width:95%;margin-top:5px;margin-bottom:10px;" alt="Refresh modifications" title="Modification refresh" />
 </div>
 <!-- markdownlint-disable MD033 -->
 
