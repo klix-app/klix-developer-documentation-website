@@ -21,9 +21,9 @@ Use assets for your Klix express checkout buttons available in EN, LT, LV, RU.
 <!-- markdownlint-disable MD033 -->
 <div>
     <div style="width:49%; display:inline-block;">
-        <img src="../images/logos/pay-by-card/pay-by-card-logo.png" />
-        <img src="../images/logos/pay-by-card/pay-by-card-logo.svg" width="45%" />
-        <a href="../images/logos/pay-by-card/pay-by-card-logo.svg" style="display:block;font-size: 14px">Download asset</a>
+        <img src="../images/logos/pay-by-card/logo-2x.png" />
+        <img src="../images/logos/pay-by-card/logo.svg" width="45%" />
+        <a href="../images/logos/pay-by-card/logo.svg" style="display:block;font-size: 14px">Download asset</a>
     </div>
 </div>
 
@@ -32,8 +32,8 @@ Use assets for your Klix express checkout buttons available in EN, LT, LV, RU.
 <!-- markdownlint-disable MD033 -->
 <div>
     <div style="width:49%; display:inline-block;">
-        <img src="../images/logos/pay-later/pay-later-logo.png" />
-        <img src="../images/logos/pay-later/pay-later-logo.svg" width="45%" />
-        <a href="../images/logos/pay-later/pay-later-logo.svg" style="display:block;font-size: 14px">Download asset</a>
+        <img src="../images/logos/pay-later/logo-2x.png" />
+        <img src="../images/logos/pay-later/logo.svg" width="45%" />
+        <a href="../images/logos/pay-later/logo.svg" style="display:block;font-size: 14px">Download asset</a>
     </div>
 </div>
