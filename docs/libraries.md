@@ -5,4 +5,4 @@ If Klix API client library is not available for your programming language/platfo
 
 ## PHP
 
-Download Klix API client PHP [library](https://portal.klix.app/api_sdks/php/) and follow instructions in README.md on how to install and use this library.
+Download Klix API client PHP [library](https://packagist.org/packages/klix/klix-sdk-php) and follow instructions in README.md on how to install and use this library.
