@@ -353,6 +353,18 @@ Then place Klix Pay Later monthly payment widget source code just below the prod
 </body>
 ```
 
+For Shopify integration:
+
+```html
+<body>
+   ...
+   <klix-pay-later amount="{{ product.price | money_numbers_only}}" brand_id="702314b8-dd86-41fa-9a22-510fdd71fa92" 
+      language="en" theme="light" view="product" category="SPORTS_GOODS">
+   </klix-pay-later>
+   ...
+</body>
+```
+
 ![Klix Pay Later widget in product page](images/klix_pay_later_monthly_payment_widget_on_product_page.png "Klix Pay Later widget in product page")
 
 !!! Note "We strongly recommend to place Klix Pay Later monthly payment widget both on product, shopping cart and checkout page so that customer can preview monthly payment also if multiple different products are added to the shopping cart."
