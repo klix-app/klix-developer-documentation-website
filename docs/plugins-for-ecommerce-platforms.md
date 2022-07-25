@@ -196,8 +196,8 @@ Installation instructions:
 
 Installation instructions:
 
-1. Add an **Klix payments app** from [Shopify app store](https://apps.shopify.com/klix-payments).
-2. After install Shopify will redirect to our Business Portal page.
+1. Add a **Klix payments app** from [Shopify app store](https://apps.shopify.com/klix-payments).
+2. After an install Shopify will redirect to our Business Portal page.
 <!-- markdownlint-disable MD033 -->
 <div>
     <img src="../images/ecommerce-platforms/shopify/business-portal.png" style="display:block;margin-left:auto;margin-right:auto;width:70%;margin-top:5px;margin-bottom:10px;" alt="Klix payment provider installation confirmation screen" title="Confirm Klix payment provider installation" />
@@ -209,13 +209,13 @@ Installation instructions:
     <img src="../images/ecommerce-platforms/shopify/create-merchant-business-portal.png" style="display:block;margin-left:auto;margin-right:auto;width:70%;margin-top:5px;margin-bottom:10px;" alt="Klix payment provider installation confirmation screen" title="Confirm Klix payment provider installation" />
 </div>
 <!-- markdownlint-disable MD033 -->
-4. Business Portal will redirect back to Shopify settings. In settings view click on **Activate Klix payments**.
+4. Business Portal will redirect back to Shopify settings to settings view. In settings click on **Activate Klix payments**.
 <!-- markdownlint-disable MD033 -->
 <div>
     <img src="../images/ecommerce-platforms/shopify/activate-klix-payments.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;margin-top:5px;margin-bottom:10px;" alt="Payments section on settings screen" title="Open payments settings" />
 </div>
 <!-- markdownlint-disable MD033 -->
-5. Go to your Shopify store checkout page and check that Klix payment method is available.
+5. Go to your Shopify store checkout page and check that Klix payment method is available. For test purposes please click on **Enable test mode** and then on **Save**.
 
 ### WooCommerce
 
