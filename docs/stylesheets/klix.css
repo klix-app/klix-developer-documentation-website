@@ -1,7 +1,7 @@
 .md-footer-copyright {
     font-size: .4rem;
 }
-img[src$='#instruction-image']{
+li img,img[src$='#instruction-image']{
     display:block;
     margin-left:auto;
     margin-right:auto;
