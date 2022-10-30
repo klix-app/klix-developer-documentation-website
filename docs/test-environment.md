@@ -8,7 +8,7 @@ In order to perform integration testing in recurring payment, reservation scenar
 |-----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
 | <sub><sup>702314b8-dd86-41fa-9a22-510fdd71fa92</sup></sub>| <sub><sup>IB-bzOdJLgJjbsaA34Qpxkg1TTIrW-iDuni6JuzbP--KgtsREHzvIvLLTH8E5T0CZcSbYM3qNmfeogpWW_RZaA== </sup></sub>|
 
-Note that this test account has access only yo Klix card payment method on test environment and specific test cards should be used for testing:
+Note that this test account has access only to Klix card payment method on test environment and specific test cards should be used for testing:
 
 | Issuer     | PAN                 | CVV | Expiry date | 3D secure password |
 |------------|---------------------|-----|-------------|--------------------|
