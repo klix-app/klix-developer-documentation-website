@@ -372,8 +372,14 @@ For Shopify integration:
 Previously mentioned widget code example will result in the following widget.
 
 <!-- markdownlint-disable MD033 -->
-<klix-pay-later amount="67900" brand_id="55b7d52b-020e-4143-bc69-3292b5002cf2" language="en" theme="light" view="product" category="SPORTS_GOODS" class="hydrated">
+<div>
+<div style="padding-bottom:10px">
+<klix-pay-later amount="67900" brand_id="55b7d52b-020e-4143-bc69-3292b5002cf2" language="lv" theme="light" view="product" category="SPORTS_GOODS" class="hydrated">
 </klix-pay-later>
+</div>
+<klix-pay-later amount="67900" brand_id="3709bfbf-9210-40cd-b6bc-dfc46a20c12e" language="lt" theme="light" view="cart" category="SPORTS_GOODS" class="hydrated">
+</klix-pay-later>
+</div>
 <!-- markdownlint-disable MD033 -->
 
 Widget parameters are described in the following table.
@@ -382,7 +388,7 @@ Widget parameters are described in the following table.
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------|----------|
 | `amount`       | Product price in cents (if widget is shown in product view)/shopping cart item total amount in cents (if widget is shown in shopping cart/checkout view)  | false    |
 | `brand_id`     | Brand ID assigned to your company after Klix agreement signing                                                                          | false    |
-| `language`     | Current language of the page where widget is shown (supported languages: "ee", "en", "lt", "lv", "ru")                                  | false    |
+| `language`     | Widget language ( Latvia "en", "lv", "ru", Lithuania: "lt")                                  | false    |
 | `theme`        | Currenly only "light" theme is supported                                                                                                | true     |
 | `view`         | Widget placement in site. Following placements are supported: "product", "cart", "checkout".                                            | true     |
 | `category`     | Product category. Should be specified only in case merchant sells different type of goods. Possible values: TV_HOME_APPLIANCES, CLOTHES_SHOES_ACCESSORIES, ELECTRONICS, COMPUTER_EQUIPMENT, FURNITURE, SPORTING_GOODS, GARDEN_GOODS, COSMETICS, CHILDREN_GOODS, CAR_GOODS, MOTO_GOODS, FOR_HOME_AND_REPAIR, ZOO_GOODS, GROCERIES_AND_ALCOHOL, BOOKS, MEDICAL_GOODS, GIFT_CARDS, DELIVERY, OTHER                                                                                                                       | true     |
