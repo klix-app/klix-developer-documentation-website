@@ -8,14 +8,14 @@ As a merchant using Klix, we kindly require you to follow our representation gui
 
 To save your valuable time, we've made everything ready and easy to use.
 
-## Klix visibility
+## Klix logo on your webpage 
 
-Klix has to be represented equally to any other payment method on your website. Here is a checklist to make sure you didn't miss anything:
+Klix has to be represented equally to any other payment method on your website. Here is an explanation of how to make sure you used Klix logo on your webpage currently: 
 
-| Placement     | Assets                 | How to use |
+| Where to use     | Logo                 | How to use |
 |---------------|------------------------|------------|
-| Webpage footer      | [Download here](https://drive.google.com/uc?export=download&id=1FOwdcUqq2OLRkTXyO-G8dj-CfVa1hgcP) | If you represent other payment methods in footer, add Klix logo. |  |
-| Payment method section | [Download here](https://drive.google.com/uc?export=download&id=1FOwdcUqq2OLRkTXyO-G8dj-CfVa1hgcP)  | If you have payment method section, or you have payment methods mentioned in delivery section, add Klix logo. |
+| Webpage footer and/or Payment method section      | [Download here](https://drive.google.com/uc?export=download&id=1npJdK2Yh3sctaE_YBdPJSWU8FgMMgIv2) | If you represent other payment methods in footer, add Klix logo. If you have payment method section, or you have payment methods mentioned in delivery section, add Klix logo.  | 
+
 
 ## Klix landing page
 

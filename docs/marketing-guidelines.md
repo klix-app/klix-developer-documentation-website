@@ -16,15 +16,32 @@ Make sure you follow simple rules, like in examples bellow. Always use Klix lock
 
 ![Lock-ups](images/marketing/soc_badge.png "Lock-ups")
 
-## Klix visuals for communication
 
-Just like any other good news, share info about Klix to your audience on your website, newsletters and social media. We've prepared everything for you, feel free to use it.
+## Klix marketing materials 
 
-| Placement     | Assets                 | How to use |
-|---------------|------------------------|------------|
-| 1. Main page banner | [Download here](https://drive.google.com/uc?export=download&id=1q4FLKs-o2XESEPi1GBh-T_MELoMbd9dO)  | Make sure users get information about what Klix offers right away. Keep informative Klix banner on main page banner rotation. You can change and use several of options. |
-| 2. Social media announcement | [Download here](https://drive.google.com/uc?export=download&id=1SkAI2AV9eN7kUQ_wSMx2gILC3L89c4Hn)  | You are now part of Klix. Celebrate a little! Announce the good news to your followers. Choose banner from options and add prepared text. |
-| 3. Video instructions | *Coming soon*  | To make sure your users understand how to use Klix, we've prepared short video instructions. Post them on your social media. You can also post it as linked-in post from Klix.app [YouTube channel](https://www.youtube.com/channel/UCZ8P6K6_0UmrsXvGVlSyiPg) |
+Just like any other good news, share info about Klix to your audience on your website, newsletters and social media. We've prepared everything for you, feel free to use it. 
+
+** Materials in LV, RUS and ENG languages for LATVIAN market. **
+
+| Where to use | Visuals | How to use |
+|-----|------|-----|
+| 1. Main page banner on your website if you have “Klix Pay Later bezprocentu nomaksa” product. <br/><font size="1"> *If you are not sure which Klix Pay Later product you have, contact your Klix account manager to specify. | [Download here](https://drive.google.com/uc?export=download&id=1eSLoKCmzMptly1iGp-AVWkgVHE-hGIUK) | Make sure users get information about what Klix offers right away. Keep informative Klix banner on main page banner rotation. You can change and use several of options. Make sure to link banner to informative Klix landing page, so your users can read more, if they have questions. If you have to adjust size, in this folder, there is photoshop file which you can edit. |
+| 2. Main page banner on your website if you have “Klix Pay Later bez ikmēneša %” product. <br/><font size="1"> *If you are not sure which Klix Pay Later product you have, contact your Klix account manager to specify. | [Download here](https://drive.google.com/uc?export=download&id=1-Kw9u0m_8goE4ZuKZNePTeg4qbLO3isf) | Make sure users get information about what Klix offers right away. Keep informative Klix banner on main page banner rotation. You can change and use several of options. Make sure to link banner to informative Klix landing page, so your users can read more, if they have questions. If you have to adjust size, in this folder, there is photoshop file which you can edit. |
+|3. Social media banners about Klix Pay  | [Download here](https://drive.google.com/uc?export=download&id=1rJAackncQQffi1GGfcaf-6ZsLF9lIsjg) | You are now part of Klix. Celebrate a little! Announce the good news to your followers. Explain how to and why to use Klix payments to your users through visuals.  |
+|4. Social media banners if you have “Klix Pay Later bezprocentu nomaksa” product <br> <font size="1"> *If you are not sure which Klix Pay Later product you have, contact your Klix account manager to specify. | [Donwload here](https://drive.google.com/uc?export=download&id=1xl1lJOOdF2M25Hmv2_BWhp-wb0UHJ-Zl) | You are now part of Klix. Celebrate a little! Announce the good news to your followers. Explain how to and why to use Klix Pay Later to your users through visuals. |
+|5. Social media banners if you have “Klix Pay Later bez ikmēneša %” product <br><font size="1">*If you are not sure which Klix Pay Later product you have, contact your Klix account manager to specify. | [Download here](https://drive.google.com/uc?export=download&id=1SX-TBj3IrOtHuBborcJjSd5WkvOUQAVA) | To make sure your users understand how to use Klix Pay Later, we will soon prepare short video instruction. |
+|6. Klix Pay Later video instruction | Coming soon | To make sure your users understand how to use Klix Pay Later, we will soon prepare short video instruction. |
+
+** Materials in LT, RUS and ENG languages for LITHUANIAN market. **
+
+| Where to use | Visuals | How to use |
+|-----|------|-----|
+| 1. Main page banner on your website if you have Klix Pay Later product   | [Download here](https://drive.google.com/uc?export=download&id=1yXVCV-8_EgEPLG7sdUQmavlVjBn1QYY9) | Make sure users get information about what Klix offers right away. Keep informative Klix banner on main page banner rotation. You can change and use several of options. Make sure to link banner to [informative Klix landing page](/representation-guidelines/#klix-landing-page), so your users can read more, if they have questions. If you have to adjust size, in this folder, there is photoshop file which you can edit. |
+|2. Social media banners about Klix Pay | [Download here](https://drive.google.com/uc?export=download&id=1w6VUZeACynEkdzIvVI-AQlgIRhMVmCBV) | You are now part of Klix. Celebrate a little! Announce the good news to your followers. Explain how to and why to use Klix payments to your users through visuals. |
+|3. Social media banners about Klix Pay Later  | [Download here](https://drive.google.com/uc?export=download&id=13TTPye8-lL_w7omZmw8lKujwgcM2yQ6r) | You are now part of Klix. Celebrate a little! Announce the good news to your followers. Explain how to and why to use Klix Pay Later to your users through visuals. |
+|4. Klix Pay Later video instruction | Coming soon | To make sure your users understand how to use Klix Pay Later, we will soon prepare short video instruction. |
+
+
 
 ## Legal restrictions
 
