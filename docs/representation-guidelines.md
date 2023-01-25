@@ -10,7 +10,7 @@ To save your valuable time, we've made everything ready and easy to use.
 
 ## Klix logo on your webpage 
 
-Klix has to be represented equally to any other payment method on your website. Here is an explanation of how to make sure you used Klix logo on your webpage currently: 
+Klix has to be represented equally to any other payment method on your website. Here is an explanation of how to make sure you used Klix logo on your webpage correctly: 
 
 | Where to use     | Logo                 | How to use |
 |---------------|------------------------|------------|
