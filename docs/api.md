@@ -374,7 +374,7 @@ Previously mentioned widget code example will result in the following widget.
 <!-- markdownlint-disable MD033 -->
 <div>
 <div style="padding-bottom:10px">
-<klix-pay-later amount="67900" brand_id="55b7d52b-020e-4143-bc69-3292b5002cf2" language="lv" theme="light" view="product" category="SPORTS_GOODS" class="hydrated">
+<klix-pay-later amount="67900" brand_id="afe15e54-d9cb-4c2a-ab04-10ff9e9625be" language="en" theme="light" view="product" category="SPORTS_GOODS" class="hydrated">
 </klix-pay-later>
 </div>
 <klix-pay-later amount="67900" brand_id="3709bfbf-9210-40cd-b6bc-dfc46a20c12e" language="lt" theme="light" view="cart" category="SPORTS_GOODS" class="hydrated">
