@@ -8,9 +8,9 @@ Please read through these guidelines, as they contain various materials and are 
 
 We encourage you to use Klix lock-ups on your banners. This way your audience will know that they can pay without a hassle in your shop. 
 
-Only ever use Klix approved lock-ups  ([download here](https://drive.google.com/uc?export=download&id=1HP4jWwJI1paHzRX5HK5cq2aQHIpq684n)). Choose one or several options, whichever suits your communication best. There are generic lock-ups as well as product descriptive lock-ups. Here is a table for better understanding. 
+Only ever use Klix approved lock-ups  ([download here](https://drive.google.com/uc?export=download&id=1oX-TPLFeYtLOXGgSQQQH8_wTir91t0_g)). Choose one or several options, whichever suits your communication best. There are generic lock-ups as well as product descriptive lock-ups. Here is a table for better understanding. 
 
-![Lock-ups](images/marketing/lockups.png "Lock-ups")
+![Lock-ups](images/marketing/Badge_lockup.jpg "Lock-ups")
 
 Make sure you follow simple rules, like in examples bellow. Always use Klix lock-up with clear space around. In horizontal banners the height of Klix lockup should be defined in certain proportion like 1/2, 1/3, 1/4 etc.The minimum height should not be less then 50px.
 

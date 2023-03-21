@@ -23,7 +23,7 @@ Create easy to find landing page about Klix where you shoppers will answer their
 
 | Versions     | Banners & text                 | How to use |
 |--------------|--------------------------------|------------|
-| Landing page text & visuals      | [Download here](https://klixecom.blob.core.windows.net/dev-portal-assets/Klix landing page.zip) | Use text from word files in languages you need. Make sure to follow instructions in word file comments to only leave payment information relevant to your shop. Use helpful instruction picture as in word file example. If adjustments are needed, use editable PSD banner files. |
+| Landing page text & visuals      | [Download here](https://drive.google.com/uc?export=download&id=1N3lgT5s7R4vokEZQ0L_JGLgnwYkQDN6M) | Use text from word files in languages you need. Make sure to follow instructions in word file comments to only leave payment information relevant to your shop. Use helpful instruction picture as in word file example. If adjustments are needed, use editable PSD banner files. |
 
 
 Landing page texts and banners can only be changed after written agreement in email with Klix marketing team.
