@@ -1,4 +1,4 @@
-# Plugins for eCommerce plartforms
+# Plugins for eCommerce platforms
 
 Klix provides plugins for most popular eCommerce platforms so that Klix can be integrated as simple as other plugins you might be already using in your shop. Integration using eCommerce platform plugin consists of a plugin installation and configuration. Plugin installation instructions differs between eCommerce platforms but configuration usually consists of two steps:
 
