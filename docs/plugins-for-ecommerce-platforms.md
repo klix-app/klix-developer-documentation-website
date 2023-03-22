@@ -7,7 +7,7 @@ Klix provides plugins for most popular eCommerce platforms so that Klix can be i
 
 If you have already signed Klix merchant agreement and have received production environment API keys then those should be used in these instructions. Otherwise there's an option to use [test-environment](/../test-environment) credentials to preview Klix payment gateway solution functionality.
 
-## eCommerce plartforms
+## eCommerce platforms
 
 ### Magento
 

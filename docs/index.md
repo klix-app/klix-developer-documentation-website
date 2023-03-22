@@ -6,4 +6,4 @@ This documentation describes [Klix](https://klix.app) payment gateway/checkout s
 * Klix integration with custom built site using our [Libraries](/../libraries).
 * Klix integration with any other platform or custom built site using our [API](/../api).
 
-In order to become Klix merchant fill in [application form](https://www.citadele.lv/lv/business/e-commerce/apply/) and you will be contacted by our sales team. There's also option to test Klix card payments using our [test environment](/../test-environment).
+In order to become Klix merchant fill in [application form](https://klix.app/en/contact/) and you will be contacted by our sales team. There's also option to test Klix card payments using our [test environment](/../test-environment).
