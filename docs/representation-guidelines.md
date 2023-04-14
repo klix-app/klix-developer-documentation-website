@@ -1,6 +1,7 @@
 # Representation guidelines
+<font size="2">Last updated 14.04.2023 
 
-As a merchant using Klix, we kindly require you to follow our representation guidelines. Please read through these guidelines, as they contain basic information & materials to ensure few, but important requirments on your e-commerce store:
+<font size="5">As a merchant using Klix, we kindly require you to follow our representation guidelines. Please read through these guidelines, as they contain basic information & materials to ensure few, but important requirments on your e-commerce store:
 
 - Klix logo appearance
 - Informative landing page about Klix
