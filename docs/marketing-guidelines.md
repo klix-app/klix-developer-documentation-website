@@ -1,7 +1,7 @@
 # Advertising guidelines
 <font size="2">Last updated 14.04.2023 
 
-<font size="5">
+<font size="4">
 Here are little tips & tricks to make sure you get best out of Klix. Klix has exponentially growing user amount month-over-month, becoming one of the most important payment methods in Baltics. Make sure you grasp this audience by showing them something they love about shopping - Klix!
 
 Please read through these guidelines, as they contain various materials and are intended to help you stay compliant while representing Klix brand.
