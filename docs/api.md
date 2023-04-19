@@ -5,10 +5,10 @@ In order to call Klix API you should first receive API credentials (Brand ID and
 
 ## API usage in single payment scenario
 
-### Single payment step by step guide
+### Single payment step-by-step guide
 
 1. Get list of payment methods (optional). This API end-point returns name and logo of each payment method available to merchant (Klix Card payments, Citadele and other bank PSD2 payments etc.). Use this list to render a payment methods page on your site.
-2. Create a purchase by submitting order data to Klix. Once purchase is created link to Klix hosted payment page will be returned as `checkout_url` field value. After customer is redirected to this page Klix will handle a payment process.
+2. Create a purchase by submitting order data to Klix. Once purchase is created link to Klix hosted payment page will be returned as `checkout_url` field value. After customer is redirected to this page Klix will handle the payment process.
 3. Handle one of possible payment process outcomes:
     * If customer payment is successful then callback is sent to merchant server and customer is redirected to successful purchase page specified by merchant. Note that you should consider purchase as successfully paid only after callback is received and purchase status is checked. Note that in case if callback is not used you can call Klix API to get purchase status once customer is redirected back to successful purchase page.
     * If customer payment fails for some reason customer is redirected to failed purchase page.
@@ -134,13 +134,13 @@ curl -X GET \
 
 ## API usage in recurring payment scenario
 
-### Recurring payment step by step guide
+### Recurring payment step-by-step guide
 
-1. Create an initial purchase with recurring flag set to `true` (see `"force_recurring": true` in [example](#create-an-initial-purchase-to-register-card-for-subsequent-recurring-payments)) in order to register payment card details for subsequent use in recurring payments. Created purchase `id` and `checkout_url` will be returned in response. Redirect customer to `checkout_url` and Klix will handle a payment process. Store this initial purchase `id` on your side as a recurring payment token and use it later on to charge a customer payment card (see `<Recurring payment token>` placeholder in [example](#charge-customer-card-as-a-recurring-payment)). If purchase created in previous step is paid by customer then card details are successfully captured for subsequent use.
+1. Create an initial purchase with recurring flag set to `true` (see `"force_recurring": true` in [example](#create-an-initial-purchase-to-register-card-for-subsequent-recurring-payments)) in order to register payment card details for subsequent use in recurring payments. Created purchase `id` and `checkout_url` will be returned in a response. Redirect customer to `checkout_url` and Klix will handle the payment process. Store this initial purchase `id` on your side as a recurring payment token and use it later on to charge a customer payment card (see `<Recurring payment token>` placeholder in [example](#charge-customer-card-as-a-recurring-payment)). If purchase created in previous step is paid by customer then card details are successfully captured for subsequent use.
 2. Once customer card should be charged in a form of a recurring payment new purchase should be created via API by specifying amount that needs to be charged and transaction description. This time `force_recurring` should be `false` or can be omitted at all (see [example](#create-recurring-payment)). In this case only purchase `id` returned in response should be used in next step (see `<Purchase id of recurring payment>` placeholder in [example](#charge-customer-card-as-a-recurring-payment)). Note that `checkout_url` should not be used.
 3. Created purchase should be charged via API call. Note that both newly created purchase `id` created in step 2 and recurring payment token (purchase `id`) created in step 1 should be passed to this API end-point (see [example](#charge-customer-card-as-a-recurring-payment)).
 
-### Request examples
+### Recurring payment request examples
 
 These are simple request examples that illustrate Klix API usage. Always use [API Reference](https://portal.klix.app/api) as a single source of truth.
 Note that `<Brand ID goes here>` and `<Secret key goes here>` should be replaced with actual `Brand ID` and `Secret Key` received from Klix contact person.
@@ -237,15 +237,15 @@ curl -X POST \
 
 ## API usage in reservation scenario (payment execution separated from authorization)
 
-### Reservation step by step guide
+### Reservation step-by-step guide
 
 1. Create a purchase by submitting order data and additional `skip_capture` flag to Klix indicating card payment authorization separation from payment execution. Once purchase is created link to Klix hosted payment page will be returned as `checkout_url` field value. Payment identifier returned in purchase creation response should be stored for later use in capture or release requests. After customer is redirected to this page Klix will capture customer card details and will reserve the funds equal to purchase total amount.
-2. There are several options how to proceed with reservation:
-    * Charge reserved amount. There's an option to either charge full reserved amount or amount that's smaller than initially reserved amount.
+2. There are two options how to proceed with reservation:
+    * Capture reserved amount. There's an option to capture either full reserved amount or amount that's smaller than initially reserved amount.
     * Release (return to customer) reserved amount.
 
 !!! Warning "Automatic release of reserved amount"
-    Reservations are released automatically after 6 days if charge request is not received within this period.
+    Reservations are released automatically after 6 days if capture request is not received within this period.
 
 ### Reservation functionality request examples
 
@@ -254,7 +254,7 @@ Note that `<Brand ID goes here>` and `<Secret key goes here>` should be replaced
 
 #### Create a reservation purchase
 
-This option allows to create a purchase that will reserve purchase total amount in case of card payment. Store purchase `id` returned in response to either change or release funds reserved by this purchase. Redirect customer to `checkout_url` returned in purchase creation response to allow customer to enter card details. Note that in case of successful reservation purchase status will be changed to "hold" instead of "paid" as in case of regular card payment.
+This option allows to create a purchase that will reserve purchase total amount in case of card payment. Store purchase `id` returned in response to either capture or release funds reserved by this purchase. Redirect customer to `checkout_url` returned in purchase creation response to allow customer to enter card details. Note that in case of successful reservation purchase status will be changed to "hold" instead of "paid" as in case of regular card payment.
 
 ```sh
 curl -X POST \
@@ -295,9 +295,9 @@ curl -X POST \
 }'
 ```
 
-#### Charge funds reserved by previously created purchase
+#### Capture funds reserved by previously created purchase
 
-To change full amount previously reserved by specified purchase no request body should be sent. `<Purchase ID>` is purchase identifier (field `id` value) received in purchase creation response.
+To capture full amount previously reserved by specified purchase no request body should be sent. `<Purchase ID>` is purchase identifier (field `id` value) received in purchase creation response.
 
 ```sh
 curl --location --request POST 'https://portal.klix.app/api/v1/purchases/<Purchase ID>/capture/' \
@@ -305,9 +305,9 @@ curl --location --request POST 'https://portal.klix.app/api/v1/purchases/<Purcha
 --header 'Authorization: Bearer <Secret key goes here>'
 ```
 
-#### Charge partial funds reserved by previously created purchase
+#### Capture partial funds reserved by previously created purchase
 
-To change amount that's smaller than previously reserved amount this new amount should be specified in request. `<Purchase ID>` is purchase identifier (field `id` value) received in purchase creation response.
+To capture amount that's smaller than previously reserved amount this new amount should be specified in request. `<Purchase ID>` is purchase identifier (field `id` value) received in purchase creation response.
 
 ```sh
 curl --location --request POST 'https://portal.klix.app/api/v1/purchases/<Purchase ID>/capture/' \
@@ -328,6 +328,96 @@ curl --location --request POST 'https://portal.klix.app/api/v1/purchases/<Purcha
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <Secret key goes here>'
 ```
+
+## API usage in recurring payment & reservation scenario
+
+Recurring payment & reservation scenario combines recurring payment and reservation scenarios - after customer performs initial card registration for recurring payments merchant can use this card for reserving initial amount and then either charging exact amount that's not greater than initially reserved amount or releasing reservation.
+
+### Recurring payment & reservation step-by-step guide
+
+1. Create an initial purchase with recurring flag set to `true` (see `"force_recurring": true` in [example](#create-an-initial-purchase-to-register-card-for-subsequent-recurring-payments)) in order to register payment card details for subsequent use in recurring payments. Created purchase `id` and `checkout_url` will be returned in a response. Redirect customer to `checkout_url` and Klix will handle the payment process. Store this initial purchase `id` on your side as a recurring payment token and use it later on to reserve initial amount (see `<Recurring payment token>` placeholder in [example](#reserve-recurring-payment-initial-amount)). If purchase created in this step is paid by customer then card details are successfully captured for subsequent use.
+2. Create a new purchase once recurring purchase amount should be reserved. Additional `skip_capture` flag (see [example request](#create-recurring-payment-for-reservation)) should be added in request indicating card payment authorization separation from payment execution. Once purchase is created payment identifier returned in response should be stored for later use in a charge request. In this case only purchase `id` returned in response should be used in next step (see `<Purchase id of recurring payment>` placeholder in [example](#reserve-recurring-payment-initial-amount)). Note that `checkout_url` should not be used.
+3. Make charge API call to perform actual reservation of recurring payment initial amount. Note that both newly created purchase `id` created in step 2 and recurring payment token (purchase `id`) created in step 1 should be passed to this API end-point (see [example](#reserve-recurring-payment-initial-amount)).
+4. There are two options how to proceed with recurring payment reservation:
+    * Capture reserved amount. There's an option to capture either full reserved amount or amount that's smaller than initially reserved amount.
+    * Release (return to customer) reserved amount.
+
+### Recurring payment & reservation request examples
+
+These are simple request examples that illustrate Klix API usage. Always use [API Reference](https://portal.klix.app/api) as a single source of truth.
+Note that `<Brand ID goes here>` and `<Secret key goes here>` should be replaced with actual `Brand ID` and `Secret Key` received from Klix contact person.
+
+#### [Create an initial purchase to register card for subsequent recurring payments](#create-an-initial-purchase-to-register-card-for-subsequent-recurring-payments)
+
+Create an initial purchase for card registration in a same way it's done in a regular recurring payment scenario.
+
+#### Create recurring payment for reservation
+
+This should be done for each recurring transaction (e.g. to reserve some predefined amount before electric car charge is started). 
+
+```sh
+curl -X POST \
+  https://portal.klix.app/api/v1/purchases/ \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer <Secret key goes here>' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -H 'Content-Type: application/json' \
+  -H 'Host: portal.klix.app' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'cache-control: no-cache' \
+  -d '{
+   "success_callback": "https://your.site/api/successfully-paid-callback-will-be-sent-to-this-end-point",
+   "purchase": {
+      "language": "lv",
+      "products": [
+         {
+            "price": 5000,
+            "name": "Electric car charge"
+         }
+      ]
+   },
+   "client": {
+      "email": "test@test.com"
+   },
+   "skip_capture": "true",
+   "brand_id": "<Brand ID goes here>",
+   "reference": "Your order id"
+}'
+```
+
+#### Reserve recurring payment initial amount
+
+Note that in case of successful reservation recurring purchase status will be changed to "hold" instead of "paid" as in case of regular card payment.
+
+```sh
+curl -X POST \
+  https://portal.klix.app/api/v1/purchases/<Purchase id of recurring payment>/charge \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer <Secret key goes here>' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -H 'Content-Type: application/json' \
+  -H 'Host: portal.klix.app' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'cache-control: no-cache' \
+  -d '{
+   "recurring_token": "<Recurring payment token>"
+}'
+```
+
+#### [Capture funds reserved by previously created purchase](#capture-funds-reserved-by-previously-created-purchase)
+
+Note that after successful capture recurring purchase status is changed to "paid".
+
+#### [Capture partial funds reserved by previously created purchase](#capture-partial-funds-reserved-by-previously-created-purchase)
+
+Note that after successful capture recurring purchase status is changed to "paid".
+
+#### [Release funds reserved by previously created purchase](#release-funds-reserved-by-previously-created-purchase)
+
+Note that after successful capture recurring purchase status is changed to "released".
+
 
 ## Klix Pay Later monthly payment widget
 
