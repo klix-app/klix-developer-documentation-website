@@ -459,15 +459,15 @@ For Shopify integration:
 
 !!! Note "We strongly recommend to place Klix Pay Later monthly payment widget both on product, shopping cart and checkout page so that customer can preview monthly payment also if multiple different products are added to the shopping cart."
 
-Previously mentioned widget code example will result in the following widget.
+Previously mentioned widget code example will result in the following widgets.
 
 <!-- markdownlint-disable MD033 -->
 <div>
 <div style="padding-bottom:10px">
-<klix-pay-later amount="67900" brand_id="afe15e54-d9cb-4c2a-ab04-10ff9e9625be" language="en" theme="light" view="product" category="SPORTS_GOODS" class="hydrated">
+<klix-pay-later amount="67900" brand_id="702314b8-dd86-41fa-9a22-510fdd71fa92" language="en" theme="light" view="product" category="SPORTS_GOODS" class="hydrated">
 </klix-pay-later>
 </div>
-<klix-pay-later amount="67900" brand_id="3709bfbf-9210-40cd-b6bc-dfc46a20c12e" language="lt" theme="light" view="cart" category="SPORTS_GOODS" class="hydrated">
+<klix-pay-later amount="67900" brand_id="0f69862f-4f5e-426e-8945-b0d9b0b17cc1" language="lt" theme="light" view="cart" category="SPORTS_GOODS" class="hydrated">
 </klix-pay-later>
 </div>
 <!-- markdownlint-disable MD033 -->
