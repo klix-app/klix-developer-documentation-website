@@ -9,6 +9,9 @@ theme:
     accent: 'klix-theme-accent'
   logo: 'images/logos/klix_white.png'
   favicon: 'images/logos/favicon.png'
+  features:
+    - content.code.copy
+    - navigation.footer
 google_analytics:
   - 'UA-149580135-1'
   - 'auto'
@@ -16,6 +19,13 @@ google_analytics:
 # Plugins  
 plugins:
   - search
+#  - with-pdf:
+#      cover_subtitle: Latest version of this documentation is available at developers.klix.app
+#      cover_logo: docs/images/logos/klix_logo.png
+#      back_cover: true
+#      toc_level: 3
+#      render_js: false
+#      output_path: ../document.pdf
 
  # Extensions
 markdown_extensions:
@@ -46,11 +56,11 @@ nav:
 # Social
 extra:
   social:
-    - type: 'github'
+    - icon: fontawesome/brands/github
       link: 'https://github.com/klix-app'
-    - type: 'twitter'
+    - icon: fontawesome/brands/twitter
       link: 'https://twitter.com/klixapp'
-    - type: 'linkedin'
+    - icon: fontawesome/brands/linkedin
       link: 'https://lv.linkedin.com/company/klixapp'
 
 # Style adjustments
@@ -63,6 +73,6 @@ repo_url: https://github.com/klix-app/klix-developer-documentation-website
 edit_uri: ""
 
 # Copyright
-copyright: 'Copyright &copy; 2021 Klix'
+copyright: 'Copyright &copy; 2021-2023 Klix'
 
       
