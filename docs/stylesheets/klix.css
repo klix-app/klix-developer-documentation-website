@@ -13,7 +13,7 @@ li img,img[src$='#instruction-image']{
 /* LOGO */
 .md-header img {
     width:auto;
-    height:23px
+    height:2.2rem !important;
 }
 /* Override theme colors (keep an eye on solution described here: https://github.com/squidfunk/mkdocs-material/issues/1297) */
 button[data-md-color-accent],button[data-md-color-primary] {

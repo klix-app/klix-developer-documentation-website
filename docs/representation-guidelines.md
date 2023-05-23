@@ -1,5 +1,5 @@
 # Representation guidelines
-<font size="2">Last updated 14.04.2023 
+<font size="2">Last updated 23.05.2023 
 
 <font size="4">As a merchant using Klix, we kindly require you to follow our representation guidelines. Please read through these guidelines, as they contain basic information & materials to ensure few, but important requirments on your e-commerce store:
 
@@ -15,7 +15,7 @@ Klix has to be represented equally to any other payment method on your website. 
 
 | Where to use     | Logo                 | How to use |
 |---------------|------------------------|------------|
-| Webpage footer and/or Payment method section      | [Download here](https://drive.google.com/uc?export=download&id=1npJdK2Yh3sctaE_YBdPJSWU8FgMMgIv2) | If you represent other payment methods in footer, add Klix logo. If you have payment method section, or you have payment methods mentioned in delivery section, add Klix logo.  | 
+| Webpage footer and/or Payment method section      | [Download here](https://drive.google.com/uc?export=download&id=1wZ9_jBxmFIOJBZSm7eVvmdWpi4vkNzx9) | If you represent other payment methods in footer, add Klix logo. If you have payment method section, or you have payment methods mentioned in delivery section, add Klix logo.  | 
 
 
 ## Klix landing page
