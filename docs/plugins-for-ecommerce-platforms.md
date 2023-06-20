@@ -19,7 +19,7 @@ Installation instructions:
 2. Create and navigate to a directory `app/code/` in your Magento root directory if does not exist already.
 3. Download Klix Magento plugin: `curl https://portal.klix.app/ecommerce_modules/magento-v2.0+.zip --output magento-v2.0+.zip`
 4. Extract Klix Magento plugin archive contents to `app/code/` directory so that there's `app/code/SpellPayment/Magento2Module` directory structure after that: `unzip -q magento-v2.0+.zip && rm magento-v2.0+.zip`
-5. Navigate to Magento root directory and run `php bin/magento module:enable SpellPayment_Magento2Module --clear-static-content`
+5. Navigate to Magento root directory and run `php bin/magento module:enable SpellPayment_ExpressCheckout --clear-static-content`
 6. Run `php bin/magento setup:upgrade`
 7. Run `php bin/magento setup:static-content:deploy` (note that message "Manual static content deployment is not required in "default" and "developer" modes" can be ignored).
 ![Run php bin/magento setup:static-content:deploy](../images/ecommerce-platforms/magento/1_run_commands.png#instruction-image)
