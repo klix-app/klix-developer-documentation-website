@@ -88,7 +88,12 @@ Compatible versions: 1.7+
 
 Installation instructions:
 
-1. Click on [this link](https://klixecom.blob.core.windows.net/modules/klix-prestashop.zip) to download Klix PrestaShop plugin in case your store Prestshop version is 1.7.6. or newer. If you use Prestashop version that's older than 1.7.6. then click on [this link](https://portal.klix.app/ecommerce_modules/prestashop-v1.7+.zip) (note that translations functionality will work only with Prestashop 1.7.6. and newer version).
+1. Download plugin by Prestashop version:
+    * [1.6 - 1.6.1.11](https://klixecom.blob.core.windows.net/modules/klix-prestashop1.6.zip)
+    * [1.7 - 1.7.5](https://portal.klix.app/ecommerce_modules/prestashop-v1.7+.zip) 
+    * [1.7.6 - 1.7.8.9](https://klixecom.blob.core.windows.net/modules/klix-prestashop.zip) 
+    * [8.0 or newer](https://klixecom.blob.core.windows.net/modules/klix-prestashop8.zip) 
+
 2. Log in to your PrestaShop store admin panel by specifying authentication credentials.
 ![PrestaShop admin panel login screen](../images/ecommerce-platforms/prestashop/1_login.png#instruction-image)
 
