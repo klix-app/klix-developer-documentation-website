@@ -1,5 +1,5 @@
 # Advertising guidelines
-<font size="2">Last updated 28.06.2023 
+<font size="2">Last updated 03.08.2023 
 
 <font size="4">
 Here are little tips & tricks to make sure you get best out of Klix. Klix has exponentially growing user amount month-over-month, becoming one of the most important payment methods in Baltics. Make sure you grasp this audience by showing them something they love about shopping - Klix!
@@ -8,13 +8,9 @@ Please read through these guidelines, as they contain various materials and are 
 
 ## Advertising with Klix
 
-We encourage you to use Klix lock-ups on your banners. This way your audience will know that they can pay without a hassle in your shop. 
+We encourage you to use Klix lock-ups on your banners. This way your audience will know that they can pay without a hassle in your shop.
+Please download Klix lock-ups [here](https://drive.google.com/uc?export=download&id=1AcofaDOFF6n5D4HJy4vOswtNsq4vvFu4).
 
-Only ever use Klix approved lock-ups  ([download here](https://drive.google.com/uc?export=download&id=1oX-TPLFeYtLOXGgSQQQH8_wTir91t0_g)). Choose one or several options, whichever suits your communication best. There are generic lock-ups as well as product descriptive lock-ups. Here is a table for better understanding. 
-
-![Lock-ups](images/marketing/Badge_lockup.jpg "Lock-ups")
-
-Make sure you follow simple rules, like in examples bellow. Always use Klix lock-up with clear space around. In horizontal banners the height of Klix lockup should be defined in certain proportion like 1/2, 1/3, 1/4 etc.The minimum height should not be less then 50px.
 
 ![Lock-ups](images/marketing/soc_badge.png "Lock-ups")
 

@@ -1,5 +1,5 @@
 # Representation guidelines
-<font size="2">Last updated 23.05.2023 
+<font size="2">Last updated 03.08.2023 
 
 <font size="4">As a merchant using Klix, we kindly require you to follow our representation guidelines. Please read through these guidelines, as they contain basic information & materials to ensure few, but important requirments on your e-commerce store:
 
@@ -39,7 +39,7 @@ You should follow one of three guidelines below, depending on how you display pa
 
 ### With visual buttons
 
-Please download checkout button assets [here](https://drive.google.com/uc?export=download&id=1BhD914tZmltlIMejeecsgSzaoGc6R8JG).
+Please download checkout button assets [here](https://drive.google.com/uc?export=download&id=1r6xbog--xAhC1BFRBD7ZFzIZBbKSpu0m).
 
 This is what text next to visual checkout button should say in each language:
 
