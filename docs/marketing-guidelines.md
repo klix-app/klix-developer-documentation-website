@@ -12,7 +12,7 @@ We encourage you to use Klix lock-ups on your banners. This way your audience wi
 Please download Klix lock-ups [here](https://drive.google.com/uc?export=download&id=1AcofaDOFF6n5D4HJy4vOswtNsq4vvFu4).
 
 
-![Lock-ups](images/marketing/soc_badge.png "Lock-ups")
+![Lock-ups](images/marketing/lockup_badge_example.jpg "Lock-ups")
 
 
 ## Klix marketing materials 
