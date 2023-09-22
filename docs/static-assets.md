@@ -29,11 +29,28 @@ Use assets for your Klix express checkout buttons available in EN, LT, LV, RU.
 
 2.2. Use assets for <b>Klix Pay Later</b> button
 
-<!-- markdownlint-disable MD033 -->
+
 <div>
     <div style="width:49%; display:inline-block;">
         <img src="../images/logos/pay-later/icon-klix_pay_later.svg" alt="klix pay later logo svg" width="45%" />
         <a href="../images/logos/pay-later/icon-klix_pay_later.svg" style="display:block;font-size: 14px">Download SVG</a>
         <a href="../images/logos/pay-later/icon-klix_pay_later.png" style="display:block;font-size: 14px">Download PNG</a>
+    </div>
+</div>
+
+<b>Pay Later</b> logo for <b>Latvian</b> market
+<div>
+    <div style="width:49%; display:inline-block;">
+        <img src="../images/logos/pay-later/logo_LV.svg" alt="klix pay later logo svg" width="45%" />
+        <a href="../images/logos/pay-later/logo_LV.svg" style="display:block;font-size: 14px">Download SVG</a>
+        <a href="../images/logos/pay-later/logo_LV.png" style="display:block;font-size: 14px">Download PNG</a>
+    </div>
+</div>
+<b>Pay Later</b> logo for <b>Lithuanian</b> market
+<div>
+    <div style="width:49%; display:inline-block;">
+        <img src="../images/logos/pay-later/logo_LT.svg" alt="klix pay later logo svg" width="45%" />
+        <a href="../images/logos/pay-later/logo_LT.svg" style="display:block;font-size: 14px">Download SVG</a>
+        <a href="../images/logos/pay-later/logo_LT.png" style="display:block;font-size: 14px">Download PNG</a>
     </div>
 </div>
