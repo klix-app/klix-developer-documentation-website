@@ -42,11 +42,13 @@ Installation instructions:
 
 ### OpenCart
 
-Compatible versions: 3.0+
+Compatible versions: 3.0-4+
 
 Installation instructions:
 
-1. Click on [this link](https://klixecom.blob.core.windows.net/modules/opencart-v3.0+.ocmod.zip) to download Klix OpenCart extension.
+1. Download plugin by Opencart version:
+    * [3.0+](https://klixecom.blob.core.windows.net/modules/opencart-v3.0+.ocmod.zip)
+    * [4.0+](https://klixecom.blob.core.windows.net/modules/klix.ocmod.zip) 
 2. Log in to your OpenCart store admin panel by specifying authentication credentials.
 ![Opencart login page](../images/ecommerce-platforms/opencart/1_login.png#instruction-image)
 
@@ -136,8 +138,10 @@ Installation instructions:
     ![After successful login click on Create in Business Portal.](../images/ecommerce-platforms/shopify/create-merchant-business-portal.png#instruction-image)
 4. Business Portal will redirect back to Shopify settings to settings view. In settings click on **Activate Klix payments**.
     ![Business Portal will redirect back to Shopify settings to settings view.](../images/ecommerce-platforms/shopify/activate-klix-payments.png#instruction-image)
-
-5. Go to your Shopify store checkout page and check that Klix payment method is available. For test purposes please click on **Enable test mode**.
+5. Switch **Payment capture method** to manual.
+![Switch Payment capture method to manual](../images/ecommerce-platforms/shopify/payment-capture-method-1.png#instruction-image)
+![Switch Payment capture method to manual](../images/ecommerce-platforms/shopify/payment-capture-method-2.png#instruction-image)
+6. Go to your Shopify store checkout page and check that Klix payment method is available. For test purposes please enable **Enable test mode** checkbox.
 
 ### WooCommerce
 
