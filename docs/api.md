@@ -21,6 +21,8 @@ Note that `<Brand ID goes here>` and `<Secret key goes here>` should be replaced
 
 #### Get list of available payment methods
 
+!!! Warning "Do not call this API end-point before each purchase initiation since this API end-point is rate limited. Cache available payment methods on server side and call this API end-point less often than once in a minute."
+
 ```sh
 curl -X GET \
   'https://portal.klix.app/api/v1/payment_methods/?currency=EUR&brand_id=<Brand ID goes here>' \
