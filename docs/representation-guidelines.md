@@ -15,8 +15,7 @@ Klix has to be represented equally to any other payment method on your website. 
 
 | Where to use     | Logo                 | How to use |
 |---------------|------------------------|------------|
-| Webpage footer and/or Payment method section      | [Download here](https://drive.google.com/uc?export=download&id=1wZ9_jBxmFIOJBZSm7eVvmdWpi4vkNzx9) | If you represent other payment methods in footer, add Klix logo. If you have payment method section, or you have payment methods mentioned in delivery section, add Klix logo.  | 
-
+| Webpage footer and/or Payment method section      | [PNG](https://drive.google.com/uc?export=download&id=1wZ9_jBxmFIOJBZSm7eVvmdWpi4vkNzx9)/[SVG](https://drive.google.com/uc?export=download&id=1eobGP6q_eWbMA82EDE1zrSudyHh3n-Ne) | If you represent other payment methods in footer, add Klix logo. If you have payment method section, or you have payment methods mentioned in delivery section, add Klix logo.  | 
 
 ## Klix landing page
 
