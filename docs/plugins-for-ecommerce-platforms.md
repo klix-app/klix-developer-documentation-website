@@ -138,9 +138,9 @@ Installation instructions:
     ![After successful login click on Create in Business Portal.](../images/ecommerce-platforms/shopify/create-merchant-business-portal.png#instruction-image)
 4. Business Portal will redirect back to Shopify settings to settings view. In settings click on **Activate Klix payments**.
     ![Business Portal will redirect back to Shopify settings to settings view.](../images/ecommerce-platforms/shopify/activate-klix-payments.png#instruction-image)
-5. Switch **Payment capture method** to automatic.
+5. Switch **Payment capture method** to automatically at checkout.
 ![Switch Payment capture method to automatic](../images/ecommerce-platforms/shopify/payment-capture-method-1.png#instruction-image)
-![Switch Payment capture method to automatic](../images/ecommerce-platforms/shopify/automatic-capture.png#instruction-image)
+![Switch Payment capture method to automatic](../images/ecommerce-platforms/shopify/automatically-checkout.png#instruction-image)
 6. Go to your Shopify store checkout page and check that Klix payment method is available. For test purposes please enable **Enable test mode** checkbox.
 
 ### WooCommerce
