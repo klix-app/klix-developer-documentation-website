@@ -21,7 +21,35 @@ Note that `<Brand ID goes here>` and `<Secret key goes here>` should be replaced
 
 #### Get list of available payment methods
 
-!!! Warning "Do not call this API end-point before each purchase initiation since this API end-point is rate limited. Cache available payment methods on server side and call this API end-point less often than once in a minute."
+This operation allows you to retrieve all payment methods available to you at the current time. Note that payment method availability depends upon your agreement with Klix and it can also vary from time to time e.g. some bank payment method can be temporarily unavailable because of planned maintenance down-time. In such a case this bank payment method will be excluded from the available payment method list returned by this API end-point until planned maintenance is over and this payment method is re-enabled. That's one of the examples of why an available payment method list should be retrieved on a regular basis in order to offer only fully functional payment methods to the end-user.
+
+!!! Warning "Do not call this API end-point before each purchase initiation since this API end-point is rate limited. Cache available payment methods on server side and call this API end-point not more often than once in a minute."
+
+List of currently supported payment methods:
+
+| Name                 | Description              | 
+|----------------------|--------------------------|
+| klix                 | Klix card payments       |
+| citadele_ee_digilink | Citadele Bank payments   |
+| citadele_lt_digilink | Citadele Bank payments   |
+| citadele_lv_digilink | Citadele Bank payments   |
+| coop_pank_ee_pis     | Coop Pank payments       |
+| klix_apple_pay       | Apple Pay payments       |
+| klix_pay_later       | Klix Pay Later           |
+| lhv_ee_pis           | LHV payments             |
+| luminor_ee_pis       | Luminor payments         |
+| luminor_lt_pis       | Luminor payments         |
+| luminor_lv_pis       | Luminor payments         |
+| revolut_pis          | Revolut payments         |
+| seb_ee_pis           | SEB payments             |
+| seb_lt_pis           | SEB payments             |
+| seb_lv_pis           | SEB payments             |
+| siauliu_lt_pis       | Šiaulių Bankas payments  |
+| swedbank_ee_pis      | Swedbank payments        |
+| swedbank_lt_pis      | Swedbank payments        |
+| swedbank_lv_pis      | Swedbank payments        |
+
+Note that this API end-point returns both payment method general availability, availability in country and additional information like human-readable payment method name and logo URI. 
 
 ```sh
 curl -X GET \
