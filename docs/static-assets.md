@@ -46,11 +46,21 @@ Use assets for your Klix express checkout buttons available in EN, LT, LV, RU.
         <a href="../images/logos/pay-later/logo_LV.png" style="display:block;font-size: 14px">Download PNG</a>
     </div>
 </div>
+
 <b>Pay Later</b> logo for <b>Lithuanian</b> market
 <div>
     <div style="width:49%; display:inline-block;">
         <img src="../images/logos/pay-later/logo_LT.svg" alt="klix pay later logo svg" width="45%" />
         <a href="../images/logos/pay-later/logo_LT.svg" style="display:block;font-size: 14px">Download SVG</a>
         <a href="../images/logos/pay-later/logo_LT.png" style="display:block;font-size: 14px">Download PNG</a>
+    </div>
+</div>
+
+<b>Pay Later</b> logo for <b>Estonian</b> market
+<div>
+    <div style="width:49%; display:inline-block;">
+        <img src="../images/logos/pay-later/logo_EE.svg" alt="klix pay later logo svg" width="45%" />
+        <a href="../images/logos/pay-later/logo_EE.svg" style="display:block;font-size: 14px">Download SVG</a>
+        <a href="../images/logos/pay-later/logo_EE.png" style="display:block;font-size: 14px">Download PNG</a>
     </div>
 </div>
