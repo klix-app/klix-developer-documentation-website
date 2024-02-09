@@ -8,7 +8,7 @@ theme:
     primary: 'klix-theme-primary'
     accent: 'klix-theme-accent'
   logo: 'images/logos/klix-by-citadele-square.png'
-  favicon: 'images/logos/favicon.png'
+  favicon: 'images/logos/favicon.ico'
   features:
     - content.code.copy
     - navigation.footer
