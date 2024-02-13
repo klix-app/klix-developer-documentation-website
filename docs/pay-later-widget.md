@@ -109,8 +109,8 @@ In order to add Klix Pay Later monthly payment widget with adjustable down-payme
 
 ```html
 <head>
-   <!-- Klix Pay Later widget with adjustabl down-payment amount -->
-    <script src="https://klix.app/app/themes/klix/js/widget-2.js"></script>
+   <!-- Klix Pay Later widget with adjustable down-payment amount -->
+    <script src="https://klix.blob.core.windows.net/public/pay-later-calculator-widget/build/klix-widget.esm.js"></script>
 </head>
 ```
 
