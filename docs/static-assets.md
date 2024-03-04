@@ -16,18 +16,24 @@ Use assets for your Klix express checkout buttons available in EN, LT, LV, RU.
 
 ## 2. Klix assets for Klix and Klix Pay Later
 
-2.1. Use assets for <b>Klix</b> card payments button
+2.1 Use assets for <b>Klix card</b> payments button (cards only)
 
 <!-- markdownlint-disable MD033 -->
 <div>
     <div style="width:49%; display:inline-block;">
-        <img src="../images/logos/pay-by-card/logo.svg" width="45%" />
-        <a href="../images/logos/pay-by-card/logo.svg" style="display:block;font-size: 14px">Download SVG</a>
-        <a href="../images/logos/pay-by-card/logo-2x.png" style="display:block;font-size: 14px">Download PNG</a>
+        <img src="../images/logos/pay-by-card/pay-by-card.svg" width="45%" />
+        <a href="../images/logos/pay-by-card/pay-by-card.svg" style="display:block;font-size: 14px">Download SVG</a>
     </div>
 </div>
 
-2.2. Use assets for <b>Klix Pay Later</b> button
+2.2 Use assets for <b>Klix card</b> payments button (cards + Apple Pay)
+<div>
+    <div style="width:49%; display:inline-block;">
+        <img src="../images/logos/apple-pay/apple-pay.svg" width="45%" />
+        <a href="../images/logos/apple-pay/apple-pay.svg" style="display:block;font-size: 14px">Download SVG</a>
+    </div>
+</div>
+2.3. Use assets for <b>Klix Pay Later</b> button
 
 
 <div>

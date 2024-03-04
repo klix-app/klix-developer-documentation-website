@@ -71,5 +71,10 @@ If your checkout has text buttons and one button can name several payment method
 | Card & Internetbank | Maksājumu karte vai internetbanka - Klix | Payment card or online banking - Klix | Mokėjimo kortelė arba interneto bankas - Klix       | Платежная карта или интернет-банк - Klix              |
 | Card & Internetbank & Instalments | Maksājumu karte / internetbanka / nomaksa - Klix | Payment card / Online banking / installments - Klix | Mokėjimo kortelė / interneto bankas / mokėti dalimis - Klix       | Платежная карта / интернет-банк / рассрочка - Klix             |
 
+
+## Apple Pay
+If you have custom integration, please follow the representation guidelines provided by Apple [here](https://developer.apple.com/design/human-interface-guidelines/apple-pay/#Button-types).
+
+
 _________________________________
 Have questions? Contact us via [marketing@klix.app](mailto:marketing@klix.app)

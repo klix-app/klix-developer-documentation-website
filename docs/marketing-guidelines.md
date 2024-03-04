@@ -38,6 +38,9 @@ Just like any other good news, share info about Klix to your audience on your we
 |4. Klix Pay Later video instruction | [Download here](https://drive.google.com/uc?export=download&id=1GKaEG-9jABYX0LxQDWhrc9ncFohg5V-l) | To make sure your customers understand how to use Klix Pay Later, we have prepared short video instruction which you are welcomed to use in your webpage and advertising. |
 
 
+## Apple Pay marketing guidelines
+Discover the most effective ways to inform your customers about the convenience and security of utilizing Apple Pay for their online transactions. By providing clear guidance on how to leverage this payment method, you can streamline their purchasing experience, enhancing both speed and security. Read more [here](https://developer.apple.com/apple-pay/marketing/).
+
 ## Legal restrictions
 
 !!! Note "This section is only referring to Klix Pay Later communication with individuals. It does not reffer to any other Klix product or to Klix Pay Later communication for entrepreneurs."
