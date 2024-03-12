@@ -124,6 +124,16 @@ Then place Klix Pay Later monthly payment widget source code in desired place an
 </body>
 ```
 
+If you require not only down payment adjustment, but also you want amount to be adjustable, you can use same widget for this.The only difference will be in use additional param which should be set to `data-amount-slider="true"`.
+
+```html
+<body>
+   ...
+   <klix-widget id="klix-custom-widget" data-brand-id="a6cef80b-92a4-4bc2-b611-7dc597f9a999" data-loan-amount="75000" data-locale="lv" data-amount-slider="true"></klix-widget>
+   ...
+</body>
+```
+
 Here are few examples of how Klix Pay Later monthly payment widget with adjustable down-payment amount might look like in case of different financing product types:
 
 * Monthly payment widget displaying grace i.e. Klix FREE financing product information for Latvian merchant
