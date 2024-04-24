@@ -447,3 +447,100 @@ Note that after successful capture recurring purchase status is changed to "paid
 #### [Release funds reserved by previously created purchase](#release-funds-reserved-by-previously-created-purchase)
 
 Note that after successful capture recurring purchase status is changed to "released".
+
+## API usage in bulk payment scenario
+
+A bulk payment is a group of payments to multiple bank accounts (IBANs) which requires only single confirmation from customer. 
+Bulk payments are executed in "all-or-nothing" mode i.e. either each individual payment succeeds or all of them fails.
+
+Typical use case for bulk payment functionality is a product marketplaces where during a checkout customer pays to multiple merchants at once. 
+Bulk payment functionality allows to initiate and confirm these multiple payments as a single payment.
+
+Here is a list of the payment methods that currently support bulk payment functionality:
+
+* seb_ee_pis
+* seb_lt_pis
+* seb_lv_pis
+* swedbank_ee_pis
+* swedbank_lt_pis
+* swedbank_lv_pis
+
+### Bulk payment step-by-step guide
+
+1. Sign the agreement with Klix for the usage of bulk payment functionality. Submit the list of creditor IBANs for whitelisting.
+2. Initiate a bulk payment by providing multiple creditors and amounts.
+3. Handle a single successful payment callback for each bulk payment.
+
+### Bulk payment request examples
+
+These are simple request examples that illustrate Klix API usage. Always use [API Reference](https://portal.klix.app/api) as a single source of truth.
+Note that `<Brand ID goes here>` and `<Secret key goes here>` should be replaced with actual `Brand ID` and `Secret Key` received from Klix contact person.
+
+#### Create a bulk payment purchase
+
+Initiate a purchase by specifying multiple creditors and corresponding payment amounts and descriptions. In the following example Swedbank Latvia bulk payment total amount is 0.03 EUR, and it consists of two payments:
+
+* 0.02 EUR payment to John Doe's IBAN LVXXPARX0000000000001 with a payment description "Description of payment to John Doe"
+* 0.01 EUR payment to Jane Doe's IBAN LVXXHABA0000000000001 with a payment description "Description of payment to Jane Doe"
+
+```sh
+curl -X POST \
+  https://portal.klix.app/api/v1/purchases/ \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer <Secret key goes here>' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -H 'Content-Type: application/json' \
+  -H 'Host: portal.klix.app' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'cache-control: no-cache' \
+  -d '{
+    "purchase": {
+        "products": [
+            {
+                "name": "Description of payment to John Doe",
+                "price": 2
+            },
+            {
+                "name": "Description of payment to Jane Doe",
+                "price": 1
+            }
+        ],
+        "payment_method_details": {
+            "pis_bulk_purchase": [
+                {
+                    "creditor_name": "John Doe",
+                    "creditor_iban": "LVXXPARX0000000000001"
+                },
+                {
+                    "creditor_name": "Jane Doe",
+                    "creditor_iban": "LVXXHABA0000000000001"
+                }
+            ]
+        }
+    },
+    "client": {
+        "email": "test@test.com"
+    },
+    "payment_method_whitelist": ["swedbank_lv_pis"],
+    "brand_id": "<Brand ID goes here>`",
+    "reference": "Your order id"
+}'
+```
+
+After redirecting customer to Klix payment page (field `checkout_url` from init payment response) bulk payment details will be presented.
+
+![Bulk payment example](../images/api/bulk_payment_example.png)
+
+Note that all creditor IBANs should be whitelisted before bulk payment is initiated. In case at least one of the creditor IBANs is not whitelisted following error message is returned in a purchase initiation response:
+
+```json
+{
+    "__all__": [
+        {
+            "message": "Creditor's IBAN 'LVXXPARX0000000000001' is not whitelisted. Please ensure the creditor's IBAN is added to the whitelist and try again.",
+            "code": "invalid"
+        }
+    ]
+}
+```
