@@ -50,6 +50,7 @@ Widget parameters are described in the following table.
 | `theme`        | Currenly only "light" theme is supported                                                                                                | true     |
 | `view`         | Widget placement in site. Following placements are supported: "product", "cart", "checkout".                                            | true     |
 | `category`     | Product category. Should be specified only in case merchant sells different type of goods. Possible values: TV_HOME_APPLIANCES, CLOTHES_SHOES_ACCESSORIES, ELECTRONICS, COMPUTER_EQUIPMENT, FURNITURE, SPORTING_GOODS, GARDEN_GOODS, COSMETICS, CHILDREN_GOODS, CAR_GOODS, MOTO_GOODS, FOR_HOME_AND_REPAIR, ZOO_GOODS, GROCERIES_AND_ALCOHOL, BOOKS, MEDICAL_GOODS, GIFT_CARDS, DELIVERY, OTHER                                                                                                                       | true     |
+| `type` | If not provided widget size will be standard, if provided `type="micro"` then widget will be small size. | true|
 
 Klix Pay Later monthly payment widget displays monthly payment information depending on a country, financing product type assigned to your merchant configuration.
 
@@ -102,6 +103,23 @@ Here are few examples of how Klix Pay Later monthly payment widget might look li
 </klix-pay-later>
 </div>
 <!-- markdownlint-disable MD033 -->
+
+* Monthly payment widget displaying installment financing product information for Latvian merchant
+<!-- markdownlint-disable MD033 -->
+<div style="margin: auto; width: 70%">
+<klix-pay-later amount="90000" brand_id="a6cef80b-92a4-4bc2-b611-7dc597f9a000" language="en" theme="light" view="product" category="SPORTS_GOODS" type="micro" class="hydrated">
+</klix-pay-later>
+</div>
+<!-- markdownlint-disable MD033 -->
+
+* Monthly micro payment widget displaying commission financing product information for Lithuanian merchant
+<!-- markdownlint-disable MD033 -->
+<div style="margin: auto; width: 70%">
+<klix-pay-later amount="50000" brand_id="a6cef80b-92a4-4bc2-b611-7dc597f9a001" language="lt" theme="light" view="product" type="micro" category="SPORTS_GOODS" class="hydrated">
+</klix-pay-later>
+</div>
+<!-- markdownlint-disable MD033 -->
+
 
 ## Monthly payment widget with adjustable down-payment amount
 
