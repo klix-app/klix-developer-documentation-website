@@ -158,6 +158,32 @@ Here are few examples of how Klix Pay Later monthly payment widget with adjustab
 </div>
 <!-- markdownlint-disable MD033 -->
 
+## Monthly payment widget with adjustable order and down-payment amount
+
+In order to add Klix Pay Later monthly payment widget with adjustable principal and down-payment amount to your store place following script in head part of the page.
+```html
+<head>
+   <!-- Klix Pay Later widget with adjustable down-payment amount -->
+    <script type="module" src="https://klix.blob.core.windows.net/public/pay-later-calculator-widget/build/klix-widget.esm.js"></script>
+</head>
+```
+
+Then place Klix Pay Later monthly payment widget source code in desired place and pass data-brand-id, data-loan-amount, data-amount-slider and data-locale attributes.
+
+```html
+<klix-widget data-brand-id="702314b8-dd86-41fa-9a22-510fdd71fa92" data-locale="en" data-loan-amount="67800" data-amount-slider="true"></klix-widget>
+```
+
+
+| Parameter                   | Description                                                                                          | Optional   |
+|-----------------------------|------------------------------------------------------------------------------------------------------|--------|
+| `data-brand-id`                         | Brand ID assigned to your company after Klix agreement signing                                       | false |
+|`data-loan-amount` | Product price in cents  | false |
+| `data-locale`           | Representative example language. Possible values: "en", "lv", "ru", "lt", "et"                                             | false |
+| `data-amount-slider` | Paraameter should be set to `true` | false |
+
+<klix-widget data-brand-id="a6cef80b-92a4-4bc2-b611-7dc597f9a000" data-locale="en" data-loan-amount="40000" data-amount-slider="true"></klix-widget>
+
 ## Monthly payment widget with custom view
 
 This type of widget allows you to implement monthly payment widget that matches your web-page design. 
@@ -225,7 +251,7 @@ To enable monthly payment widget custom view you should set global variables `sh
 
 ## Representative example
 
-This API endpoint allows you to retrieve a representative example.
+This API endpoint allows you to retrieve a representative example. The amount should correspond to the exact product price.
 
 ```url
 https://api.klix.app/financing/v2/preliminary-offers/pl/representative-example?b=702314b8-dd86-41fa-9a22-510fdd71fa92&a=56000&d=12&l=en
@@ -245,4 +271,4 @@ Example
 | `b`                         | Brand ID assigned to your company after Klix agreement signing                                       | false |
 |`a` | Product price in cents  | false |
 | `l`           | Representative example language. Possible values: "en", "lv", "ru", "lt", "et"                                             | true |
-| `d` | The loanDuration variable is used to specify the length of time over which the loan will be repaid. | true |
+| `d` | The duration variable is used to specify the length of time over which the loan will be repaid. | true |
