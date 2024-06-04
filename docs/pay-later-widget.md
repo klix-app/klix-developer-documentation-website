@@ -222,3 +222,27 @@ To enable monthly payment widget custom view you should set global variables `sh
 | `name`                      | Name of this financing product                                                                       | string |
 | `productType`               | Type of this financing product. Possible values: `GRACE_PERIOD`, `INSTALLMENT_CREDIT`, `COMMISSION`  | string |
 | `sequence`                  | Financing product sequence                                                                           | number | 
+
+## Representative example
+
+This API endpoint allows you to retrieve a representative example.
+
+```url
+https://api.klix.app/financing/v2/preliminary-offers/pl/representative-example?b=702314b8-dd86-41fa-9a22-510fdd71fa92&a=56000&d=12&l=en
+```
+
+Example
+```json
+{
+  "representativeExample": "Representative example: Loan amount: €560, loan duration: 12 mos., monthly payment: €46.67, total loan amount: €576.8, interest rate: 0%, annual percentage rate (APR): 5.78%, commission fee: €16.8. Calculations are only informative, and each customers situation is evaluated individually. The lending service using Klix is provided by AS Citadele banka, AS Lateko Līzings, or SIA Aizdevums.lv."
+}
+```
+
+`Preliminary offers` parameters description:
+
+| Parameter                   | Description                                                                                          | Optional   |
+|-----------------------------|------------------------------------------------------------------------------------------------------|--------|
+| `b`                         | Brand ID assigned to your company after Klix agreement signing                                       | false |
+|`a` | Product price in cents  | false |
+| `l`           | Representative example language. Possible values: "en", "lv", "ru", "lt", "et"                                             | true |
+| `d` | The loanDuration variable is used to specify the length of time over which the loan will be repaid. | true |
