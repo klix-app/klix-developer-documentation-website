@@ -182,8 +182,9 @@ Then place Klix Pay Later monthly payment widget source code in desired place an
 | `data-locale`           | Representative example language. Possible values: "en", "lv", "ru", "lt", "et"                                             | false |
 | `data-amount-slider` | Paraameter should be set to `true` | false |
 
+<div style="margin: auto; width: 70%">
 <klix-widget data-brand-id="a6cef80b-92a4-4bc2-b611-7dc597f9a000" data-locale="en" data-loan-amount="40000" data-amount-slider="true"></klix-widget>
-
+</div>
 ## Monthly payment widget with custom view
 
 This type of widget allows you to implement monthly payment widget that matches your web-page design. 
