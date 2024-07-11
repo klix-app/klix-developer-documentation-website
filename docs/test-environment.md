@@ -12,8 +12,8 @@ Note that this test account has access only to Klix card payment method on test 
 
 | Issuer     | PAN                 | CVV | Expiry date | 3D secure password |
 |------------|---------------------|-----|-------------|--------------------|
-| VISA       | 4314 2200 0000 0056 | 123 | 01/28       | hint               |
-| MASTERCARD | 5413 3300 0000 0019 | 589 | 01/28       | hint               |
+| VISA       | 4505 1312 3400 0029 | 123 | 06/28       | hint               |
+| MASTERCARD | 5191 6312 3400 0024 | 583 | 06/28       | hint               |
 
 Any cardholder name can be used with these cards.
 
