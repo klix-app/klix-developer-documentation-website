@@ -27,27 +27,28 @@ This operation allows you to retrieve all payment methods available to you at th
 
 List of currently supported payment methods:
 
-| Name                 | Description              | 
-|----------------------|--------------------------|
-| klix                 | Klix card payments       |
-| citadele_ee_digilink | Citadele Bank payments   |
-| citadele_lt_digilink | Citadele Bank payments   |
-| citadele_lv_digilink | Citadele Bank payments   |
-| coop_pank_ee_pis     | Coop Pank payments       |
-| klix_apple_pay       | Apple Pay payments       |
-| klix_pay_later       | Klix Pay Later           |
-| lhv_ee_pis           | LHV payments             |
-| luminor_ee_pis       | Luminor payments         |
-| luminor_lt_pis       | Luminor payments         |
-| luminor_lv_pis       | Luminor payments         |
-| revolut_pis          | Revolut payments         |
-| seb_ee_pis           | SEB payments             |
-| seb_lt_pis           | SEB payments             |
-| seb_lv_pis           | SEB payments             |
-| siauliu_lt_pis       | Šiaulių Bankas payments  |
-| swedbank_ee_pis      | Swedbank payments        |
-| swedbank_lt_pis      | Swedbank payments        |
-| swedbank_lv_pis      | Swedbank payments        |
+| Name                 | Description             | 
+|----------------------|-------------------------|
+| klix                 | Klix card payments      |
+| citadele_ee_digilink | Citadele Bank payments  |
+| citadele_lt_digilink | Citadele Bank payments  |
+| citadele_lv_digilink | Citadele Bank payments  |
+| coop_pank_ee_pis     | Coop Pank payments      |
+| klix_apple_pay       | Apple Pay payments      |
+| klix_google_pay      | Google Pay™ payments    |
+| klix_pay_later       | Klix Pay Later          |
+| lhv_ee_pis           | LHV payments            |
+| luminor_ee_pis       | Luminor payments        |
+| luminor_lt_pis       | Luminor payments        |
+| luminor_lv_pis       | Luminor payments        |
+| revolut_pis          | Revolut payments        |
+| seb_ee_pis           | SEB payments            |
+| seb_lt_pis           | SEB payments            |
+| seb_lv_pis           | SEB payments            |
+| siauliu_lt_pis       | Šiaulių Bankas payments |
+| swedbank_ee_pis      | Swedbank payments       |
+| swedbank_lt_pis      | Swedbank payments       |
+| swedbank_lv_pis      | Swedbank payments       |
 
 Note that this API end-point returns both payment method general availability, availability in country and additional information like human-readable payment method name and logo URI. 
 
@@ -450,8 +451,7 @@ Note that after successful capture recurring purchase status is changed to "rele
 
 ## API usage in bulk payment scenario
 
-A bulk payment is a group of payments to multiple bank accounts (IBANs) which requires only single confirmation from customer. 
-Bulk payments are executed in "all-or-nothing" mode i.e. either each individual payment succeeds or all of them fails.
+A bulk payment is a group of payments to multiple bank accounts (IBANs) which requires only single confirmation from customer.
 
 Typical use case for bulk payment functionality is a product marketplaces where during a checkout customer pays to multiple merchants at once. 
 Bulk payment functionality allows to initiate and confirm these multiple payments as a single payment.
@@ -544,3 +544,4 @@ Note that all creditor IBANs should be whitelisted before bulk payment is initia
     ]
 }
 ```
+
