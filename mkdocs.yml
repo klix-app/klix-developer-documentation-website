@@ -49,6 +49,7 @@ nav:
   - Plugins for eCommerce platforms: plugins-for-ecommerce-platforms.md
   - Libraries: libraries.md
   - Direct integration using API: api.md
+  - Supported payment methods: payment-methods.md
   - Pay Later monthly payment widget: pay-later-widget.md
   - Static assets: static-assets.md
   - Representation guidelines: representation-guidelines.md
