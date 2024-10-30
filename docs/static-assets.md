@@ -1,22 +1,8 @@
-# Klix Pay and Klix Checkout assets for your store
+# Klix Pay and Klix Pay Later assets for your store
 
-## Asset usage guide
+## 1. Klix Pay assets
 
-![Klix static asset usage guide](images/asset_usage_guide.png "Klix static asset usage guide")
-
-## 1. Klix Checkout assets for Klix as your express checkout solution
-
-Use assets for your Klix express checkout buttons available in EN, LT, LV, RU.
-
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/logos/quick-checkout-en.gif" width="50%" />
-    <div style="font-size: 14px;">Download asset in <a href="../images/logos/quick-checkout-en.gif">EN</a>, <a href="../images/logos/quick-checkout-lt.gif">LT</a>, <a href="../images/logos/quick-checkout-lv.gif">LV</a>, <a href="../images/logos/quick-checkout-ru.gif">RU</a> languages</div>
-</div>
-
-## 2. Klix assets for Klix and Klix Pay Later
-
-2.1 Use assets for <b>Klix card</b> payments button (cards only)
+1.1 Use assets for <b>Klix card</b> payments button (cards only)
 
 <!-- markdownlint-disable MD033 -->
 <div>
@@ -25,17 +11,40 @@ Use assets for your Klix express checkout buttons available in EN, LT, LV, RU.
         <a href="../images/logos/pay-by-card/pay-by-card.svg" style="display:block;font-size: 14px">Download SVG</a>
     </div>
 </div>
-
-2.2 Use assets for <b>Klix card</b> payments button (cards + Apple Pay)
+1.2 Use assets for <b>Klix card</b> payments button (cards + Apple Pay)
 <div>
     <div style="width:49%; display:inline-block;">
         <img src="../images/logos/apple-pay/apple-pay.svg" width="45%" />
         <a href="../images/logos/apple-pay/apple-pay.svg" style="display:block;font-size: 14px">Download SVG</a>
     </div>
 </div>
-2.3. Use assets for <b>Klix Pay Later</b> button
+
+1.3. Use assets for <b>Klix card</b> payments button (cards + Apple Pay + Google Pay)
+<div>
+    <div style="width:49%; display:inline-block;">
+        <img src="../images/logos/pay-by-card/icon-klix-and-apple-pay-google-pay.svg" width="45%" />
+        <a href="../images/logos/pay-by-card/icon-klix-and-apple-pay-google-pay.svg" style="display:block;font-size: 14px">Download SVG</a>
+    </div>
+</div>
+1.4. <b>Apple Pay</b> logo
+<div>
+    <div style="width:49%; display:inline-block;">
+        <img src="../images/logos/pay-by-card/klix-applepay.svg" width="45%" />
+        <a href="../images/logos/pay-by-card/klix-applepay.svg" style="display:block;font-size: 14px">Download SVG</a>
+    </div>
+</div>
+1.5. <b>Google Pay</b> logo
+<div>
+    <div style="width:49%; display:inline-block;">
+        <img src="../images/logos/pay-by-card/klix-googlepay.svg" width="45%" />
+        <a href="../images/logos/pay-by-card/klix-googlepay.svg" style="display:block;font-size: 14px">Download SVG</a>
+    </div>
+</div>
 
 
+## 2. Klix assets for Klix and Klix Pay Later
+
+2.1. Use assets for <b>Klix Pay Later</b> button
 <div>
     <div style="width:49%; display:inline-block;">
         <img src="../images/logos/pay-later/icon-klix_pay_later.svg" alt="klix pay later logo svg" width="45%" />
@@ -44,7 +53,7 @@ Use assets for your Klix express checkout buttons available in EN, LT, LV, RU.
     </div>
 </div>
 
-<b>Pay Later</b> logo for <b>Latvian</b> market
+2.2. <b>Pay Later</b> logo for <b>Latvian</b> market
 <div>
     <div style="width:49%; display:inline-block;">
         <img src="../images/logos/pay-later/logo_LV.svg" alt="klix pay later logo svg" width="45%" />
@@ -53,7 +62,7 @@ Use assets for your Klix express checkout buttons available in EN, LT, LV, RU.
     </div>
 </div>
 
-<b>Pay Later</b> logo for <b>Lithuanian</b> market
+2.3. <b>Pay Later</b> logo for <b>Lithuanian</b> market
 <div>
     <div style="width:49%; display:inline-block;">
         <img src="../images/logos/pay-later/logo_LT.svg" alt="klix pay later logo svg" width="45%" />
@@ -62,7 +71,7 @@ Use assets for your Klix express checkout buttons available in EN, LT, LV, RU.
     </div>
 </div>
 
-<b>Pay Later</b> logo for <b>Estonian</b> market
+2.4. <b>Pay Later</b> logo for <b>Estonian</b> market
 <div>
     <div style="width:49%; display:inline-block;">
         <img src="../images/logos/pay-later/logo_EE.svg" alt="klix pay later logo svg" width="45%" />
