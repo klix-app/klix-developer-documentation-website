@@ -522,3 +522,145 @@ Note that all creditor IBANs should be whitelisted before bulk payment is initia
 }
 ```
 
+## API usage in native Apple Pay / Google Pay™ scenario
+
+By default Klix Apple Pay / Google Pay payments are handled fully on Klix side i.e. after Klix purchase initiation customer is redirected to Klix hosted payment page where customer interacts with Apple Pay / Google Pay browser elements. Interaction with Apple Pay / Google Pay JavaScript SDK is done by Klix in this case.
+
+To accept Apple Pay / Google Pay payments directly in your application or website, Klix provides an API end-point that accepts encrypted payment token. In case of native Apple Pay / Google Pay payments there are no redirects to Klix payment page and merchant is responsible for interaction with Apple Pay / Google Pay JavaScript or mobile SDKs.
+
+### Native Apple Pay / Google Pay payment step-by-step guide
+
+1. Initiate a payment by specifying either `klix_apple_pay` or `klix_google_pay` as a whitelisted payment method. 
+2. Append a query parameter `s2s=true` to `checkout_url` field value returned in payment initiation response.
+3. Post Base64 encoded encrypted payment token obtained via Apple Pay / Google Pay SDKs.
+
+### Native Apple Pay / Google Pay request examples
+
+These are simple request examples that illustrate Klix API usage. Always use [API Reference](https://portal.klix.app/api) as a single source of truth.
+Note that `<Brand ID goes here>` and `<Secret key goes here>` should be replaced with actual `Brand ID` and `Secret Key` received from Klix contact person.
+
+#### [Create whitelisted payment method purchase](#create-whitelisted-payment-method-purchase)
+
+Pass `klix_apple_pay` or `klix_google_pay` as purchase initiation request field `payment_method_whitelist` value.
+
+#### Post Base64 encoded encrypted payment token obtained via Apple Pay / Google Pay SDKs
+
+```sh
+curl --location --request POST 'https://portal.klix.app/p/<Purchase id returned in previous step>/?s2s=true' \
+--header 'Authorization: <Secret key goes here>' \
+--form 'pm="<Payment method name>"' \
+--form 'data="<Base64 encoded token>"'
+```
+
+Do not forget to specify the desired payment method as a form field `pm` value, e.g. `klix_apple_pay` or `klix_google_pay`.
+Form field `data` value is Base64 encoded token.
+
+##### Apple Pay token example
+
+```json
+{
+   "payment": {
+      "token": {
+         "paymentData": {
+            "data": "BgpuZOTAwfvcKLjTeEb2KRx7lzj5ovSFU9dXOeNO8siMVNYR+TyrTgcsR3m2f1joLnpRgi+ThW7Z7uJvBeaQ9o1bsML7dMku7ncs0YCqA0M2Xzc0jTTXiQPdvbw0+kBdJEFGu/Z0qrSlP5QkTuMISwxzLs9ZaZBpgWsuhgKvW4Fg3Ci6igfZPbCqy5isz1M48MGDUBc1Ao3y2uU+2Gg1tGTjUD4dl8CPlLiXFFVKtYt4Ji6pk6vzr1MsOs6h7uT7rT8dbN2oRUnx7k0bhYe1d8sMiM0sT36jvt8ygJUaB0ZRNCIbzh/mUKfj9QYWv203TuiRd/RBNtceRewZsZbRS3aaPdv9J6z+8Is2Jz2lmHuj8VsxBfeY66K3kgL0jOwmF+99Bm53slmF2VPseTonW49ODNPYb7u5tTPTljtFWX7bb/o=",
+            "signature": "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",
+            "header": {
+               "publicKeyHash": "sVJ+hz3Jyb0eKCe276d05QHmUF5K9+HCalzkUBPQ9YE=",
+               "ephemeralPublicKey": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEOuabaFAe9UQlHceNRNrlhef+lpW/Xuwk/sOmttK0iCt2hJqgqiq/b/ZDN2RjzRlTEXWlFAMkMf6O3f4cxK9tUg==",
+               "transactionId": "c82114434378b3372d2c739b91c2d08d3e79038bcd0cff37dbf220a57a9e69cf"
+            },
+            "version": "EC_v1"
+         },
+         "paymentMethod": {
+            "displayName": "Visa 0224",
+            "network": "Visa",
+            "type": "debit"
+         },
+         "transactionIdentifier": "c82114434378b3372d2c739b91c2d08d3e79038bcd0cff37dbf220a57a9e69cf"
+      }
+   }
+}
+```
+
+##### Base64 encoded Apple Pay token example
+
+```
+ewogICAgInBheW1lbnQiOiB7CiAgICAgICAgInRva2VuIjogewogICAgICAgICAgICAicGF5bWVudERhdGEiOiB7CiAgICAgICAgICAgICAgICAiZGF0YSI6ICJCZ3B1Wk9UQXdmdmNLTGpUZUViMktSeDdsemo1b3ZTRlU5ZFhPZU5POHNpTVZOWVIrVHlyVGdjc1IzbTJmMWpvTG5wUmdpK1RoVzdaN3VKdkJlYVE5bzFic01MN2RNa3U3bmNzMFlDcUEwTTJYemMwalRUWGlRUGR2YncwK2tCZEpFRkd1L1owcXJTbFA1UWtUdU1JU3d4ekxzOVphWkJwZ1dzdWhnS3ZXNEZnM0NpNmlnZlpQYkNxeTVpc3oxTTQ4TUdEVUJjMUFvM3kydVUrMkdnMXRHVGpVRDRkbDhDUGxMaVhGRlZLdFl0NEppNnBrNnZ6cjFNc09zNmg3dVQ3clQ4ZGJOMm9SVW54N2swYmhZZTFkOHNNaU0wc1QzNmp2dDh5Z0pVYUIwWlJOQ0liemgvbVVLZmo5UVlXdjIwM1R1aVJkL1JCTnRjZVJld1pzWmJSUzNhYVBkdjlKNnorOElzMkp6MmxtSHVqOFZzeEJmZVk2Nksza2dMMGpPd21GKzk5Qm01M3NsbUYyVlBzZVRvblc0OU9ETlBZYjd1NXRUUFRsanRGV1g3YmIvbz0iLAogICAgICAgICAgICAgICAgICAgICJzaWduYXR1cmUiOiAiTUlBR0NTcUdTSWIzRFFFSEFxQ0FNSUFDQVFFeERUQUxCZ2xnaGtnQlpRTUVBZ0V3Z0FZSktvWklodmNOQVFjQkFBQ2dnRENDQStNd2dnT0lvQU1DQVFJQ0NFd3dRVWxSblZRMk1Bb0dDQ3FHU000OUJBTUNNSG94TGpBc0JnTlZCQU1NSlVGd2NHeGxJRUZ3Y0d4cFkyRjBhVzl1SUVsdWRHVm5jbUYwYVc5dUlFTkJJQzBnUnpNeEpqQWtCZ05WQkFzTUhVRndjR3hsSUVObGNuUnBabWxqWVhScGIyNGdRWFYwYUc5eWFYUjVNUk13RVFZRFZRUUtEQXBCY0hCc1pTQkpibU11TVFzd0NRWURWUVFHRXdKVlV6QWVGdzB4T1RBMU1UZ3dNVE15TlRkYUZ3MHlOREExTVRZd01UTXlOVGRhTUY4eEpUQWpCZ05WQkFNTUhHVmpZeTF6YlhBdFluSnZhMlZ5TFhOcFoyNWZWVU0wTFZCU1QwUXhGREFTQmdOVkJBc01DMmxQVXlCVGVYTjBaVzF6TVJNd0VRWURWUVFLREFwQmNIQnNaU0JKYm1NdU1Rc3dDUVlEVlFRR0V3SlZVekJaTUJNR0J5cUdTTTQ5QWdFR0NDcUdTTTQ5QXdFSEEwSUFCTUlWZCszcjFzZXlJWTlvM1hDUW9TR054N0M5Ynl3b1BZUmdsZGxLOUtWQkc0TkNEdGdSODBCK2d6TWZIRlREOStzeUlOYTYxZFR2OUpLSmlUNThEeE9qZ2dJUk1JSUNEVEFNQmdOVkhSTUJBZjhFQWpBQU1COEdBMVVkSXdRWU1CYUFGQ1B5U2NSUGsrVHZKK2JFOWloc1A2SzcvUzVMTUVVR0NDc0dBUVVGQndFQkJEa3dOekExQmdnckJnRUZCUWN3QVlZcGFIUjBjRG92TDI5amMzQXVZWEJ3YkdVdVkyOXRMMjlqYzNBd05DMWhjSEJzWldGcFkyRXpNREl3Z2dFZEJnTlZIU0FFZ2dFVU1JSUJFRENDQVF3R0NTcUdTSWIzWTJRRkFUQ0IvakNCd3dZSUt3WUJCUVVIQWdJd2diWU1nYk5TWld4cFlXNWpaU0J2YmlCMGFHbHpJR05sY25ScFptbGpZWFJsSUdKNUlHRnVlU0J3WVhKMGVTQmhjM04xYldWeklHRmpZMlZ3ZEdGdVkyVWdiMllnZEdobElIUm9aVzRnWVhCd2JHbGpZV0pzWlNCemRHRnVaR0Z5WkNCMFpYSnRjeUJoYm1RZ1kyOXVaR2wwYVc5dWN5QnZaaUIxYzJVc0lHTmxjblJwWm1sallYUmxJSEJ2YkdsamVTQmhibVFnWTJWeWRHbG1hV05oZEdsdmJpQndjbUZqZEdsalpTQnpkR0YwWlcxbGJuUnpMakEyQmdnckJnRUZCUWNDQVJZcWFIUjBjRG92TDNkM2R5NWhjSEJzWlM1amIyMHZZMlZ5ZEdsbWFXTmhkR1ZoZFhSb2IzSnBkSGt2TURRR0ExVWRId1F0TUNzd0thQW5vQ1dHSTJoMGRIQTZMeTlqY213dVlYQndiR1V1WTI5dEwyRndjR3hsWVdsallUTXVZM0pzTUIwR0ExVWREZ1FXQkJTVVY5dHYxWFNCaG9tSmRpOStWNFVINTV0WUpEQU9CZ05WSFE4QkFmOEVCQU1DQjRBd0R3WUpLb1pJaHZkalpBWWRCQUlGQURBS0JnZ3Foa2pPUFFRREFnTkpBREJHQWlFQXZnbFhIK2NlSG5OYlZlV3ZyTFRITCt0RVh6QVlVaUxISlJBQ3RoNjliMVVDSVFEUml6VUtYZGJkYnJGMFlEV3hIckxPaDgrajVxOXN2WU9BaVEzSUxOMnFZekNDQXU0d2dnSjFvQU1DQVFJQ0NFbHRMNzg2bU5xWE1Bb0dDQ3FHU000OUJBTUNNR2N4R3pBWkJnTlZCQU1NRWtGd2NHeGxJRkp2YjNRZ1EwRWdMU0JITXpFbU1DUUdBMVVFQ3d3ZFFYQndiR1VnUTJWeWRHbG1hV05oZEdsdmJpQkJkWFJvYjNKcGRIa3hFekFSQmdOVkJBb01Da0Z3Y0d4bElFbHVZeTR4Q3pBSkJnTlZCQVlUQWxWVE1CNFhEVEUwTURVd05qSXpORFl6TUZvWERUSTVNRFV3TmpJek5EWXpNRm93ZWpFdU1Dd0dBMVVFQXd3bFFYQndiR1VnUVhCd2JHbGpZWFJwYjI0Z1NXNTBaV2R5WVhScGIyNGdRMEVnTFNCSE16RW1NQ1FHQTFVRUN3d2RRWEJ3YkdVZ1EyVnlkR2xtYVdOaGRHbHZiaUJCZFhSb2IzSnBkSGt4RXpBUkJnTlZCQW9NQ2tGd2NHeGxJRWx1WXk0eEN6QUpCZ05WQkFZVEFsVlRNRmt3RXdZSEtvWkl6ajBDQVFZSUtvWkl6ajBEQVFjRFFnQUU4QmNSaEJuWFpJWFZHbDRsZ1FkMjZJQ2k3OTU3cmszZ2pmeExrK0V6VnRWbVd6V3VJdENYZGcwaVRudTZDUDEyRjg2SXkzYTdabkMreU9ncGhQOVVSYU9COXpDQjlEQkdCZ2dyQmdFRkJRY0JBUVE2TURnd05nWUlLd1lCQlFVSE1BR0dLbWgwZEhBNkx5OXZZM053TG1Gd2NHeGxMbU52YlM5dlkzTndNRFF0WVhCd2JHVnliMjkwWTJGbk16QWRCZ05WSFE0RUZnUVVJL0pKeEUrVDVPOG41c1QyS0d3L29ydjlMa3N3RHdZRFZSMFRBUUgvQkFVd0F3RUIvekFmQmdOVkhTTUVHREFXZ0JTN3NONmhXRE9JbXFTS21kNit2ZXV2MnNza3F6QTNCZ05WSFI4RU1EQXVNQ3lnS3FBb2hpWm9kSFJ3T2k4dlkzSnNMbUZ3Y0d4bExtTnZiUzloY0hCc1pYSnZiM1JqWVdjekxtTnliREFPQmdOVkhROEJBZjhFQkFNQ0FRWXdFQVlLS29aSWh2ZGpaQVlDRGdRQ0JRQXdDZ1lJS29aSXpqMEVBd0lEWndBd1pBSXdPczl5ZzFFV21iR0crelhEVnNwaXYvUVg3ZGtQZFUyaWpyN3huSUZlUXJlSitKajNtMW1mbU5WQkRZK2Q2Y0wrQWpBeUxkVkVJYkNqQlhkc1hmTTRPNUJuL1JkOExDRnRsay9HY21tQ0VtOVUrSHA5RzVuTG13bUpJV0VHbVE4SmtoMEFBREdDQVlnd2dnR0VBZ0VCTUlHR01Ib3hMakFzQmdOVkJBTU1KVUZ3Y0d4bElFRndjR3hwWTJGMGFXOXVJRWx1ZEdWbmNtRjBhVzl1SUVOQklDMGdSek14SmpBa0JnTlZCQXNNSFVGd2NHeGxJRU5sY25ScFptbGpZWFJwYjI0Z1FYVjBhRzl5YVhSNU1STXdFUVlEVlFRS0RBcEJjSEJzWlNCSmJtTXVNUXN3Q1FZRFZRUUdFd0pWVXdJSVREQkJTVkdkVkRZd0N3WUpZSVpJQVdVREJBSUJvSUdUTUJnR0NTcUdTSWIzRFFFSkF6RUxCZ2txaGtpRzl3MEJCd0V3SEFZSktvWklodmNOQVFrRk1ROFhEVEl6TURVeU5ERTVNamMxTTFvd0tBWUpLb1pJaHZjTkFRazBNUnN3R1RBTEJnbGdoa2dCWlFNRUFnR2hDZ1lJS29aSXpqMEVBd0l3THdZSktvWklodmNOQVFrRU1TSUVJUGpNMllrZ3JvQzIvL3poSGdtazgwS25rTGxjeVpSVll0Mzh3WThMODUxUk1Bb0dDQ3FHU000OUJBTUNCRWN3UlFJZ0pkVTJzZDQ5SzNjcGxzb0FNcHBOb2xSMzZnNWt0ZWZsZVp1OUg0YThVVjhDSVFEamdrV3Q1WkQ3bjlVYUhwWnN2S2diZGt0TXE2TWhHNjBiUmVtWDhSbnFYd0FBQUFBQUFBPT0iLAogICAgICAgICAgICAgICAgICAgICAgICAiaGVhZGVyIjogewogICAgICAgICAgICAgICAgICAgICJwdWJsaWNLZXlIYXNoIjogInNWSitoejNKeWIwZUtDZTI3NmQwNVFIbVVGNUs5K0hDYWx6a1VCUFE5WUU9IiwKICAgICAgICAgICAgICAgICAgICAgICAgImVwaGVtZXJhbFB1YmxpY0tleSI6ICJNRmt3RXdZSEtvWkl6ajBDQVFZSUtvWkl6ajBEQVFjRFFnQUVPdWFiYUZBZTlVUWxIY2VOUk5ybGhlZitscFcvWHV3ay9zT210dEswaUN0MmhKcWdxaXEvYi9aRE4yUmp6UmxURVhXbEZBTWtNZjZPM2Y0Y3hLOXRVZz09IiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICJ0cmFuc2FjdGlvbklkIjogImM4MjExNDQzNDM3OGIzMzcyZDJjNzM5YjkxYzJkMDhkM2U3OTAzOGJjZDBjZmYzN2RiZjIyMGE1N2E5ZTY5Y2YiCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgInZlcnNpb24iOiAiRUNfdjEiCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgICJwYXltZW50TWV0aG9kIjogewogICAgICAgICAgICAgICAgImRpc3BsYXlOYW1lIjogIlZpc2EgMDIyNCIsCiAgICAgICAgICAgICAgICAgICAgIm5ldHdvcmsiOiAiVmlzYSIsCiAgICAgICAgICAgICAgICAgICAgICAgICJ0eXBlIjogImRlYml0IgogICAgICAgICAgICB9LAogICAgICAgICAgICAidHJhbnNhY3Rpb25JZGVudGlmaWVyIjogImM4MjExNDQzNDM3OGIzMzcyZDJjNzM5YjkxYzJkMDhkM2U3OTAzOGJjZDBjZmYzN2RiZjIyMGE1N2E5ZTY5Y2YiCiAgICAgICAgfQogICAgfQp9
+```
+
+##### Google Pay token example
+
+```json
+{
+    "apiVersionMinor": 0,
+    "apiVersion": 2,
+    "paymentMethodData": {
+        "description": "Visa•••1111",
+        "tokenizationData": {
+            "type": "PAYMENT_GATEWAY",
+            "token": "{\"signature\":\"MEYCIQDHUpR5xlu0wp0q3JdkYafwE0otpsRQ1ljF+FXHPXGdcAIhANIFbzZ3DVuNxAzDllI/AkW/lnM2NgrAEfrF+Cty38/8\",\"intermediateSigningKey\":{\"signedKey\":\"{\\\"keyValue\\\":\\\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEJ66kcxuM0H1OBBzzsLjzSjlA5HShjK7MqaLNeggofGvcsH4KhKtfE4W4SIPXHRSJHeQsq+oO/vj4t4oBwaPEIA\\\\u003d\\\\u003d\\\",\\\"keyExpiration\\\":\\\"1708691731258\\\"}\",\"signatures\":[\"MEQCIB7WCq8CS5M+XmVPw4fHn6MD/CbNYyEbOT/0+t/UqvFGAiB5qQkbfamdWzmUPcUlZZNp7iz8HIIEkqLoUhaeA5BXuQ\\u003d\\u003d\"]},\"protocolVersion\":\"ECv2\",\"signedMessage\":\"{\\\"encryptedMessage\\\":\\\"Pqwy024PI3gbAd2+f3IRCgNM4s08yqdkrZu975/DW3hsG+RpG5NRJYjfukZaqpgZYzHGqjKcU9borN2HbCowxmPl+1ndXV6xa11/3LQg2aU1k09OipHyEEgUo3uGJpro115iktdKFSVf4A1Y8YNO+XqLJm8gMe5Q0Ro4mO6jZ7SU/sVxmPnJzPNAK/dNx2zV57H29ZMuf28F5xRk6+8ZoV4e+sgYbDCBvCLoQZmI3M++hFS6agMtJ/YkBDpTAnE+fBBgf3ST31W95IXYsDQf+iHmID8tk1/VKbf5jS3SJiRelV3sCSc/5aq9LiR/siKe0bNA4AjK5kHCee1VlMdOO8S4f+sVHd5vSJBW3WzP0DWha+xIV3f+JapPCX++bOUqtgvZaP1+q+Yg6MCTcPqKr/O0NsavdqHqm3gPW7IKXzbC8e46dPTcUwXB+Wirp0BQmVwNKUmHS1H5kgahJway3hj32P5GrNV8djer4n1BIw1uyfOF17rcXGvA8u/C4fNHaEM/hk2R7uO7OQ3iYWyo8GqJp2MmEqk3RdRh4snlkgFGFlzcntkSGmpv7WVQCchxX9d+9VEpIEgn\\\",\\\"ephemeralPublicKey\\\":\\\"BPLkfpYaBTDeIfkWIyWrHAHEmAM+PAV0dNXg23xep+nSh8tB4UDaYxs7Qmw3rnEs0qzuHY3njSoOBK7uewSaNMQ\\\\u003d\\\",\\\"tag\\\":\\\"G/2CnxBCjRLaeX2y66QV0Yln2OY/GNiV1zH/sKnQoaI\\\\u003d\\\"}\"}"
+        },
+        "type": "CARD",
+        "info": {
+            "cardNetwork": "VISA",
+            "cardDetails": "1111"
+        }
+    }
+}
+```
+
+##### Base64 encoded Google Pay token example
+
+```
+eyJhcGlWZXJzaW9uTWlub3IiOjAsImFwaVZlcnNpb24iOjIsInBheW1lbnRNZXRob2REYXRhIjp7ImRlc2NyaXB0aW9uIjoiVmlzYeKAhuKAouKAouKAouKAouKAhjExMTEiLCJ0b2tlbml6YXRpb25EYXRhIjp7InR5cGUiOiJQQVlNRU5UX0dBVEVXQVkiLCJ0b2tlbiI6IntcInNpZ25hdHVyZVwiOlwiTUVZQ0lRREhVcFI1eGx1MHdwMHEzSmRrWWFmd0Uwb3Rwc1JRMWxqRitGWEhQWEdkY0FJaEFOSUZielozRFZ1TnhBekRsbEkvQWtXL2xuTTJOZ3JBRWZyRitDdHkzOC84XCIsXCJpbnRlcm1lZGlhdGVTaWduaW5nS2V5XCI6e1wic2lnbmVkS2V5XCI6XCJ7XFxcImtleVZhbHVlXFxcIjpcXFwiTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFSjY2a2N4dU0wSDFPQkJ6enNManpTamxBNUhTaGpLN01xYUxOZWdnb2ZHdmNzSDRLaEt0ZkU0VzRTSVBYSFJTSkhlUXNxK29PL3ZqNHQ0b0J3YVBFSUFcXFxcdTAwM2RcXFxcdTAwM2RcXFwiLFxcXCJrZXlFeHBpcmF0aW9uXFxcIjpcXFwiMTcwODY5MTczMTI1OFxcXCJ9XCIsXCJzaWduYXR1cmVzXCI6W1wiTUVRQ0lCN1dDcThDUzVNK1htVlB3NGZIbjZNRC9DYk5ZeUViT1QvMCt0L1VxdkZHQWlCNXFRa2JmYW1kV3ptVVBjVWxaWk5wN2l6OEhJSUVrcUxvVWhhZUE1Qlh1UVxcdTAwM2RcXHUwMDNkXCJdfSxcInByb3RvY29sVmVyc2lvblwiOlwiRUN2MlwiLFwic2lnbmVkTWVzc2FnZVwiOlwie1xcXCJlbmNyeXB0ZWRNZXNzYWdlXFxcIjpcXFwiUHF3eTAyNFBJM2diQWQyK2YzSVJDZ05NNHMwOHlxZGtyWnU5NzUvRFczaHNHK1JwRzVOUkpZamZ1a1phcXBnWll6SEdxaktjVTlib3JOMkhiQ293eG1QbCsxbmRYVjZ4YTExLzNMUWcyYVUxazA5T2lwSHlFRWdVbzN1R0pwcm8xMTVpa3RkS0ZTVmY0QTFZOFlOTytYcUxKbThnTWU1UTBSbzRtTzZqWjdTVS9zVnhtUG5KelBOQUsvZE54MnpWNTdIMjlaTXVmMjhGNXhSazYrOFpvVjRlK3NnWWJEQ0J2Q0xvUVptSTNNKytoRlM2YWdNdEovWWtCRHBUQW5FK2ZCQmdmM1NUMzFXOTVJWFlzRFFmK2lIbUlEOHRrMS9WS2JmNWpTM1NKaVJlbFYzc0NTYy81YXE5TGlSL3NpS2UwYk5BNEFqSzVrSENlZTFWbE1kT084UzRmK3NWSGQ1dlNKQlczV3pQMERXaGEreElWM2YrSmFwUENYKytiT1VxdGd2WmFQMStxK1lnNk1DVGNQcUtyL08wTnNhdmRxSHFtM2dQVzdJS1h6YkM4ZTQ2ZFBUY1V3WEIrV2lycDBCUW1Wd05LVW1IUzFINWtnYWhKd2F5M2hqMzJQNUdyTlY4ZGplcjRuMUJJdzF1eWZPRjE3cmNYR3ZBOHUvQzRmTkhhRU0vaGsyUjd1TzdPUTNpWVd5bzhHcUpwMk1tRXFrM1JkUmg0c25sa2dGR0ZsemNudGtTR21wdjdXVlFDY2h4WDlkKzlWRXBJRWduXFxcIixcXFwiZXBoZW1lcmFsUHVibGljS2V5XFxcIjpcXFwiQlBMa2ZwWWFCVERlSWZrV0l5V3JIQUhFbUFNK1BBVjBkTlhnMjN4ZXArblNoOHRCNFVEYVl4czdRbXczcm5FczBxenVIWTNualNvT0JLN3Vld1NhTk1RXFxcXHUwMDNkXFxcIixcXFwidGFnXFxcIjpcXFwiRy8yQ254QkNqUkxhZVgyeTY2UVYwWWxuMk9ZL0dOaVYxekgvc0tuUW9hSVxcXFx1MDAzZFxcXCJ9XCJ9In0sInR5cGUiOiJDQVJEIiwiaW5mbyI6eyJjYXJkTmV0d29yayI6IlZJU0EiLCJjYXJkRGV0YWlscyI6IjExMTEifX19
+```
+
+##### Apple Pay post Base64 encoded encrypted payment response
+
+```json
+{
+  "status": "please wait for webhook"
+}
+```
+
+##### Google Pay post Base64 encoded encrypted payment response
+
+In case of Google Pay payment depending on the buyer's device two different responses can be returned. In case payment was processed single field `status` is returned in response.
+
+```json
+{
+  "status": "please wait for webhook"
+}
+```
+
+In case field `threeDsRedirectUrl` is returned in response customer should be redirected to this URL to pass 3DS authentication.
+
+```json
+{
+        "merchant": "******",
+        "order": {
+            "amount": 0.01,
+            "creationTime": 1730440058.759529,
+            "currency": "EUR",
+            "id": "10407955-21cb-475c-87bb-efe72541fb9d",
+            "lastUpdatedTime": 1730440058.75953,
+            "totalRefundedAmount": 0,
+            "totalAuthorizedAmount": 0.01,
+            "totalCapturedAmount": 0.01,
+            "totalDisbursedAmount": 0.01,
+            "merchantCurrency": "EUR"
+        },
+        "response": {
+            "gatewayCode": "APPROVED",
+            "threeDsRedirectUrl": "<3DS redirect URL>"
+        },
+        "result": "SUCCESS",
+        "transaction": {
+            "id": "10407955-21cb-475c-87bb-efe72541fb9d",
+            "amount": 0.01,
+            "currency": "EUR",
+            "type": "CAPTURE",
+            "retRefNr": "430605133628"
+        }
+    }
+```
