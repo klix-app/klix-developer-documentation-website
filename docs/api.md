@@ -524,9 +524,54 @@ Note that all creditor IBANs should be whitelisted before bulk payment is initia
 
 ## API usage in native Apple Pay / Google Pay™ scenario
 
-By default Klix Apple Pay / Google Pay payments are handled fully on Klix side i.e. after Klix purchase initiation customer is redirected to Klix hosted payment page where customer interacts with Apple Pay / Google Pay browser elements. Interaction with Apple Pay / Google Pay JavaScript SDK is done by Klix in this case.
+By default, Klix Apple Pay / Google Pay payments are handled fully on Klix side i.e. after Klix purchase initiation customer is redirected to Klix hosted payment page where customer interacts with Apple Pay / Google Pay browser elements. Interaction with Apple Pay / Google Pay JavaScript SDK is done by Klix in this case.
 
 To accept Apple Pay / Google Pay payments directly in your application or website, Klix provides an API end-point that accepts encrypted payment token. In case of native Apple Pay / Google Pay payments there are no redirects to Klix payment page and merchant is responsible for interaction with Apple Pay / Google Pay JavaScript or mobile SDKs.
+
+In order to initiate Apple Pay payment request following Apple Pay merchant identifier should be used: `merchant.app.klix.portal` (also note that 3D Secure capability should be set):
+
+```swift
+let paymentRequest = PKPaymentRequest()
+paymentRequest.merchantIdentifier = "merchant.app.klix.portal"
+paymentRequest.supportedNetworks = [.visa, .masterCard]
+paymentRequest.merchantCapabilities = .capability3DS
+```
+
+In order to initiate Google Pay payment request following `gateway`, `gatewayMerchantId` and `merchantId` should be specified (also note `allowedAuthMethods` value):
+
+```kotlin
+val paymentDataRequest = PaymentDataRequest.fromJson("""
+{
+  "apiVersion": 2,
+  "apiVersionMinor": 0,
+  "allowedPaymentMethods": [
+    {
+      "type": "CARD",
+      "parameters": {
+        "allowedAuthMethods": ["PAN_ONLY", "CRYPTOGRAM_3DS"],
+        "allowedCardNetworks": ["VISA", "MASTERCARD"]
+      },
+      "tokenizationSpecification": {
+        "type": "PAYMENT_GATEWAY",
+        "parameters": {
+          "gateway": "klix",
+          "gatewayMerchantId": "request_your_gateway_merchant_id_to_klix_support"
+        }
+      }
+    }
+  ],
+  "transactionInfo": {
+    "totalPriceStatus": "FINAL",
+    "totalPrice": "1.00",
+    "currencyCode": "EUR"
+  },
+  "merchantInfo": {
+    "merchantName": "your_company_name",
+    "merchantId": "BCR2DN4TTWQITP2N"
+  }
+}
+""")
+```
 
 ### Native Apple Pay / Google Pay payment step-by-step guide
 
