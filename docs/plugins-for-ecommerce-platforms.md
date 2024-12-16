@@ -48,7 +48,7 @@ Installation instructions:
 
 1. Download plugin by Opencart version:
     * [3.0+](https://klixecom.blob.core.windows.net/modules/opencart-v3.0+.ocmod.zip)
-    * [4.0+](https://klixecom.blob.core.windows.net/modules/klix.ocmod.zip) 
+    * [4.0+](https://klixecom.blob.core.windows.net/modules/oc/klix.ocmod.zip) 
 2. Log in to your OpenCart store admin panel by specifying authentication credentials.
 ![Opencart login page](../images/ecommerce-platforms/opencart/1_login.png#instruction-image)
 
