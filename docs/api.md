@@ -435,6 +435,9 @@ Bulk payment functionality allows to initiate and confirm these multiple payment
 
 Here is a list of the payment methods that currently support bulk payment functionality:
 
+* citadele_ee_pis
+* citadele_lt_pis
+* citadele_lv_pis
 * seb_ee_pis
 * seb_lt_pis
 * seb_lv_pis
