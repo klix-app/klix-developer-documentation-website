@@ -525,6 +525,75 @@ Note that all creditor IBANs should be whitelisted before bulk payment is initia
 }
 ```
 
+## API usage in variable creditor scenario
+
+By default, each Klix bank payment method's creditor account number configuration is set to a static IBAN specified by the merchant in the Klix agreement.
+If the merchant needs to specify the creditor account number individually during purchase initiation, the variable creditor account functionality should be used. Note that this functionality is disabled by default, and its usage must be explicitly requested.
+
+### Variable creditor payment step-by-step guide
+
+1. Sign the agreement with Klix for the usage of variable creditor payment functionality. Submit the list of creditor IBANs and creditor names for whitelisting.
+2. Initiate a purchase by specifying one of the previously whitelisted creditor IBANs and creditor names.
+
+### Variable creditor payment request examples
+
+These are simple request examples that illustrate Klix API usage. Always use [API Reference](https://portal.klix.app/api) as a single source of truth.
+Note that `<Brand ID goes here>` and `<Secret key goes here>` should be replaced with actual `Brand ID` and `Secret Key` received from Klix contact person.
+
+#### Create a variable creditor payment purchase
+
+Initiate a purchase by specifying one of the previously whitelisted creditor IBANs and names.
+
+```sh
+curl -X POST \
+  https://portal.klix.app/api/v1/purchases/ \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer <Secret key goes here>' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -H 'Content-Type: application/json' \
+  -H 'Host: portal.klix.app' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'cache-control: no-cache' \
+  -d '{
+    "purchase": {
+        "products": [
+            {
+                "name": "Variable creditor account example",
+                "price": 5
+            },
+        ],
+        "payment_method_details": {
+            "pis_purchase": {
+                "creditor": {
+                    "iban": "LVXXPARX0000000000001",
+                    "name": "John Doe"
+                }
+            }
+        }
+    },
+    "client": {
+        "email": "test@test.com"
+    },
+    "payment_method_whitelist": ["swedbank_lv_pis"],
+    "brand_id": "<Brand ID goes here>`",
+    "reference": "Your order id"
+}'
+```
+
+As previously mentioned only previously whitelisted IBAN and creditor name can specified in purchase initiation request. In case creditor IBAN or name is not whitelisted following error message is returned in a purchase initiation response:
+
+```json
+{
+   "creditor": [
+      {
+         "message": "The provided creditor name or IBAN is not in the whitelist.",
+         "code": "invalid"
+      }
+   ]
+}
+```
+
 ## API usage in native Apple Pay / Google Pay™ scenario
 
 By default, Klix Apple Pay / Google Pay payments are handled fully on Klix side i.e. after Klix purchase initiation customer is redirected to Klix hosted payment page where customer interacts with Apple Pay / Google Pay browser elements. Interaction with Apple Pay / Google Pay JavaScript SDK is done by Klix in this case.
