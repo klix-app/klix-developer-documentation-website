@@ -2,28 +2,29 @@
 
 Klix currently supports following payment methods:
 
-| Name                 | Description             | 
-|----------------------|-------------------------|
-| klix                 | Klix card payments      |
-| citadele_ee_digilink | Citadele Bank payments  |
-| citadele_lt_digilink | Citadele Bank payments  |
-| citadele_lv_digilink | Citadele Bank payments  |
-| coop_pank_ee_pis     | Coop Pank payments      |
-| klix_apple_pay       | Apple Pay payments      |
-| klix_google_pay      | Google Pay™ payments    |
-| klix_pay_later       | Klix Pay Later          |
-| lhv_ee_pis           | LHV payments            |
-| luminor_ee_pis       | Luminor payments        |
-| luminor_lt_pis       | Luminor payments        |
-| luminor_lv_pis       | Luminor payments        |
-| revolut_pis          | Revolut payments        |
-| seb_ee_pis           | SEB payments            |
-| seb_lt_pis           | SEB payments            |
-| seb_lv_pis           | SEB payments            |
-| siauliu_lt_pis       | Šiaulių Bankas payments |
-| swedbank_ee_pis      | Swedbank payments       |
-| swedbank_lt_pis      | Swedbank payments       |
-| swedbank_lv_pis      | Swedbank payments       |
+| Name                  | Description                 | Supports personal ID validation | Supports full name validation |
+|-----------------------|-----------------------------|---------------------------------|-------------------------------|
+| citadele_ee_digilink  | Citadele Bank payments      |                                 |               X               |
+| citadele_lt_digilink  | Citadele Bank payments      |                                 |               X               |
+| citadele_lv_digilink  | Citadele Bank payments      |                                 |               X               |
+| coop_pank_ee_pis      | Coop Pank payments          |                                 |                               |
+ | indexo_lv_pis         | INDEXO bank payments        |                                 |                               |
+| klix                  | Klix card payments          |                                 |                               |
+| klix_apple_pay        | Apple Pay payments          |                                 |                               |
+| klix_google_pay       | Google Pay™ payments        |                                 |                               |
+| klix_pay_later        | Klix Pay Later              |                                 |                               |
+| lhv_ee_pis            | LHV payments                |                                 |                               |
+| luminor_ee_pis        | Luminor payments            |                X                |                               |
+| luminor_lt_pis        | Luminor payments            |                X                |                               |
+| luminor_lv_pis        | Luminor payments            |                X                |                               |
+| revolut_pis           | Revolut payments            |                                 |               X               |
+| seb_ee_pis            | SEB payments                |                X                |                               |
+| seb_lt_pis            | SEB payments                |                X                |                               |
+| seb_lv_pis            | SEB payments                |                X                |                               |
+| siauliu_lt_pis        | Šiaulių Bankas payments     |                                 |                               |
+| swedbank_ee_pis       | Swedbank payments           |                X                |                               |
+| swedbank_lt_pis       | Swedbank payments           |                X                |                               |
+| swedbank_lv_pis       | Swedbank payments           |                X                |                               |
 
 ## Payment method specifics
 
