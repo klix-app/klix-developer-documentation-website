@@ -664,7 +664,7 @@ Pass `klix_apple_pay` or `klix_google_pay` as purchase initiation request field 
 
 ```sh
 curl --location --request POST 'https://portal.klix.app/p/<Purchase id returned in previous step>/?s2s=true' \
---header 'Authorization: <Secret key goes here>' \
+--header 'Authorization: Bearer <Secret key goes here>' \
 --form 'pm="<Payment method name>"' \
 --form 'data="<Base64 encoded token>"'
 ```
