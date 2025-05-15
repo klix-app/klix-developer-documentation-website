@@ -734,15 +734,31 @@ eyJhcGlWZXJzaW9uTWlub3IiOjAsImFwaVZlcnNpb24iOjIsInBheW1lbnRNZXRob2REYXRhIjp7ImRl
 
 ##### Apple Pay post Base64 encoded encrypted payment response
 
+In case payment was successfully processed single field `status` is returned in response.
+
 ```json
 {
   "status": "please wait for webhook"
 }
 ```
 
+In case of failed payment response containing `error_response.result`: `"FAILURE"` is returned.
+
+```json
+{
+    "error_response": {
+        "response": {
+            "gatewayCode": "ACQUIRER_SYSTEM_ERROR",
+            "threeDsRedirectUrl": null
+        },
+        "result": "FAILURE"
+    }
+}
+```
+
 ##### Google Pay post Base64 encoded encrypted payment response
 
-In case of Google Pay payment depending on the buyer's device two different responses can be returned. In case payment was processed single field `status` is returned in response.
+In case of Google Pay payment depending on the buyer's device two different responses can be returned. In case payment was successfully processed single field `status` is returned in response.
 
 ```json
 {
@@ -780,4 +796,18 @@ In case field `threeDsRedirectUrl` is returned in response customer should be re
             "retRefNr": "430605133628"
         }
     }
+```
+
+In case of failed payment response containing `error_response.result`: `"FAILURE"` is returned.
+
+```json
+{
+    "error_response": {
+        "response": {
+            "gatewayCode": "ACQUIRER_SYSTEM_ERROR",
+            "threeDsRedirectUrl": null
+        },
+        "result": "FAILURE"
+    }
+}
 ```
