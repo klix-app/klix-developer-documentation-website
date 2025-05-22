@@ -41,6 +41,10 @@ button[data-md-color-primary=klix-theme-primary] {
     color: #0094ff
 }
 
+:root {
+  --md-primary-fg-color: #0094ff;
+}
+
 [data-md-color-primary=klix-theme-primary] .md-header,[data-md-color-primary=klix-theme-primary] .md-hero {
     background-color: #0094ff
 }

@@ -21,7 +21,7 @@ Klix currently supports following payment methods:
 | seb_ee_pis            | SEB payments                |                X                |                               |
 | seb_lt_pis            | SEB payments                |                X                |                               |
 | seb_lv_pis            | SEB payments                |                X                |                               |
-| siauliu_lt_pis        | Šiaulių Bankas payments     |                                 |                               |
+| siauliu_lt_pis        | Artea Bankas payments     |                                 |                               |
 | swedbank_ee_pis       | Swedbank payments           |                X                |                               |
 | swedbank_lt_pis       | Swedbank payments           |                X                |                               |
 | swedbank_lv_pis       | Swedbank payments           |                X                |                               |
