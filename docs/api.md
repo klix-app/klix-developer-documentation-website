@@ -647,9 +647,8 @@ val paymentDataRequest = PaymentDataRequest.fromJson("""
 
 ### Native Apple Pay / Google Pay payment step-by-step guide
 
-1. Initiate a payment by specifying either `klix_apple_pay` or `klix_google_pay` as a whitelisted payment method. 
-2. Append a query parameter `s2s=true` to `checkout_url` field value returned in payment initiation response.
-3. Post Base64 encoded encrypted payment token obtained via Apple Pay / Google Pay SDKs.
+1. Initiate a payment by specifying either `klix_apple_pay` or `klix_google_pay` as a whitelisted payment method.
+2. Post Base64 encoded encrypted payment token obtained via Apple Pay / Google Pay SDKs.
 
 ### Native Apple Pay / Google Pay request examples
 
@@ -663,13 +662,14 @@ Pass `klix_apple_pay` or `klix_google_pay` as purchase initiation request field 
 #### Post Base64 encoded encrypted payment token obtained via Apple Pay / Google Pay SDKs
 
 ```sh
-curl --location --request POST 'https://portal.klix.app/p/<Purchase id returned in previous step>/?s2s=true' \
+curl --location --request POST 'https://portal.klix.app/p/<Purchase id returned in previous step>/' \
 --header 'Authorization: Bearer <Secret key goes here>' \
 --form 'pm="<Payment method name>"' \
+--form 's2s="true"'
 --form 'data="<Base64 encoded token>"'
 ```
 
-Do not forget to specify the desired payment method as a form field `pm` value, e.g. `klix_apple_pay` or `klix_google_pay`.
+Do not forget to specify the desired payment method as a form field `pm` value, e.g. `klix_apple_pay` or `klix_google_pay` and form field `s2s` value `"true"`.
 Form field `data` value is Base64 encoded token.
 
 ##### Apple Pay token example
@@ -734,15 +734,31 @@ eyJhcGlWZXJzaW9uTWlub3IiOjAsImFwaVZlcnNpb24iOjIsInBheW1lbnRNZXRob2REYXRhIjp7ImRl
 
 ##### Apple Pay post Base64 encoded encrypted payment response
 
+In case payment was successfully processed single field `status` is returned in response.
+
 ```json
 {
   "status": "please wait for webhook"
 }
 ```
 
+In case of failed payment response containing `error_response.result`: `"FAILURE"` is returned.
+
+```json
+{
+    "error_response": {
+        "response": {
+            "gatewayCode": "ACQUIRER_SYSTEM_ERROR",
+            "threeDsRedirectUrl": null
+        },
+        "result": "FAILURE"
+    }
+}
+```
+
 ##### Google Pay post Base64 encoded encrypted payment response
 
-In case of Google Pay payment depending on the buyer's device two different responses can be returned. In case payment was processed single field `status` is returned in response.
+In case of Google Pay payment depending on the buyer's device two different responses can be returned. In case payment was successfully processed single field `status` is returned in response.
 
 ```json
 {
@@ -780,4 +796,18 @@ In case field `threeDsRedirectUrl` is returned in response customer should be re
             "retRefNr": "430605133628"
         }
     }
+```
+
+In case of failed payment response containing `error_response.result`: `"FAILURE"` is returned.
+
+```json
+{
+    "error_response": {
+        "response": {
+            "gatewayCode": "ACQUIRER_SYSTEM_ERROR",
+            "threeDsRedirectUrl": null
+        },
+        "result": "FAILURE"
+    }
+}
 ```
