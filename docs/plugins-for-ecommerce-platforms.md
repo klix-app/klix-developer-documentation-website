@@ -19,13 +19,22 @@ Installation instructions:
 2. Create and navigate to a directory `app/code/` in your Magento root directory if does not exist already.
 3. Download Klix Magento plugin: `curl https://klixecom.blob.core.windows.net/modules/klix-magento.zip --output magento-v2.0+.zip`
 4. Extract Klix Magento plugin archive contents to `app/code/` directory so that there's `app/code/SpellPayment/Magento2Module` directory structure after that: `unzip -q magento-v2.0+.zip && rm magento-v2.0+.zip`
-5. Navigate to Magento root directory and run `php bin/magento module:enable SpellPayment_ExpressCheckout --clear-static-content`
+5. Navigate to Magento root directory and run `php bin/magento module:enable SpellPayment_Magento2Module --clear-static-content`
 6. Run `php bin/magento setup:upgrade`
 7. Run `php bin/magento setup:static-content:deploy` (note that message "Manual static content deployment is not required in "default" and "developer" modes" can be ignored).
 ![Run php bin/magento setup:static-content:deploy](../images/ecommerce-platforms/magento/1_run_commands.png#instruction-image)
 
 8. Log in to your Magento store admin panel.
 ![Log in to your Magento store admin panel.](../images/ecommerce-platforms/magento/2_login.png#instruction-image)
+
+9. Go to `STORES` -> `Configuration`
+![Open stores and Configuration](../images/ecommerce-platforms/magento/3_stores_configuration.png#instruction-image)
+
+10. Open `SALES` -> `Payment methods`. Find `Citadele E-Commerce Gateway` and click on `Configure`.
+![Sales and payment methods](../images/ecommerce-platforms/magento/4_sales_payment_methods.png#instruction-image)
+
+11. Enter Brand ID and Secret key provided by Klix contact person, set Enable API to `Yes` and click on `Save Config`.
+![Magento keys configuration](../images/ecommerce-platforms/magento/5_config.png#instruction-image)
 
 ### Mozello
 
