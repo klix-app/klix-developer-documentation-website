@@ -140,6 +140,56 @@ curl -X GET \
   -H 'cache-control: no-cache'
 ```
 
+#### Set purchase expiration date
+
+To define an expiration date for a purchase, you need to configure two parameters in the request:
+
+1. `due` - specifies the exact expiration time for the purchase.
+The value must be provided as a Unix timestamp.
+
+2. `purchase.due_strict` - when set to true, the payment will not be accepted after the due timestamp is reached.
+
+```sh
+curl -X POST \
+  https://portal.klix.app/api/v1/purchases/ \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer <Secret key goes here>' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -H 'Content-Type: application/json' \
+  -H 'Host: portal.klix.app' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'cache-control: no-cache' \
+  -d '{
+   "success_callback": "https://your.site/api/successfully-paid-callback-will-be-sent-to-this-end-point",
+   "success_redirect": "https://your.site/customer-will-be-redirected-here-in-case-of-successfull-payment",
+   "failure_redirect": "https://your.site/customer-will-be-redirected-here-in-case-of-failed-payment",
+   "cancel_redirect": "https://your.site/customer-will-be-redirected-here-in-case-customer-decides-to-go-back-to-your-store-during-payment",
+   "purchase": {
+      "due_strict": true,
+      "language": "lv",
+      "products": [
+         {
+            "price": 3000,
+            "name": "Xiaomi Mi Smart Band 5"
+         },
+         {
+            "price": 100,
+            "name": "Screen protector for Xiaomi Mi Smart Band 5"
+         }
+      ]
+   },
+   "client": {
+      "email": "test@test.com"
+   },
+   "payment_method_whitelist": ["klix"],
+   "brand_id": "<Brand ID goes here>",
+   "reference": "Your order id",
+   "due": 1356088289
+}'
+```
+
+
 ## API usage in recurring payment scenario
 
 ### Recurring payment step-by-step guide
