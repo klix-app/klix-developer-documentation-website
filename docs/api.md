@@ -650,14 +650,16 @@ By default, Klix Apple Pay / Google Pay payments are handled fully on Klix side 
 
 To accept Apple Pay / Google Pay payments directly in your application or website, Klix provides an API end-point that accepts encrypted payment token. In case of native Apple Pay / Google Pay payments there are no redirects to Klix payment page and merchant is responsible for interaction with Apple Pay / Google Pay JavaScript or mobile SDKs.
 
-In order to initiate Apple Pay payment request following Apple Pay merchant identifier should be used: `merchant.app.klix.portal` (also note that 3D Secure capability should be set):
+In order to initiate native iOS Apple Pay payment request merchant should use their own Apple Pay merchant identifier e.g. `merchant.lv.merchant1` (also note that 3D Secure capability should be set):
 
 ```swift
 let paymentRequest = PKPaymentRequest()
-paymentRequest.merchantIdentifier = "merchant.app.klix.portal"
+paymentRequest.merchantIdentifier = "merchant.lv.merchant1"
 paymentRequest.supportedNetworks = [.visa, .masterCard]
 paymentRequest.merchantCapabilities = .capability3DS
 ```
+
+Merchant should also request payment processing certificate signing request (CSR) from Klix support, upload it during merchant identifier registration, download certificate signed by Apple and provide it to Klix support. Note that in case of direct Apple Pay integration in merchant's website using JS SDK, merchant will additionally need to perform the domain verification.
 
 In order to initiate Google Pay payment request following `gateway`, `gatewayMerchantId` and `merchantId` should be specified (also note `allowedAuthMethods` value):
 
