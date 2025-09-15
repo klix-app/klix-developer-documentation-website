@@ -14,6 +14,7 @@ Klix currently supports following payment methods:
 | klix_google_pay       | Google Pay™ payments        |                                 |                               |
 | klix_pay_later        | Klix Pay Later              |                                 |                               |
 | lhv_ee_pis            | LHV payments                |                                 |                               |
+| lku_lt_pis            | LKU payments                |                                 |                               |
 | luminor_ee_pis        | Luminor payments            |                X                |                               |
 | luminor_lt_pis        | Luminor payments            |                X                |                               |
 | luminor_lv_pis        | Luminor payments            |                X                |                               |
