@@ -7,25 +7,27 @@
 <!-- markdownlint-disable MD033 -->
 <div>
     <div style="width:49%; display:inline-block;">
-        <img src="../images/logos/pay-by-card/pay-by-card.svg" width="45%" />
-        <a href="../images/logos/pay-by-card/pay-by-card.svg" style="display:block;font-size: 14px">Download SVG</a>
+        <img src="../images/logos/ctp/VISA_MC_CtP.svg" width="45%" />
+        <a href="../images/logos/ctp/VISA_MC_CtP.svg" style="display:block;font-size: 14px">Download SVG</a>
     </div>
 </div>
-1.2 Use assets for <b>Klix card</b> payments button (cards + Apple Pay)
+1.2 Use assets for <b>Klix card</b> payments button (cards + Click to Pay + Apple Pay)
 <div>
     <div style="width:49%; display:inline-block;">
-        <img src="../images/logos/apple-pay/apple-pay.svg" width="45%" />
-        <a href="../images/logos/apple-pay/apple-pay.svg" style="display:block;font-size: 14px">Download SVG</a>
+        <img src="../images/logos/ctp/APay_VISA_MC_CtP.svg" width="45%" />
+        <a href="../images/logos/ctp/APay_VISA_MC_CtP.svg" style="display:block;font-size: 14px">Download SVG</a>
+        
     </div>
 </div>
 
-1.3. Use assets for <b>Klix card</b> payments button (cards + Apple Pay + Google Pay)
+1.3. Use assets for <b>Klix card</b> payments button (cards + Click to Pay + Apple Pay + Google Pay)
 <div>
     <div style="width:49%; display:inline-block;">
-        <img src="../images/logos/pay-by-card/icon-klix-and-apple-pay-google-pay.svg" width="45%" />
-        <a href="../images/logos/pay-by-card/icon-klix-and-apple-pay-google-pay.svg" style="display:block;font-size: 14px">Download SVG</a>
+        <img src="../images/logos/ctp/GPay_APay_VISA_MC_CtP.svg" width="45%" />
+        <a href="../images/logos/ctp/GPay_APay_VISA_MC_CtP.svg" style="display:block;font-size: 14px">Download SVG</a>
     </div>
 </div>
+
 1.4. <b>Apple Pay</b> logo
 <div>
     <div style="width:49%; display:inline-block;">
@@ -38,6 +40,13 @@
     <div style="width:49%; display:inline-block;">
         <img src="../images/logos/pay-by-card/klix-googlepay.svg" width="45%" />
         <a href="../images/logos/pay-by-card/klix-googlepay.svg" style="display:block;font-size: 14px">Download SVG</a>
+    </div>
+</div>
+1.6. <b>Click to Pay</b> logo
+<div>
+    <div style="width:49%; display:inline-block;">
+        <img src="../images/logos/ctp/click_to_pay.svg" width="45%" />
+        <a href="../images/logos/ctp/click_to_pay.svg" style="display:block;font-size: 14px">Download SVG</a>
     </div>
 </div>
 
