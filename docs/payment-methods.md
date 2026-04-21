@@ -19,6 +19,9 @@ Klix currently supports following payment methods:
 | luminor_lt_pis        | Luminor payments           | X                                 |                               |
 | luminor_lv_pis        | Luminor payments           | X                                 |                               |
 | revolut_pis           | Revolut payments           |                                   | X                             |
+| paysera_ee_pis        | Paysera payments           |                                   |                               |
+| paysera_lt_pis        | Paysera payments           |                                   |                               |
+| paysera_lv_pis        | Paysera payments           |                                   |                               |
 | seb_ee_pis            | SEB payments               | X                                 |                               |
 | seb_lt_pis            | SEB payments               | X                                 |                               |
 | seb_lv_pis            | SEB payments               | X                                 |                               |
