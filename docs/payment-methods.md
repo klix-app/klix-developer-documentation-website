@@ -2,33 +2,33 @@
 
 Klix currently supports following payment methods:
 
-| Name                  | Description                | Supports personal code validation | Supports full name validation |
-|-----------------------|----------------------------|-----------------------------------|-------------------------------|
-| citadele_ee_digilink  | Citadele Bank payments     |                                   | X                             |
-| citadele_lt_digilink  | Citadele Bank payments     |                                   | X                             |
-| citadele_lv_digilink  | Citadele Bank payments     |                                   | X                             |
-| coop_pank_ee_pis      | Coop Pank payments         |                                   |                               |
-| indexo_lv_pis         | INDEXO bank payments       | X                                 | X                             |
-| klix                  | Klix card payments         |                                   |                               |
-| klix_apple_pay        | Apple Pay payments         |                                   |                               |
-| klix_google_pay       | Google Pay™ payments       |                                   |                               |
-| klix_pay_later        | Klix Pay Later             |                                   |                               |
-| lhv_ee_pis            | LHV payments               |                                   |                               |
-| lku_lt_pis            | LKU payments               |                                   |                               |
-| luminor_ee_pis        | Luminor payments           | X                                 |                               |
-| luminor_lt_pis        | Luminor payments           | X                                 |                               |
-| luminor_lv_pis        | Luminor payments           | X                                 |                               |
-| revolut_pis           | Revolut payments           |                                   | X                             |
-| paysera_ee_pis        | Paysera payments           |                                   |                               |
-| paysera_lt_pis        | Paysera payments           |                                   |                               |
-| paysera_lv_pis        | Paysera payments           |                                   |                               |
-| seb_ee_pis            | SEB payments               | X                                 |                               |
-| seb_lt_pis            | SEB payments               | X                                 |                               |
-| seb_lv_pis            | SEB payments               | X                                 |                               |
-| siauliu_lt_pis        | Artea Bankas payments      | X                                 |                               |
-| swedbank_ee_pis       | Swedbank payments          | X                                 |                               |
-| swedbank_lt_pis       | Swedbank payments          | X                                 |                               |
-| swedbank_lv_pis       | Swedbank payments          | X                                 |                               |
+| Name                  | Description                | Supports personal code validation | Supports full name validation | Supports bulk payments | Supports variable creditor functionality |
+|-----------------------|----------------------------|-----------------------------------|-------------------------------|------------------------|------------------------------------------|
+| citadele_ee_digilink  | Citadele Bank payments     |                                   | X                             | X                      | X                                        |
+| citadele_lt_digilink  | Citadele Bank payments     |                                   | X                             | X                      | X                                        |
+| citadele_lv_digilink  | Citadele Bank payments     |                                   | X                             | X                      | X                                        |
+| coop_pank_ee_pis      | Coop Pank payments         |                                   |                               |                        | X                                        |
+| indexo_lv_pis         | INDEXO bank payments       | X                                 | X                             |                        | X                                        |
+| klix                  | Klix card payments         |                                   |                               |                        | X                                        |
+| klix_apple_pay        | Apple Pay payments         |                                   |                               |                        | X                                        |
+| klix_google_pay       | Google Pay™ payments       |                                   |                               |                        | X                                        |
+| klix_pay_later        | Klix Pay Later             |                                   |                               |                        | X                                        |
+| lhv_ee_pis            | LHV payments               |                                   |                               |                        | X                                        |
+| lku_lt_pis            | LKU payments               |                                   |                               |                        | X                                        |
+| luminor_ee_pis        | Luminor payments           | X                                 |                               | X                      | X                                        |
+| luminor_lt_pis        | Luminor payments           | X                                 |                               | X                      | X                                        |
+| luminor_lv_pis        | Luminor payments           | X                                 |                               | X                      | X                                        |
+| revolut_pis           | Revolut payments           |                                   | X                             |                        | X                                        |
+| paysera_ee_pis        | Paysera payments           |                                   |                               |                        | X                                        |
+| paysera_lt_pis        | Paysera payments           |                                   |                               |                        | X                                        |
+| paysera_lv_pis        | Paysera payments           |                                   |                               |                        | X                                        |
+| seb_ee_pis            | SEB payments               | X                                 |                               | X                      | X                                        |
+| seb_lt_pis            | SEB payments               | X                                 |                               | X                      | X                                        |
+| seb_lv_pis            | SEB payments               | X                                 |                               | X                      | X                                        |
+| siauliu_lt_pis        | Artea Bankas payments      | X                                 |                               |                        | X                                        |
+| swedbank_ee_pis       | Swedbank payments          | X                                 |                               | X                      | X                                        |
+| swedbank_lt_pis       | Swedbank payments          | X                                 |                               | X                      | X                                        |
+| swedbank_lv_pis       | Swedbank payments          | X                                 |                               | X                      | X                                        |
 
 ## Payment method specifics
 
